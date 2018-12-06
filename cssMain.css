@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css?family=Adamina');
+
+main {
+    padding: 50px 0px 150px 0px;
+}
+
+
+.navbar {
+    font-size: 30px;
+    transform: translate(0px, -80px);
+    -webkit-transition: transform 900ms ease;
+    -moz-transition: transform 900ms ease;
+    -o-transition: transform 900ms ease;
+}
+
+i {
+    border: solid green;
+    border-width: 0 15px 15px 0;
+    display: inline-block;
+    padding: 15px;
+    margin-left: 10px;
+    transform: translate(0px, 0px);
+    -webkit-transition: transform 1000ms ease;
+    -moz-transition: transform 1000ms ease;
+    -o-transition: transform 1000ms ease;
+    opacity: 0;
+}
+
+
+i.hide {
+    transform: translate(0px, -80px);
+}
+
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.hideShowNav {
+    padding: 0px;
+    height: 60px;
+    width: 65px;
+    z-index: 1;
+    position: fixed;
+    display: block;
+    margin: auto;
+}
+
+.navbar:hover {
+    transform: translate(0px, 0px);
+}
+
+.hideShowNav:hover + .navbar {
+    transform: translate(0px, 0px);
+}
+
+#hideShowPic {
+    margin: auto;
+    display: block;
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+}
+
+.full-aboutme {
+    padding-top: 20px;
+}
+
+@keyframes aboutLoad {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
+
+
+#aboutImg {
+    opacity: 0;
+    transform: translate(0px, 0px);
+    position: static;
+    width: 100%;
+    height: 100%;
+    animation: aboutLoad 800ms ease 0s 1 normal forwards;
+}
+
+
+#aboutHeader {
+    opacity: 0;
+    transform: translate(15px, 0px);
+    animation: aboutLoad 400ms ease 800ms 1 normal forwards;
+}
+
+#aboutP1 {
+    opacity: 0;
+    transform: translate(5px, 0px);
+    animation: aboutLoad 400ms ease 1600ms 1 normal forwards;
+}
+
+#aboutList {
+    opacity: 0;
+    transform: translate(0px, 0px);
+    animation: aboutLoad 400ms ease 1900ms 1 normal forwards;
+}
+
+#listElem1 {
+    opacity: 0;
+    transform: translate(10px, 0px);
+    animation: aboutLoad 400ms ease 2200ms 1 normal forwards;
+}
+
+#listElem2 {
+    opacity: 0;
+    transform: translate(10px, 0px);
+    animation: aboutLoad 400ms ease 2500ms 1 normal forwards;
+}
+
+#listElem3 {
+    opacity: 0;
+    transform: translate(10px, 0px);
+    animation: aboutLoad 400ms ease 2800ms 1 normal forwards;
+}
+
+#listElem4 {
+    opacity: 0;
+    transform: translate(10px, 0px);
+    animation: aboutLoad 400ms ease 3100ms 1 normal forwards;
+}
+
+#aboutP2 {
+    opacity: 0;
+    transform: translate(5px, 0px);
+    animation: aboutLoad 400ms ease 3700ms 1 normal forwards;
+}
+
+
+
+
+
+/* Non-Mobile Styles */
+@media screen and (min-width: 561px) {
+    #GGpoem {
+        display: block !important;
+    }
+
+    #TDWBGpoem {
+        display: block !important;
+    }
+
+    #GOALSpoem {
+        display: block !important;
+    }
+
+    #BDpoem {
+        display: block !important;
+    }
+
+    #LTTGpoem {
+        display: block !important;
+    }
+
+    #AMBIGUITYpoem {
+        display: block !important;
+    }
+
+    #TTpoem {
+        display: block !important;
+    }
+
+    #COMFORTpoem {
+        display: block !important;
+    }
+
+    #TMpoem {
+        display: block !important;
+    }
+
+    #CSpoem {
+        display: block !important;
+    }
+    
+    #INFpoem {
+        display: block !important;
+    }
+
+    #holder {
+        display: block;
+    }
+
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 560px) {
+
+    #aboutHeader {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+
+    #GGpoem {
+        margin: auto;
+        display: none;
+    }
+
+    #TDWBGpoem {
+        margin: auto;
+        display: none;
+    }
+
+    #GOALSpoem {
+        margin: auto;
+        display: none;
+    }
+
+    #BDpoem {
+        margin: auto;
+        display: none;
+    }
+
+    #LTTGpoem {
+        margin: auto;
+        display: none;
+    }
+
+    #AMBIGUITYpoem {
+        margin: auto;
+        display: none;
+    }
+
+
+    #TTpoem {
+        margin: auto;
+        display: none;
+    }
+
+    #COMFORTpoem {
+        margin: auto;
+        display: none;
+    }
+
+    #TMpoem {
+        margin: auto;
+        display: none;
+    }
+
+    #CSpoem {
+        margin: auto;
+        display: none;
+    }
+
+    #INFpoem {
+        margin: auto;
+        display: none;
+    }
+
+    main {
+        padding: 0px 0px 0px 0px;
+    }
+
+    .hideShowNav {
+        display: none;
+    }
+
+    .navbar {
+        font-size: 30px;
+        transform: translate(0px, 0px);
+        transition: transform 900ms ease;
+    }
+
+    .secretbtn {
+        display: none;
+    }
+
+}
+
+.headercont {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.background {
+    margin: 0 auto;
+    height: 620px;
+    width: 100%;
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Mountains.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.greeting {
+    opacity: 0;
+    font-family: Adamina;
+    text-shadow: 5px 5px 10px darkolivegreen;
+    margin: 0 auto;
+    color: chartreuse;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    transition: opacity 800ms ease-in;
+    -webkit-transition: opacity 800ms ease-in;
+    -moz-transition: opacity 800ms ease-in;
+    -o-transition: opacity 800ms ease-in;
+}
+
+.greeting.load {
+    opacity: 1;
+}
+
+.description {
+    opacity: 0;
+    font-size: 30px;
+    font-family: Adamina, sans-serif;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    color: white;
+    transition: opacity 4s ease-in-out;
+    -webkit-transition: opacity 4s ease-in-out;
+    -moz-transition: opacity 4s ease-in-out;
+    -o-transition: opacity 4s ease-in-out;
+}
+
+.description.load {
+    opacity: 1;
+}
+
+.About-me-section {
+    font-family: Adamina, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+@keyframes poemHead {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes poemButtonCascade {
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
+
+#navPoemHead {
+    opacity: 0;
+    animation: poemHead 400ms ease 500ms 1 normal forwards;
+}
+
+.poem-item {
+    opacity: 0;
+    margin: auto;
+    width: 80%;
+}
+
+#GG {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation: poemButtonCascade 200ms ease 1000ms 1 normal forwards;
+}
+
+#TDWBG {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation: poemButtonCascade 200ms ease 1200ms 1 normal forwards;
+}
+
+#GOALS {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation: poemButtonCascade 200ms ease 1400ms 1 normal forwards;
+}
+
+#BD {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation: poemButtonCascade 200ms ease 1600ms 1 normal forwards;
+}
+
+#LTTG {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation: poemButtonCascade 200ms ease 1800ms 1 normal forwards;
+}
+
+#AMBIGUITY {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation: poemButtonCascade 200ms ease 2000ms 1 normal forwards;
+}
+
+#TT {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation: poemButtonCascade 200ms ease 2200ms 1 normal forwards;
+}
+
+#COMFORT {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation: poemButtonCascade 200ms ease 2400ms 1 normal forwards;
+}
+
+#TM {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation: poemButtonCascade 200ms ease 2600ms 1 normal forwards;
+}
+
+#CS {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation: poemButtonCascade 200ms ease 2800ms 1 normal forwards;
+}
+
+#INF {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation: poemButtonCascade 200ms ease 3000ms 1 normal forwards;
+}
+
+.list-full {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.poemsNav {
+    max-height: 600px;
+
+}
+
+/*Between is for space in between button, 20px */
+.between {
+    margin: 10px 0px 10px 0px;
+}
+
+
+#poemHead {
+    opacity: 0;
+    animation: poemHead 400ms ease-in 0ms 1 normal forwards;
+}
+
+.Poem {
+    opacity: 0;
+    transform: translate(0px, 0px);
+    -moz-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+    -webkit-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+    -o-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+    font-size: 20px;
+}
+
+#GGpoem.show {
+    opacity: 1 !important;
+    transform: translate(50px, 0px);
+}
+
+#TDWBGpoem.show {
+    opacity: 1 !important;
+    transform: translate(50px, 0px);
+}
+
+#GOALSpoem.show {
+    opacity: 1 !important;
+    transform: translate(50px, 0px);
+}
+
+#BDpoem.show {
+    opacity: 1 !important;
+    transform: translate(50px, 0px);
+}
+
+#LTTGpoem.show {
+    opacity: 1 !important;
+    transform: translate(50px, 0px);
+}
+
+#AMBIGUITYpoem.show {
+    opacity: 1 !important;
+    transform: translate(50px, 0px);
+}
+
+#TTpoem.show {
+    opacity: 1 !important;
+    transform: translate(50px, 0px);
+}
+
+#COMFORTpoem.show {
+    opacity: 1 !important;
+    transform: translate(50px, 0px);
+}
+
+#TMpoem.show {
+    opacity: 1 !important;
+    transform: translate(50px, 0px);
+}
+
+#CSpoem.show {
+    opacity: 1 !important;
+    transform: translate(50px, 0px);
+}
+
+#INFpoem.show {
+    opacity: 1 !important;
+    transform: translate(50px, 0px);
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.footerP{
+    font-size: 25px;
+    padding: 20px 0px 20px 0px;
+}
+
+.secretbtn {
+    position: absolute;
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.secretbtn.showing {
+    font-size: 20px;
+    opacity: 1;
+    width: 50%;
+    height: 50%;
+}
+
+.secret {
+    display: none;
+}
+
+#secret {
+    display: none;
+    height: 200px;
+    width: 300px;
+}
