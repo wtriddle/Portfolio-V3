@@ -1,4 +1,4 @@
-var mobile = false; //Determines if the webpage will use Mobile or Non-Mobile functionality. 
+var mobile = false; //Determines if the webpage will use Mobile or Non-Mobile functionality.
 
 //Retrieves the id of the specified Poem by Poem class heirarchy
 function getID(y) {
@@ -12,76 +12,20 @@ function getID(y) {
 function getActive() {
     'use strict';
     if (mobile === false) {
-        if ($("#GGpoem").css("opacity") === "1") {
-            return document.getElementsByClassName("Poem")[0].id;
-        }
-        if ($("#TDWBGpoem").css("opacity") === "1") {
-            return document.getElementsByClassName("Poem")[1].id;
-        }
-        if ($("#GOALSpoem").css("opacity") === "1") {
-            return document.getElementsByClassName("Poem")[2].id;
-        }
-        if ($("#BDpoem").css("opacity") === "1") {
-            return document.getElementsByClassName("Poem")[3].id;
-        }
-        if ($("#LTTGpoem").css("opacity") === "1") {
-            return document.getElementsByClassName("Poem")[4].id;
-        }
-        if ($("#AMBIGUITYpoem").css("opacity") === "1") {
-            return document.getElementsByClassName("Poem")[5].id;
-        }
-        if ($("#TTpoem").css("opacity") === "1") {
-            return document.getElementsByClassName("Poem")[6].id;
-        }
-        if ($("#COMFORTpoem").css("opacity") === "1") {
-            return document.getElementsByClassName("Poem")[7].id;
-        }
-        if ($("#TMpoem").css("opacity") === "1") {
-            return document.getElementsByClassName("Poem")[8].id;
-        }
-        if ($("#CSpoem").css("opacity") === "1") {
-            return document.getElementsByClassName("Poem")[9].id;
-        }
-        if ($("#INFpoem").css("opacity") === "1") {
-            return document.getElementsByClassName("Poem")[10].id;
+        for (var poemNumber = 0; poemNumber < 10; poemNumber++){
+          var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
+          if ($("#" + poemName).css("opacity") == 1) {
+            return poemName;
+          }
         }
     }
     if (mobile === true) {
-        if ($("#GGpoem").css("display") === "block") {
-            return document.getElementsByClassName("Poem")[0].id;
+        for (var poemNumber = 0; poemNumber < 10; poemNumber++) {
+            var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
+            if($("#" + poemName).css("display") == "block"){
+              return poemName;
+            }
         }
-        if ($("#TDWBGpoem").css("display") === "block") {
-            return document.getElementsByClassName("Poem")[1].id;
-        }
-        if ($("#GOALSpoem").css("display") === "block") {
-            return document.getElementsByClassName("Poem")[2].id;
-        }
-        if ($("#BDpoem").css("display") === "block") {
-            return document.getElementsByClassName("Poem")[3].id;
-        }
-        if ($("#LTTGpoem").css("display") === "block") {
-            return document.getElementsByClassName("Poem")[4].id;
-        }
-        if ($("#AMBIGUITYpoem").css("display") === "block") {
-            return document.getElementsByClassName("Poem")[5].id;
-        }
-        if ($("#TTpoem").css("display") === "block") {
-            return document.getElementsByClassName("Poem")[6].id;
-        }
-        if ($("#COMFORTpoem").css("display") === "block") {
-            return document.getElementsByClassName("Poem")[7].id;
-        }
-        if ($("#TMpoem").css("display") === "block") {
-            return document.getElementsByClassName("Poem")[8].id;
-        }
-        if ($("#CSpoem").css("display") === "block") {
-            return document.getElementsByClassName("Poem")[9].id;
-        }
-        if ($("#INFpoem").css("display") === "block") {
-            return document.getElementsByClassName("Poem")[10].id;
-        }
-
-
     }
 
 }
@@ -91,68 +35,29 @@ function getActive() {
 function changePoemColumns() {
     'use strict';
     if (mobile === true) {
-        $("#GGpoem").removeClass("col-8").addClass("col-12");
-        $("#TDWBGpoem").removeClass("col-8").addClass("col-12");
-        $("#GOALSpoem").removeClass("col-8").addClass("col-12");
-        $("#BDpoem").removeClass("col-8").addClass("col-12");
-        $("#LTTGpoem").removeClass("col-8").addClass("col-12");
-        $("#AMBIGUITYpoem").removeClass("col-8").addClass("col-12");
-        $("#TTpoem").removeClass("col-8").addClass("col-12");
-        $("#COMFORTpoem").removeClass("col-8").addClass("col-12");
-        $("#TMpoem").removeClass("col-8").addClass("col-12");
-        $("#CSpoem").removeClass("col-8").addClass("col-12");
-        $("#INFpoem").removeClass("col-8").addClass("col-12");
+      for (var poemNumber = 0; poemNumber < 10; poemNumber++){
+        var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
+        $("#" + poemName).removeClass("col-8").addClass("col-12");
+      }
     }
     if (mobile === false) {
-        $("#GGpoem").removeClass("col-12").addClass("col-8");
-        $("#TDWBGpoem").removeClass("col-12").addClass("col-8");
-        $("#GOALSpoem").removeClass("col-12").addClass("col-8");
-        $("#BDpoem").removeClass("col-12").addClass("col-8");
-        $("#LTTGpoem").removeClass("col-12").addClass("col-8");
-        $("#AMBIGUITYpoem").removeClass("col-12").addClass("col-8");
-        $("#TTpoem").removeClass("col-12").addClass("col-8");
-        $("#COMFORTpoem").removeClass("col-12").addClass("col-8");
-        $("#TMpoem").removeClass("col-12").addClass("col-8");
-        $("#CSpoem").removeClass("col-12").addClass("col-8");
-        $("#INFpoem").removeClass("col-12").addClass("col-8");
+      for (var poemNumber = 0; poemNumber < 10; poemNumber++){
+        var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
+        $("#" + poemName).removeClass("col-12").addClass("col-8");
+      }
     }
 }
 
 //When resizing the webpage down to mobile, this function will take the active showing poem from the non-mobile webpage and center it with all the other poems.
 function repositionActiveMobile() {
     'use strict';
-    if ($("#GGpoem").css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-        $("#GGpoem").toggleClass("show");
-    }
-    if ($("#TDWBGpoem").css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-        $("#TDWBGpoem").toggleClass("show");
-    }
-    if ($("#GOALSpoem").css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-        $("#GOALSpoem").toggleClass("show");
-    }
-    if ($("#BDpoem").css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-        $("#BDpoem").toggleClass("show");
-    }
-    if ($("#LTTGpoem").css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-        $("#LTTGpoem").toggleClass("show");
-    }
-    if ($("#AMBIGUITYpoem").css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-        $("#AMBIGUITYpoem").toggleClass("show");
-    }
-    if ($("#TTpoem").css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-        $("#TTpoem").toggleClass("show");
-    }
-    if ($("#COMFORTpoem").css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-        $("#COMFORTpoem").toggleClass("show");
-    }
-    if ($("#TMpoem").css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-        $("#TMpoem").toggleClass("show");
-    }
-    if ($("#CSpoem").css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-        $("#CSpoem").toggleClass("show");
-    }
-    if ($("#INFpoem").css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-        $("#INFpoem").toggleClass("show");
+
+    for(var poemNumber = 0; poemNumber < 10; poemNumber++){
+      var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
+      if($("#" + poemName).css("transform") === "matrix(1, 0, 0, 1, 50, 0)"){
+        $("#" + poemName).toggleClass("show");
+        break;
+      }
     }
 
 }
@@ -173,7 +78,7 @@ $(document).ready(function () {
     GGbtn = TDWBGbtn = GOALSbtn = BDbtn = LTTGbtn = AMBIGUITYbtn = TTbtn = COMFORTbtn = TMbtn = CSbtn = INFbtn = false;
 
     //Append animations only for Non-mobile
-    $(window).scroll(function (event) {
+    $(window).scroll(function () {
         var x = $(this).scrollTop();
         if (mobile == false) {
             if (x >= 200) {
@@ -189,7 +94,7 @@ $(document).ready(function () {
 
                 //About header append
                 if (aboutHead == false) {
-                    $(".About-me-section").prepend("            <h4 class='display-4 text-center' id='aboutHeader'>About</h4>");
+                    $(".About-me-section").prepend("<h4 class='display-4 text-center' id='aboutHeader'>About</h4>");
                     aboutHead = true;
                 }
 
@@ -474,11 +379,17 @@ $(document).ready(function () {
         mobile = false;
     }
 
+    $(".poemTrash").click(function(){
+      $(".poemTrash").index(document.getElementsByClassName("poemTrash").id);
+      //FInd a way to get index of the clicked button to activate switching of poems that show.
+      //BAsically condense the long list of poem functions below into one based on index.
+    });
+
     //Green Goddess Button
     $("#GGcont").on('click', 'button#GG', function () {
         if (mobile === false) {
             let z = getID(0);
-            let k = getActive();
+            var k = getActive();
             $("#" + k).toggleClass("show");
             $("#" + z).toggleClass("show");
 
@@ -774,8 +685,7 @@ $(document).ready(function () {
         toggleNav();
     });
 
-
-    //Secret Button 
+    //Secret Button
     $("#secretActivator").click(function () {
         if ($(".secret").css("display") == "none") {
             $(".secretbtn").toggleClass("showing");
