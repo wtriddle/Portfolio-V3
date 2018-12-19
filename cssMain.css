@@ -287,7 +287,7 @@ i.hide {
 
 .background {
     margin: 0 auto;
-    height: 620px;
+    height: 820px;
     width: 100%;
     background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Mountains.jpg");
     background-repeat: no-repeat;
