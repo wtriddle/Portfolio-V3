@@ -1,26 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Adamina');
 
 main {
-    padding: 50px 0px 200px 0px;
+  padding: 50px 0px 200px 0px;
 }
-
 
 .navbar {
-    font-size: 26px;
-    z-index: 1;
-    transform: translate(0px, -80px);
-    transition: transform 900ms ease;
-    -webkit-transition: transform 900ms ease;
-    -moz-transition: transform 900ms ease;
-    -o-transition: transform 900ms ease;
+  font-size: 26px;
+  z-index: 1;
+  transform: translate(0px, -80px);
+  transition: transform 900ms ease;
+  -webkit-transition: transform 900ms ease;
+  -moz-transition: transform 900ms ease;
+  -o-transition: transform 900ms ease;
 }
 
-.hello{
+.hello {
   transform: translate(0px, 0px);
 }
 
-
-.navToggle{
+.navToggle {
   z-index: 2;
   display: inline-block;
   cursor: pointer;
@@ -44,531 +42,516 @@ main {
   transform: rotate(-45deg) translate(-9px, 6px);
 }
 
-.change .bar2 {opacity: 0;}
+.change .bar2 {
+  opacity: 0;
+}
 
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
-
 .hideShowNav {
-    padding: 0px;
-    height: 60px;
-    width: 65px;
-    z-index: 1;
-    position: fixed;
-    display: block;
-    margin: auto;
+  padding: 0px;
+  height: 60px;
+  width: 65px;
+  z-index: 1;
+  position: fixed;
+  display: block;
+  margin: auto;
 }
 
 #hideShowPic {
-    margin: auto;
-    display: block;
-    z-index: 1;
-    height: 40px;
-    width: 40px;
+  margin: auto;
+  display: block;
+  z-index: 1;
+  height: 40px;
+  width: 40px;
 }
 
 .full-aboutme {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 @keyframes aboutLoad {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-        transform: translate(0px, 0px);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
 }
-
-
 
 #aboutImg {
-    opacity: 0;
-    transform: translate(0px, 0px);
-    position: static;
-    width: 100%;
-    height: 100%;
-    animation: aboutLoad 800ms ease 0s 1 normal forwards;
+  opacity: 0;
+  transform: translate(0px, 0px);
+  position: static;
+  width: 100%;
+  height: 100%;
+  animation: aboutLoad 800ms ease 0s 1 normal forwards;
 }
 
-
 #aboutHeader {
-    opacity: 0;
-    transform: translate(15px, 0px);
-    animation: aboutLoad 400ms ease 800ms 1 normal forwards;
+  opacity: 0;
+  transform: translate(15px, 0px);
+  animation: aboutLoad 400ms ease 800ms 1 normal forwards;
 }
 
 #aboutP1 {
-    opacity: 0;
-    transform: translate(5px, 0px);
-    animation: aboutLoad 400ms ease 1600ms 1 normal forwards;
+  opacity: 0;
+  transform: translate(5px, 0px);
+  animation: aboutLoad 400ms ease 1600ms 1 normal forwards;
 }
 
 #aboutList {
-    opacity: 0;
-    transform: translate(0px, 0px);
-    animation: aboutLoad 400ms ease 1900ms 1 normal forwards;
+  opacity: 0;
+  transform: translate(0px, 0px);
+  animation: aboutLoad 400ms ease 1900ms 1 normal forwards;
 }
 
 #listElem1 {
-    opacity: 0;
-    transform: translate(10px, 0px);
-    animation: aboutLoad 400ms ease 2200ms 1 normal forwards;
+  opacity: 0;
+  transform: translate(10px, 0px);
+  animation: aboutLoad 400ms ease 2200ms 1 normal forwards;
 }
 
 #listElem2 {
-    opacity: 0;
-    transform: translate(10px, 0px);
-    animation: aboutLoad 400ms ease 2500ms 1 normal forwards;
+  opacity: 0;
+  transform: translate(10px, 0px);
+  animation: aboutLoad 400ms ease 2500ms 1 normal forwards;
 }
 
 #listElem3 {
-    opacity: 0;
-    transform: translate(10px, 0px);
-    animation: aboutLoad 400ms ease 2800ms 1 normal forwards;
+  opacity: 0;
+  transform: translate(10px, 0px);
+  animation: aboutLoad 400ms ease 2800ms 1 normal forwards;
 }
 
 #listElem4 {
-    opacity: 0;
-    transform: translate(10px, 0px);
-    animation: aboutLoad 400ms ease 3100ms 1 normal forwards;
+  opacity: 0;
+  transform: translate(10px, 0px);
+  animation: aboutLoad 400ms ease 3100ms 1 normal forwards;
 }
 
 #aboutP2 {
-    opacity: 0;
-    transform: translate(5px, 0px);
-    animation: aboutLoad 400ms ease 3700ms 1 normal forwards;
+  opacity: 0;
+  transform: translate(5px, 0px);
+  animation: aboutLoad 400ms ease 3700ms 1 normal forwards;
 }
-
-
-
-
 
 /* Non-Mobile Styles */
 @media screen and (min-width: 561px) {
-    #GGpoem {
-        display: block !important;
-    }
+  #GGpoem {
+    display: block !important;
+  }
 
-    #TDWBGpoem {
-        display: block !important;
-    }
+  #TDWBGpoem {
+    display: block !important;
+  }
 
-    #GOALSpoem {
-        display: block !important;
-    }
+  #GOALSpoem {
+    display: block !important;
+  }
 
-    #BDpoem {
-        display: block !important;
-    }
+  #BDpoem {
+    display: block !important;
+  }
 
-    #LTTGpoem {
-        display: block !important;
-    }
+  #LTTGpoem {
+    display: block !important;
+  }
 
-    #AMBIGUITYpoem {
-        display: block !important;
-    }
+  #AMBIGUITYpoem {
+    display: block !important;
+  }
 
-    #TTpoem {
-        display: block !important;
-    }
+  #TTpoem {
+    display: block !important;
+  }
 
-    #COMFORTpoem {
-        display: block !important;
-    }
+  #COMFORTpoem {
+    display: block !important;
+  }
 
-    #TMpoem {
-        display: block !important;
-    }
+  #TMpoem {
+    display: block !important;
+  }
 
-    #CSpoem {
-        display: block !important;
-    }
+  #CSpoem {
+    display: block !important;
+  }
 
-    #INFpoem {
-        display: block !important;
-    }
+  #INFpoem {
+    display: block !important;
+  }
 
-    #holder {
-        display: block;
-    }
-
+  #holder {
+    display: block;
+  }
 }
 
 /* Mobile Styles */
 @media screen and (max-width: 560px) {
+  #aboutHeader {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
 
-    #aboutHeader {
-        opacity: 1;
-        transform: translate(0px, 0px);
-    }
+  #GGpoem {
+    margin: auto;
+    display: none;
+  }
 
-    #GGpoem {
-        margin: auto;
-        display: none;
-    }
+  #TDWBGpoem {
+    margin: auto;
+    display: none;
+  }
 
-    #TDWBGpoem {
-        margin: auto;
-        display: none;
-    }
+  #GOALSpoem {
+    margin: auto;
+    display: none;
+  }
 
-    #GOALSpoem {
-        margin: auto;
-        display: none;
-    }
+  #BDpoem {
+    margin: auto;
+    display: none;
+  }
 
-    #BDpoem {
-        margin: auto;
-        display: none;
-    }
+  #LTTGpoem {
+    margin: auto;
+    display: none;
+  }
 
-    #LTTGpoem {
-        margin: auto;
-        display: none;
-    }
+  #AMBIGUITYpoem {
+    margin: auto;
+    display: none;
+  }
 
-    #AMBIGUITYpoem {
-        margin: auto;
-        display: none;
-    }
+  #TTpoem {
+    margin: auto;
+    display: none;
+  }
 
+  #COMFORTpoem {
+    margin: auto;
+    display: none;
+  }
 
-    #TTpoem {
-        margin: auto;
-        display: none;
-    }
+  #TMpoem {
+    margin: auto;
+    display: none;
+  }
 
-    #COMFORTpoem {
-        margin: auto;
-        display: none;
-    }
+  #CSpoem {
+    margin: auto;
+    display: none;
+  }
 
-    #TMpoem {
-        margin: auto;
-        display: none;
-    }
+  #INFpoem {
+    margin: auto;
+    display: none;
+  }
 
-    #CSpoem {
-        margin: auto;
-        display: none;
-    }
+  main {
+    padding: 0px 0px 0px 0px;
+  }
 
-    #INFpoem {
-        margin: auto;
-        display: none;
-    }
+  .hideShowNav {
+    display: none;
+  }
 
-    main {
-        padding: 0px 0px 0px 0px;
-    }
+  .navbar {
+    font-size: 30px;
+    transform: translate(0px, 0px);
+    transition: transform 900ms ease;
+  }
 
-    .hideShowNav {
-        display: none;
-    }
-
-    .navbar {
-        font-size: 30px;
-        transform: translate(0px, 0px);
-        transition: transform 900ms ease;
-    }
-
-    .secretbtn {
-        display: none;
-    }
-
+  .secretbtn {
+    display: none;
+  }
 }
 
 .headercont {
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
 .background {
-    margin: 0 auto;
-    height: 820px;
-    width: 100%;
-    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Mountains.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+  margin: 0 auto;
+  height: 820px;
+  width: 100%;
+  background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Mountains.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 .greeting {
-    opacity: 0;
-    font-family: Adamina;
-    text-shadow: 5px 5px 10px darkolivegreen;
-    margin: 0 auto;
-    color: chartreuse;
-    padding-top: 100px;
-    padding-bottom: 50px;
-    transition: opacity 800ms ease-in;
-    -webkit-transition: opacity 800ms ease-in;
-    -moz-transition: opacity 800ms ease-in;
-    -o-transition: opacity 800ms ease-in;
+  opacity: 0;
+  font-family: Adamina;
+  text-shadow: 5px 5px 10px darkolivegreen;
+  margin: 0 auto;
+  color: chartreuse;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  transition: opacity 800ms ease-in;
+  -webkit-transition: opacity 800ms ease-in;
+  -moz-transition: opacity 800ms ease-in;
+  -o-transition: opacity 800ms ease-in;
 }
 
 .greeting.load {
-    opacity: 1;
+  opacity: 1;
 }
 
 .description {
-    opacity: 0;
-    font-size: 30px;
-    font-family: Adamina, sans-serif;
-    margin: 0 auto;
-    padding-bottom: 50px;
-    color: white;
-    transition: opacity 4s ease-in-out;
-    -webkit-transition: opacity 4s ease-in-out;
-    -moz-transition: opacity 4s ease-in-out;
-    -o-transition: opacity 4s ease-in-out;
+  opacity: 0;
+  font-size: 30px;
+  font-family: Adamina, sans-serif;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  color: white;
+  transition: opacity 4s ease-in-out;
+  -webkit-transition: opacity 4s ease-in-out;
+  -moz-transition: opacity 4s ease-in-out;
+  -o-transition: opacity 4s ease-in-out;
 }
 
 .description.load {
-    opacity: 1;
+  opacity: 1;
 }
 
 .About-me-section {
-    font-family: Adamina, sans-serif;
-    font-size: 20px;
-    color: white;
+  font-family: Adamina, sans-serif;
+  font-size: 20px;
+  color: white;
 }
 
 @keyframes poemHead {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
-
 
 @keyframes poemButtonCascade {
-    0% {
-        opacity: 0;
+  0% {
+    opacity: 0;
+  }
 
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0px, 0px);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
 }
-
 
 #navPoemHead {
-    opacity: 0;
-    animation: poemHead 400ms ease 500ms 1 normal forwards;
+  opacity: 0;
+  animation: poemHead 400ms ease 500ms 1 normal forwards;
 }
 
-.poemHolder{
+.poemHolder {
   opacity: 1;
 }
 
 .poem-item {
-    opacity: 0;
-    margin: auto;
-    width: 80%;
+  opacity: 0;
+  margin: auto;
+  width: 80%;
 }
 
 #GG {
-    transform: translate(0px, 10px);
-    opacity: 0;
-    animation: poemButtonCascade 200ms ease 1000ms 1 normal forwards;
+  transform: translate(0px, 10px);
+  opacity: 0;
+  animation: poemButtonCascade 200ms ease 1000ms 1 normal forwards;
 }
 
 #TDWBG {
-    transform: translate(0px, 10px);
-    opacity: 0;
-    animation: poemButtonCascade 200ms ease 1200ms 1 normal forwards;
+  transform: translate(0px, 10px);
+  opacity: 0;
+  animation: poemButtonCascade 200ms ease 1200ms 1 normal forwards;
 }
 
 #GOALS {
-    transform: translate(0px, 10px);
-    opacity: 0;
-    animation: poemButtonCascade 200ms ease 1400ms 1 normal forwards;
+  transform: translate(0px, 10px);
+  opacity: 0;
+  animation: poemButtonCascade 200ms ease 1400ms 1 normal forwards;
 }
 
 #BD {
-    transform: translate(0px, 10px);
-    opacity: 0;
-    animation: poemButtonCascade 200ms ease 1600ms 1 normal forwards;
+  transform: translate(0px, 10px);
+  opacity: 0;
+  animation: poemButtonCascade 200ms ease 1600ms 1 normal forwards;
 }
 
 #LTTG {
-    transform: translate(0px, 10px);
-    opacity: 0;
-    animation: poemButtonCascade 200ms ease 1800ms 1 normal forwards;
+  transform: translate(0px, 10px);
+  opacity: 0;
+  animation: poemButtonCascade 200ms ease 1800ms 1 normal forwards;
 }
 
 #AMBIGUITY {
-    transform: translate(0px, 10px);
-    opacity: 0;
-    animation: poemButtonCascade 200ms ease 2000ms 1 normal forwards;
+  transform: translate(0px, 10px);
+  opacity: 0;
+  animation: poemButtonCascade 200ms ease 2000ms 1 normal forwards;
 }
 
 #TT {
-    transform: translate(0px, 10px);
-    opacity: 0;
-    animation: poemButtonCascade 200ms ease 2200ms 1 normal forwards;
+  transform: translate(0px, 10px);
+  opacity: 0;
+  animation: poemButtonCascade 200ms ease 2200ms 1 normal forwards;
 }
 
 #COMFORT {
-    transform: translate(0px, 10px);
-    opacity: 0;
-    animation: poemButtonCascade 200ms ease 2400ms 1 normal forwards;
+  transform: translate(0px, 10px);
+  opacity: 0;
+  animation: poemButtonCascade 200ms ease 2400ms 1 normal forwards;
 }
 
 #TM {
-    transform: translate(0px, 10px);
-    opacity: 0;
-    animation: poemButtonCascade 200ms ease 2600ms 1 normal forwards;
+  transform: translate(0px, 10px);
+  opacity: 0;
+  animation: poemButtonCascade 200ms ease 2600ms 1 normal forwards;
 }
 
 #CS {
-    transform: translate(0px, 10px);
-    opacity: 0;
-    animation: poemButtonCascade 200ms ease 2800ms 1 normal forwards;
+  transform: translate(0px, 10px);
+  opacity: 0;
+  animation: poemButtonCascade 200ms ease 2800ms 1 normal forwards;
 }
 
 #INF {
-    transform: translate(0px, 10px);
-    opacity: 0;
-    animation: poemButtonCascade 200ms ease 3000ms 1 normal forwards;
+  transform: translate(0px, 10px);
+  opacity: 0;
+  animation: poemButtonCascade 200ms ease 3000ms 1 normal forwards;
 }
 
 .list-full {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .poemsNav {
-    max-height: 600px;
-
+  max-height: 600px;
 }
 
 /*Between is for space in between button, 20px */
 .between {
-    margin: 10px 0px 10px 0px;
+  margin: 10px 0px 10px 0px;
 }
 
-
 #poemHead {
-    opacity: 0;
-    animation: poemHead 400ms ease-in 0ms 1 normal forwards;
+  opacity: 0;
+  animation: poemHead 400ms ease-in 0ms 1 normal forwards;
 }
 
 .Poem {
-    opacity: 0;
-    transform: translate(0px, 0px);
-    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
-    -moz-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
-    -webkit-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
-    -o-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
-    font-size: 20px;
+  opacity: 0;
+  transform: translate(0px, 0px);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  -moz-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  -webkit-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  -o-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  font-size: 20px;
 }
 
 #GGpoem.show {
-    opacity: 1 !important;
-    transform: translate(50px, 0px);
+  opacity: 1 !important;
+  transform: translate(50px, 0px);
 }
 
 #TDWBGpoem.show {
-    opacity: 1 !important;
-    transform: translate(50px, 0px);
+  opacity: 1 !important;
+  transform: translate(50px, 0px);
 }
 
 #GOALSpoem.show {
-    opacity: 1 !important;
-    transform: translate(50px, 0px);
+  opacity: 1 !important;
+  transform: translate(50px, 0px);
 }
 
 #BDpoem.show {
-    opacity: 1 !important;
-    transform: translate(50px, 0px);
+  opacity: 1 !important;
+  transform: translate(50px, 0px);
 }
 
 #LTTGpoem.show {
-    opacity: 1 !important;
-    transform: translate(50px, 0px);
+  opacity: 1 !important;
+  transform: translate(50px, 0px);
 }
 
 #AMBIGUITYpoem.show {
-    opacity: 1 !important;
-    transform: translate(50px, 0px);
+  opacity: 1 !important;
+  transform: translate(50px, 0px);
 }
 
 #TTpoem.show {
-    opacity: 1 !important;
-    transform: translate(50px, 0px);
+  opacity: 1 !important;
+  transform: translate(50px, 0px);
 }
 
 #COMFORTpoem.show {
-    opacity: 1 !important;
-    transform: translate(50px, 0px);
+  opacity: 1 !important;
+  transform: translate(50px, 0px);
 }
 
 #TMpoem.show {
-    opacity: 1 !important;
-    transform: translate(50px, 0px);
+  opacity: 1 !important;
+  transform: translate(50px, 0px);
 }
 
 #CSpoem.show {
-    opacity: 1 !important;
-    transform: translate(50px, 0px);
+  opacity: 1 !important;
+  transform: translate(50px, 0px);
 }
 
 #INFpoem.show {
-    opacity: 1 !important;
-    transform: translate(50px, 0px);
+  opacity: 1 !important;
+  transform: translate(50px, 0px);
 }
 
 .absolute {
-    position: absolute;
+  position: absolute;
 }
 
 .relative {
-    position: relative;
+  position: relative;
 }
 
-.footerP{
-    font-size: 25px;
-    padding: 20px 0px 20px 0px;
+.footerP {
+  font-size: 25px;
+  padding: 20px 0px 20px 0px;
 }
 
 .secretbtn {
-    position: absolute;
-    opacity: 0;
-    width: 30px;
-    height: 30px;
+  position: absolute;
+  opacity: 0;
+  width: 30px;
+  height: 30px;
 }
 
 .secretbtn.showing {
-    font-size: 20px;
-    opacity: 1;
-    width: 50%;
-    height: 50%;
+  font-size: 20px;
+  opacity: 1;
+  width: 50%;
+  height: 50%;
 }
 
 .secret {
-    display: none;
+  display: none;
 }
 
 #secret {
-    display: none;
-    height: 200px;
-    width: 300px;
+  display: none;
+  height: 200px;
+  width: 300px;
 }
