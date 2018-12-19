@@ -183,7 +183,7 @@ i.hide {
     #CSpoem {
         display: block !important;
     }
-    
+
     #INFpoem {
         display: block !important;
     }
@@ -363,6 +363,10 @@ i.hide {
 #navPoemHead {
     opacity: 0;
     animation: poemHead 400ms ease 500ms 1 normal forwards;
+}
+
+.poemHolder{
+  opacity: 1;
 }
 
 .poem-item {

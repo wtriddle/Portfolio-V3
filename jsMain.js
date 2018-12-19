@@ -1,5 +1,7 @@
 var mobile = false; //Determines if the webpage will use Mobile or Non-Mobile functionality.
 
+var timeout = false; //
+
 //Retrieves the id of the specified Poem by Poem class heirarchy
 function getID(y) {
     'use strict';
@@ -12,7 +14,7 @@ function getID(y) {
 function getActive() {
     'use strict';
     if (mobile === false) {
-        for (var poemNumber = 0; poemNumber < 10; poemNumber++){
+        for (var poemNumber = 0; poemNumber < 11; poemNumber++){
           var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
           if ($("#" + poemName).css("opacity") == 1) {
             return poemName;
@@ -20,7 +22,7 @@ function getActive() {
         }
     }
     if (mobile === true) {
-        for (var poemNumber = 0; poemNumber < 10; poemNumber++) {
+        for (var poemNumber = 0; poemNumber < 11; poemNumber++) {
             var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
             if($("#" + poemName).css("display") == "block"){
               return poemName;
@@ -379,263 +381,39 @@ $(document).ready(function () {
         mobile = false;
     }
 
-    $(".poemTrash").click(function(){
-      $(".poemTrash").index(document.getElementsByClassName("poemTrash").id);
-      //FInd a way to get index of the clicked button to activate switching of poems that show.
-      //BAsically condense the long list of poem functions below into one based on index.
-    });
+    $(".poemHolder").click(function(){
+      if (timeout === false) {
+        timeout = true;
+      var index = $(".poemHolder").index(this);
+      // var poemcont = $(".poemHolder")[index].id;
+      // var poem = poemcont.replace(/cont/, '');
+      // alert(index);
+      // alert(poem);
+      // alert(poemcont);
+      if (mobile === false) {
+        let z = getID(index);
+        let k = getActive();
+        $("#" + k).toggleClass("show");
+        $("#" + z).toggleClass("show");
 
-    //Green Goddess Button
-    $("#GGcont").on('click', 'button#GG', function () {
-        if (mobile === false) {
-            let z = getID(0);
-            var k = getActive();
-            $("#" + k).toggleClass("show");
-            $("#" + z).toggleClass("show");
-
+      }
+      if(mobile === true) {
+        let z = getID(index);
+        let k = getActive();
+        if (k === undefined) {
+            $("#" + z).css("display", "block");
+        } else {
+            $("#" + k).css("display", "none");
+            $("#" + z).css("display", "block");
         }
-        if (mobile === true) {
-            let z = getID(0);
-            let k = getActive();
-            if (k === undefined) {
-                $("#" + z).css("display", "block");
-            } else {
-                $("#" + k).css("display", "none");
-                $("#" + z).css("display", "block");
-            }
-            repositionActiveMobile();
+        repositionActiveMobile();
 
-        }
-    });
-
-    //The Day Will Be Gone Button
-    $("#TDWBGcont").on('click', 'button#TDWBG', function () {
-        if (mobile === false) {
-            let z = getID(1);
-            let k = getActive();
-            $("#" + z).toggleClass("show");
-            $("#" + k).toggleClass("show");
-
-        }
-        if (mobile === true) {
-            let z = getID(1);
-            let k = getActive();
-            if (k === undefined) {
-                $("#" + z).css("display", "block");
-            } else {
-                $("#" + k).css("display", "none");
-                $("#" + z).css("display", "block");
-            }
-            repositionActiveMobile();
-        }
-    });
-
-    //Goals Button
-    $("#GOALScont").on('click', 'button#GOALS', function () {
-        if (mobile === false) {
-            let z = getID(2);
-            let k = getActive();
-            $("#" + z).toggleClass("show");
-            $("#" + k).toggleClass("show");
-
-        }
-        if (mobile === true) {
-            let z = getID(2);
-            let k = getActive();
-            if (k === undefined) {
-                $("#" + z).css("display", "block");
-            } else {
-                $("#" + k).css("display", "none");
-                $("#" + z).css("display", "block");
-            }
-            repositionActiveMobile();
-        }
-    });
-
-    //Brighter Day Button
-    $("#BDcont").on('click', 'button#BD', function () {
-        if (mobile === false) {
-            let z = getID(3);
-            let k = getActive();
-            $("#" + z).toggleClass("show");
-            $("#" + k).toggleClass("show");
-
-        }
-        if (mobile === true) {
-            let z = getID(3);
-            let k = getActive();
-            if (k === undefined) {
-                $("#" + z).css("display", "block");
-            } else {
-                $("#" + k).css("display", "none");
-                $("#" + z).css("display", "block");
-            }
-            repositionActiveMobile();
-
-        }
-    });
-
-    //Lodged To The Grave Button
-    $("#LTTGcont").on('click', 'button#LTTG', function () {
-        if (mobile === false) {
-            let z = getID(4);
-            let k = getActive();
-            $("#" + z).toggleClass("show");
-            $("#" + k).toggleClass("show");
-
-        }
-        if (mobile === true) {
-            let z = getID(4);
-            let k = getActive();
-            if (k === undefined) {
-                $("#" + z).css("display", "block");
-            } else {
-                $("#" + k).css("display", "none");
-                $("#" + z).css("display", "block");
-            }
-            repositionActiveMobile();
-
-        }
-    });
-
-    //Ambiguity Button
-    $("#AMBIGUITYcont").on('click', 'button#AMBIGUITY', function () {
-        if (mobile === false) {
-            let z = getID(5);
-            let k = getActive();
-            $("#" + z).toggleClass("show");
-            $("#" + k).toggleClass("show");
-
-        }
-        if (mobile === true) {
-            let z = getID(5);
-            let k = getActive();
-            if (k === undefined) {
-                $("#" + z).css("display", "block");
-            } else {
-                $("#" + k).css("display", "none");
-                $("#" + z).css("display", "block");
-            }
-            repositionActiveMobile();
-
-        }
-    });
-
-    //The Thrill Button
-    $("#TTcont").on('click', 'button#TT', function () {
-        if (mobile === false) {
-            let z = getID(6);
-            let k = getActive();
-            $("#" + z).toggleClass("show");
-            $("#" + k).toggleClass("show");
-
-        }
-        if (mobile === true) {
-            let z = getID(6);
-            let k = getActive();
-            if (k === undefined) {
-                $("#" + z).css("display", "block");
-            } else {
-                $("#" + k).css("display", "none");
-                $("#" + z).css("display", "block");
-            }
-            repositionActiveMobile();
-
-        }
-    });
-
-    //Comfort Button
-    $("#COMFORTcont").on('click', 'button#COMFORT', function () {
-        if (mobile === false) {
-            let z = getID(7);
-            let k = getActive();
-            $("#" + z).toggleClass("show");
-            $("#" + k).toggleClass("show");
-
-        }
-        if (mobile === true) {
-            let z = getID(7);
-            let k = getActive();
-            if (k === undefined) {
-                $("#" + z).css("display", "block");
-            } else {
-                $("#" + k).css("display", "none");
-                $("#" + z).css("display", "block");
-            }
-            repositionActiveMobile();
-
-        }
-    });
-
-    //Tell me Button
-    $("#TMcont").on('click', 'button#TM', function () {
-        if (mobile === false) {
-            let z = getID(8);
-            let k = getActive();
-            $("#" + z).toggleClass("show");
-            $("#" + k).toggleClass("show");
-
-        }
-        if (mobile === true) {
-            let z = getID(8);
-            let k = getActive();
-            if (k === undefined) {
-                $("#" + z).css("display", "block");
-            } else {
-                $("#" + k).css("display", "none");
-                $("#" + z).css("display", "block");
-            }
-            repositionActiveMobile();
-
-        }
-    });
-
-    //Clear Sight Button
-    $("#CScont").on('click', 'button#CS', function () {
-        if (mobile === false) {
-            let z = getID(9);
-            let k = getActive();
-            $("#" + z).toggleClass("show");
-            $("#" + k).toggleClass("show");
-
-        }
-        if (mobile === true) {
-            let z = getID(9);
-            let k = getActive();
-            if (k === undefined) {
-                $("#" + z).css("display", "block");
-            } else {
-                $("#" + k).css("display", "none");
-                $("#" + z).css("display", "block");
-            }
-            repositionActiveMobile();
-
-        }
-    });
-
-    //Infinity Button
-    $("#INFcont").on('click', 'button#INF', function () {
-        if (mobile === false) {
-            let z = getID(10);
-            let k = getActive();
-            $("#" + z).toggleClass("show");
-            $("#" + k).toggleClass("show");
-
-        }
-        if (mobile === true) {
-            let z = getID(10);
-            let k = getActive();
-            if (k === undefined) {
-                $("#" + z).css("display", "block");
-            } else {
-                $("#" + k).css("display", "none");
-                $("#" + z).css("display", "block");
-            }
-            repositionActiveMobile();
-
-        }
-    });
-
+      }
+      setTimeout(function(){
+        timeout = false;
+      },300);
+    }
+ });
 
     //Nav bar collapses if button on navbar is used on mobile
     $("#aboutBtnCont").on('click', 'a#aboutBtn', function () {
