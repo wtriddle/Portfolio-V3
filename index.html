@@ -22,10 +22,14 @@
 
 <body>
 
-    <div class="hideShowNav"><i class="down"></i></div>
+  <div class="navToggle" onclick="myFunction(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
 
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+      <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
         <a href="#" class="navbar-brand">William's Site</a>
         <button id="navCollapse" type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
             <span class="navbar-toggler-icon"></span>
@@ -34,19 +38,14 @@
         <div class="navbar-collapse collapse" id="myMenu">
             <ul class="navbar-nav justify-content-center">
                 <li class="nav-item" id="aboutBtnCont">
-                    <!--
-                    <a href="#aboutMeSection" class="nav-link" id="aboutBtn">About</a>
-                    -->
-                </li>
+
+                 </li>
                 <li class="nav-item" id="poetryBtnCont">
-                    <!--
-                    <a href="#poetrySection" class="nav-link" id="poetryBtn">Poetry</a>
-                    -->
-                </li>
+
+                 </li>
                 <li class="nav-item" id="footerBtnCont">
-                    <!--
-                    -->
-                </li>
+
+                 </li>
 
             </ul>
         </div>
@@ -62,6 +61,9 @@
 
     <!-- Main -->
     <main class="bg-dark">
+
+
+<!-- Put survey of what device someone is on, then turn survey into bar graph of which computer the users came from -->
 
         <!-- About Section -->
         <div class="container-fluid bg-dark full-aboutme" id="aboutMeSection">
