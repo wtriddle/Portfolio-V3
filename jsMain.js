@@ -10,6 +10,10 @@ function getID(y) {
 
 }
 
+function myFunction(z) {
+  z.classList.toggle("change");
+}
+
 //Returns the id string of the currently visible Poem, for both Mobile and Non-mobile
 function getActive() {
     'use strict';
@@ -68,11 +72,12 @@ function repositionActiveMobile() {
 $(document).ready(function () {
 
     'use strict';
-    $("i").toggleClass("hide"); //initally no arrow for navbar
-
+    $(".navToggle").click(function(){
+      $(".navbar").toggleClass("hello");
+    });
     //Variables to check if the HTML elements have been appended to the document
-    var aboutHead, aboutPic, aboutP1, aboutList, listElem1, listElem2, listElem3, listElem4, aboutP2, poemHead, poemNavHead, aboutFull, aboutBtn, poetryBtn, navBtnShow, footerbtn;
-    aboutHead = aboutPic = aboutP1 = aboutList = listElem1 = listElem2 = listElem3 = listElem4 = aboutP2 = poemHead = poemNavHead = aboutFull = aboutBtn = poetryBtn = navBtnShow = footerbtn = false;
+    var aboutHead, aboutPic, aboutP1, aboutList, listElem1, listElem2, listElem3, listElem4, aboutP2, poemHead, poemNavHead, aboutFull, aboutBtn, poetryBtn, footerbtn;
+    aboutHead = aboutPic = aboutP1 = aboutList = listElem1 = listElem2 = listElem3 = listElem4 = aboutP2 = poemHead = poemNavHead = aboutFull = aboutBtn = poetryBtn  = footerbtn = false;
 
     //Variables to check if poem buttons have appended to document
     var GGbtn, TDWBGbtn, GOALSbtn, BDbtn, LTTGbtn, AMBIGUITYbtn, TTbtn, COMFORTbtn, TMbtn, CSbtn, INFbtn;
@@ -86,13 +91,7 @@ $(document).ready(function () {
             if (x >= 200) {
                 setTimeout(function () {
                     aboutFull = true;
-                    if (navBtnShow == false) {
-                        $("i").toggleClass("hide");
-                        navBtnShow = true;
-                    }
                 }, 3700); //Shows nav arrow only after about section has fully loaded
-
-                $("i").css("opacity", "1"); //makes arrow visible
 
                 //About header append
                 if (aboutHead == false) {
@@ -381,6 +380,7 @@ $(document).ready(function () {
         mobile = false;
     }
 
+    //Poem navbar button function
     $(".poemHolder").click(function(){
       if (timeout === false) {
         timeout = true;
