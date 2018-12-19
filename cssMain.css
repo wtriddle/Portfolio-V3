@@ -6,36 +6,51 @@ main {
 
 
 .navbar {
-    font-size: 30px;
+    font-size: 26px;
+    z-index: 1;
     transform: translate(0px, -80px);
+    transition: transform 900ms ease;
     -webkit-transition: transform 900ms ease;
     -moz-transition: transform 900ms ease;
     -o-transition: transform 900ms ease;
 }
 
-i {
-    border: solid green;
-    border-width: 0 15px 15px 0;
-    display: inline-block;
-    padding: 15px;
-    margin-left: 10px;
-    transform: translate(0px, 0px);
-    -webkit-transition: transform 1000ms ease;
-    -moz-transition: transform 1000ms ease;
-    -o-transition: transform 1000ms ease;
-    opacity: 0;
+.hello{
+  transform: translate(0px, 0px);
 }
 
 
-i.hide {
-    transform: translate(0px, -80px);
+.navToggle{
+  z-index: 2;
+  display: inline-block;
+  cursor: pointer;
+  right: 10px;
+  top: 10px;
+  position: fixed;
 }
 
-
-.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+.bar1, .bar2, .bar3 {
+  width: 40px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: transform 400ms ease, opacity 400ms ease;
+  transform: rotate(0deg) translate(0px, 0px);
+  opacity: 1;
 }
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
 
 .hideShowNav {
     padding: 0px;
@@ -45,14 +60,6 @@ i.hide {
     position: fixed;
     display: block;
     margin: auto;
-}
-
-.navbar:hover {
-    transform: translate(0px, 0px);
-}
-
-.hideShowNav:hover + .navbar {
-    transform: translate(0px, 0px);
 }
 
 #hideShowPic {
@@ -467,6 +474,7 @@ i.hide {
 .Poem {
     opacity: 0;
     transform: translate(0px, 0px);
+    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
     -moz-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
     -webkit-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
     -o-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
