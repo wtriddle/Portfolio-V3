@@ -385,11 +385,6 @@ $(document).ready(function() {
     if (timeout === false) {
       timeout = true;
       var index = $(".poemHolder").index(this);
-      // var poemcont = $(".poemHolder")[index].id;
-      // var poem = poemcont.replace(/cont/, '');
-      // alert(index);
-      // alert(poem);
-      // alert(poemcont);
       if (mobile === false) {
         let z = getID(index);
         let k = getActive();
