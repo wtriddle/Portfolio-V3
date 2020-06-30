@@ -80,55 +80,91 @@ main {
   position: static;
   width: 100%;
   height: 100%;
+}
+
+#aboutImg.load {
   animation: aboutLoad 800ms ease 0s 1 normal forwards;
 }
 
 #aboutHeader {
   opacity: 0;
   transform: translate(15px, 0px);
-  animation: aboutLoad 400ms ease 800ms 1 normal forwards;
+}
+
+#aboutHeader.load {
+  animation: aboutLoad 800ms ease 400ms 1 normal forwards;
 }
 
 #aboutP1 {
   opacity: 0;
   transform: translate(5px, 0px);
-  animation: aboutLoad 400ms ease 1600ms 1 normal forwards;
+}
+
+#aboutP1.load {
+  animation: aboutLoad 800ms ease 800ms 1 normal forwards;
 }
 
 #aboutList {
   opacity: 0;
   transform: translate(0px, 0px);
-  animation: aboutLoad 400ms ease 1900ms 1 normal forwards;
+}
+
+#aboutList.load {
+  animation: aboutLoad 800ms ease 1200ms 1 normal forwards;
 }
 
 #listElem1 {
   opacity: 0;
   transform: translate(10px, 0px);
-  animation: aboutLoad 400ms ease 2200ms 1 normal forwards;
+}
+
+#listElem1.load {
+  animation: aboutLoad 800ms ease 1600ms 1 normal forwards;
 }
 
 #listElem2 {
   opacity: 0;
   transform: translate(10px, 0px);
-  animation: aboutLoad 400ms ease 2500ms 1 normal forwards;
+}
+
+#listElem2.load {
+  animation: aboutLoad 800ms ease 2000ms 1 normal forwards;
 }
 
 #listElem3 {
   opacity: 0;
   transform: translate(10px, 0px);
-  animation: aboutLoad 400ms ease 2800ms 1 normal forwards;
+}
+
+#listElem3.load {
+  animation: aboutLoad 800ms ease 2400ms 1 normal forwards;
 }
 
 #listElem4 {
   opacity: 0;
   transform: translate(10px, 0px);
-  animation: aboutLoad 400ms ease 3100ms 1 normal forwards;
+}
+
+#listElem4.load {
+  animation: aboutLoad 800ms ease 2700ms 1 normal forwards;
+}
+
+#listElem5 {
+  opacity: 0;
+  transform: translate(10px, 0px);
+}
+
+#listElem5.load {
+  animation: aboutLoad 800ms ease 3000ms 1 normal forwards;
 }
 
 #aboutP2 {
   opacity: 0;
   transform: translate(5px, 0px);
-  animation: aboutLoad 400ms ease 3700ms 1 normal forwards;
+}
+
+#aboutP2.load {
+  animation: aboutLoad 800ms ease 3600ms 1 normal forwards;
 }
 
 /* Non-Mobile Styles */

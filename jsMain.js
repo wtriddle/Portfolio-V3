@@ -84,79 +84,29 @@ $(document).ready(function() {
 
   GGbtn = TDWBGbtn = GOALSbtn = BDbtn = LTTGbtn = AMBIGUITYbtn = TTbtn = COMFORTbtn = TMbtn = CSbtn = INFbtn = false;
 
+  var about_div = document.getElementById("about_container");
+  var children = about_div.getElementsByTagName("*");
+
   //Append animations only for Non-mobile
   $(window).scroll(function() {
     var x = $(this).scrollTop();
     if (mobile == false) {
       if (x >= 200) {
-        setTimeout(function() {
-          aboutFull = true;
-        }, 3700); //Shows nav arrow only after about section has fully loaded
 
-        //About header append
-        if (aboutHead == false) {
-          $(".About-me-section").prepend("<h4 class='display-4 text-center' id='aboutHeader'>About</h4>");
-          aboutHead = true;
-        }
+          // Apply animated loading for About Section
+          $("#aboutImg").addClass("load");
+          
+          Array.prototype.forEach.call(children, (item) => {
+            $("#" + item.id).addClass("load");
+          });
 
-        //Pomona pic append
-        if (aboutPic == false) {
-          $("#aboutImgContainer").prepend(" <img src='Images/Pomona.JPG' alt='clouds' id='aboutImg' class='img-fluid'>");
-          aboutPic = true;
-        }
-
-        //First paragraph append
-        if (aboutP1 == false) {
-          $(".About-me-section").append("  <p id='aboutP1'>Currently a freshman at Cal Poly Pomona, I am majoring in Computer Engineering and living on campus. A lists of some of my interests includes</p>")
-          aboutP1 = true;
-        }
-
-        //About list append
-        if (aboutList == false) {
-          $(".About-me-section").append("<ul id='aboutList'> </ul>");
-          aboutList = true;
-        }
-
-        //First bullet append
-        if (listElem1 == false) {
-          $("#aboutList").append("<li id='listElem1'>Long Distance Running</li>");
-          listElem1 = true;
-        }
-
-        //Second "
-        if (listElem2 == false) {
-          $("#aboutList").append(" <li id='listElem2''>Reading (Fantasy & Non-fiction)</li>");
-          listElem2 = true;
-        }
-
-        //Third "
-        if (listElem3 == false) {
-          $("#aboutList").append(" <li id='listElem3'>Programming/coding</li>");
-          listElem3 = true;
-        }
-
-        //Fourth "
-        if (listElem4 == false) {
-          $("#aboutList").append("<li id='listElem4'>Music (Indie rock and Hip-Hop)</li>");
-          listElem4 = true;
-        }
-
-        //Second paragraph append
-        if (aboutP2 == false) {
-          $(".About-me-section").append("<p id='aboutP2'>When I'm not doing one of the above, I'm probably on the first floor of the Cal Poly library or in the classroom.</p>");
-          aboutP2 = true;
-        }
-
-        //Navbar About button append
-        if (aboutBtn == false) {
-          $("#aboutBtnCont").prepend("<a href='#aboutMeSection' class='nav-link' id='aboutBtn'>About</a>");
-          aboutBtn = true;
-        }
-
+          // Add navbar about button if is does not exist
+          if (!document.getElementById("aboutBtn")){
+              $("#aboutBtnCont").prepend("<a href='#aboutMeSection' class='nav-link' id='aboutBtn'>About</a>");
+          }
       }
 
-
-      if (x >= 700 && aboutFull == true) {
+      if (x >= 700) {
 
         //Poem header append
         if (poemHead == false) {
