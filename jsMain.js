@@ -73,136 +73,58 @@ $(document).ready(function() {
 
   'use strict';
   $(".navToggle").click(function() {
-    $(".navbar").toggleClass("hello");
+    $(".navbar").toggleClass("show");
   });
-  //Variables to check if the HTML elements have been appended to the document
-  var aboutHead, aboutPic, aboutP1, aboutList, listElem1, listElem2, listElem3, listElem4, aboutP2, poemHead, poemNavHead, aboutFull, aboutBtn, poetryBtn, footerbtn;
-  aboutHead = aboutPic = aboutP1 = aboutList = listElem1 = listElem2 = listElem3 = listElem4 = aboutP2 = poemHead = poemNavHead = aboutFull = aboutBtn = poetryBtn = footerbtn = false;
 
-  //Variables to check if poem buttons have appended to document
-  var GGbtn, TDWBGbtn, GOALSbtn, BDbtn, LTTGbtn, AMBIGUITYbtn, TTbtn, COMFORTbtn, TMbtn, CSbtn, INFbtn;
-
-  GGbtn = TDWBGbtn = GOALSbtn = BDbtn = LTTGbtn = AMBIGUITYbtn = TTbtn = COMFORTbtn = TMbtn = CSbtn = INFbtn = false;
-
+  // HTML widget containers ==================================================
   var about_div = document.getElementById("about_container");
-  var children = about_div.getElementsByTagName("*");
+  var about_elems = about_div.getElementsByTagName("*");
 
-  //Append animations only for Non-mobile
+  var poem_div = document.getElementById("poemNav");
+  var poem_buttons = poem_div.getElementsByTagName("button");
+  // Containers ==============================================================
+
+  // Animated scroll configurations
   $(window).scroll(function() {
-    var x = $(this).scrollTop();
-    if (mobile == false) {
-      if (x >= 200) {
 
-          // Apply animated loading for About Section
+    // Integer position of user on page
+    var scroll_pos = $(this).scrollTop();
+
+      // About me section loading
+      if (scroll_pos >= 200) {
+
           $("#aboutImg").addClass("load");
           
-          Array.prototype.forEach.call(children, (item) => {
+          Array.prototype.forEach.call(about_elems, (item) => {
             $("#" + item.id).addClass("load");
           });
 
-          // Add navbar about button if is does not exist
+          // About section navbar button
           if (!document.getElementById("aboutBtn")){
               $("#aboutBtnCont").prepend("<a href='#aboutMeSection' class='nav-link' id='aboutBtn'>About</a>");
           }
       }
 
-      if (x >= 700) {
+      // Poetry Section loading
+      if (scroll_pos >= 1200) {
 
-        //Poem header append
-        if (poemHead == false) {
-          $("#poemHeadContainer").append("<h2 class='display-1 text-center text-light bg-dark' id='poemHead'>Poetry</h2>");
-          poemHead = true;
-        }
+          $("#navPoemHead").addClass("load");
+          $("#poemHead").addClass("load");
 
-        //Select a poem append
-        if (poemNavHead == false) {
-          $(".list-full").prepend("<h2 class='display-6 text-center text-light id='navPoemHead'>Select a Poem</h2>");
-          poemNavHead = true;
-        }
+          Array.prototype.forEach.call(poem_buttons, (item) => {
+            $("#" + item.id).addClass("load_poem");
+          });        
 
-        //Green Goddess button append
-        if (GGbtn == false) {
-          $("#GGcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='GG'>The Green Goddess</button>");
-          GGbtn = true;
-        }
+          // Poetry section navbar button
+          if (!document.getElementById("poetryBtn")){
+              $("#poetryBtnCont").append("<a href='#poetrySection' class='nav-link' id='poetryBtn'>Poetry</a>");
+          }
 
-        //The Day Will Be Gone " "
-        if (TDWBGbtn == false) {
-          $("#TDWBGcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='TDWBG'>The Day Will Be Gone</button>");
-          TDWBGbtn = true;
-        }
-
-        //Goals " "
-        if (GOALSbtn == false) {
-          $("#GOALScont").append("<button class='btn btn-outline-secondary text-light poem-item' id='GOALS'>Goals</button>");
-          GOALSbtn = true;
-        }
-
-        //Brighter Day " "
-        if (BDbtn == false) {
-          $("#BDcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='BD'>Brighter Day</button>");
-          BDbtn = true;
-        }
-
-        //Lodged to the Grave " "
-        if (LTTGbtn == false) {
-          $("#LTTGcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='LTTG'>Lodged to the Grave</button>");
-          LTTGbtn = true;
-        }
-
-        //Realize " "
-        if (AMBIGUITYbtn == false) {
-          $("#AMBIGUITYcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='AMBIGUITY'>Realize</button>");
-          AMBIGUITYbtn = true;
-        }
-
-        //The Thrill " "
-        if (TTbtn == false) {
-          $("#TTcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='TT'>The Thrill</button>");
-          TTbtn = true;
-        }
-
-        //Comfort " "
-        if (COMFORTbtn == false) {
-          $("#COMFORTcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='COMFORT'>Comfort</button>");
-          COMFORTbtn = true;
-        }
-
-        //Tell me " "
-        if (TMbtn == false) {
-          $("#TMcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='TM'>Tell me</button>");
-          TMbtn = true;
-        }
-
-        //Clear Sight " "
-        if (CSbtn == false) {
-          $("#CScont").append("<button class='btn btn-outline-secondary text-light poem-item' id='CS'>Clear Sight</button>");
-          CSbtn = true;
-        }
-
-        //Infinity " "
-        if (INFbtn == false) {
-          $("#INFcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='INF'>Infinity</button>");
-          INFbtn = true;
-        }
-
-        //Navbar Poetry button append
-        if (poetryBtn == false) {
-          $("#poetryBtnCont").append("<a href='#poetrySection' class='nav-link' id='poetryBtn'>Poetry</a>");
-          poetryBtn = true;
-        }
-
-        //Navbar Footer button append
-        if (footerbtn == false) {
-          $("#footerBtnCont").append("<a href='#footer' class='nav-link' id='footerBtn'>Footer</a>");
-          footerbtn = true;
-        }
+          // Footer section navbar button
+          if (!document.getElementById("footerBtn")){
+              $("#footerBtnCont").append("<a href='#footer' class='nav-link' id='footerBtn'>Footer</a>");
+          }
       }
-
-
-
-
-    }
   });
 
 
@@ -211,120 +133,6 @@ $(document).ready(function() {
     $(".greeting").toggleClass("load");
     $(".description").toggleClass("load");
   })();
-
-  //Determines mobile or non-mobile layout/functionality on loading the page.
-  if (screenWidth < 600) {
-    mobile = true;
-    //If screen is mobile, load all elements into page.
-    if (mobile == true) {
-      if (aboutHead == false) {
-        $(".About-me-section").prepend("                  <h4 class='display-4 text-center' id='aboutHeader'>About</h4>");
-        aboutHead = true;
-      }
-      if (aboutPic == false) {
-        $("#aboutImgContainer").prepend(" <img src='Images/Pomona.JPG' alt='clouds' id='aboutImg' class='img-fluid'>");
-        aboutPic = true;
-      }
-      if (aboutP1 == false) {
-        $(".About-me-section").append("  <p id='aboutP1'>Currently a freshman at Cal Poly Pomona, I am majoring in Computer Engineering and living on campus. A lists of some of my interests includes</p>")
-        aboutP1 = true;
-      }
-      if (aboutList == false) {
-        $(".About-me-section").append("<ul id='aboutList'> </ul>");
-        aboutList = true;
-      }
-      if (listElem1 == false) {
-        $("#aboutList").append("<li id='listElem1'>Long Distance Running</li>");
-        listElem1 = true;
-      }
-      if (listElem2 == false) {
-        $("#aboutList").append(" <li id='listElem2''>Reading (Fantasy in particular)</li>");
-        listElem2 = true;
-      }
-      if (listElem3 == false) {
-        $("#aboutList").append(" <li id='listElem3'>Programming/coding</li>");
-        listElem3 = true;
-      }
-      if (listElem4 == false) {
-        $("#aboutList").append("<li id='listElem4'>Music (Indie rock and Hip-Hop)</li>");
-        listElem4 = true;
-      }
-      if (aboutP2 == false) {
-        $(".About-me-section").append("<p id='aboutP2'>When I'm not doing one of the above, I'm probably on the first floor of the Cal Poly library or in the classroom.</p>");
-        aboutP2 = true;
-      }
-      if (poemHead == false) {
-        $("#poemHeadContainer").append("<h2 class='display-1 text-center text-light bg-dark' id='poemHead'>Poetry</h2>");
-        poemHead = true;
-      }
-      if (poemHead == false) {
-        $("#poemHeadContainer").append("<h2 class='display-1 text-center text-light bg-dark' id='poemHead'>Poetry</h2>");
-        poemHead = true;
-      }
-      if (poemNavHead == false) {
-        $(".list-full").prepend("<h2 class='display-6 text-center text-light id='navPoemHead'>Select a Poem</h2>");
-        poemNavHead = true;
-      }
-      if (GGbtn == false) {
-        $("#GGcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='GG'>The Green Goddess</button>");
-        GGbtn = true;
-      }
-      if (TDWBGbtn == false) {
-        $("#TDWBGcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='TDWBG'>The Day Will Be Gone</button>");
-        TDWBGbtn = true;
-      }
-      if (GOALSbtn == false) {
-        $("#GOALScont").append("<button class='btn btn-outline-secondary text-light poem-item' id='GOALS'>Goals</button>");
-        GOALSbtn = true;
-      }
-      if (BDbtn == false) {
-        $("#BDcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='BD'>Brighter Day</button>");
-        BDbtn = true;
-      }
-      if (LTTGbtn == false) {
-        $("#LTTGcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='LTTG'>Lodged to the Grave</button>");
-        LTTGbtn = true;
-      }
-      if (AMBIGUITYbtn == false) {
-        $("#AMBIGUITYcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='AMBIGUITY'>Ambiguity</button>");
-        AMBIGUITYbtn = true;
-      }
-      if (TTbtn == false) {
-        $("#TTcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='TT'>The Thrill</button>");
-        TTbtn = true;
-      }
-      if (COMFORTbtn == false) {
-        $("#COMFORTcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='COMFORT'>Comfort</button>");
-        COMFORTbtn = true;
-      }
-
-      if (TMbtn == false) {
-        $("#TMcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='TM'>Tell me</button>");
-        TMbtn = true;
-      }
-      if (CSbtn == false) {
-        $("#CScont").append("<button class='btn btn-outline-secondary text-light poem-item' id='CS'>Clear Sight</button>");
-        CSbtn = true;
-      }
-
-      if (INFbtn == false) {
-        $("#INFcont").append("<button class='btn btn-outline-secondary text-light poem-item' id='INF'>Infinity</button>");
-        INFbtn = true;
-      }
-      if (footerbtn == false) {
-        $("#footerBtnCont").append("<a href='#footer' class='nav-link' id='footerBtn'>Footer</a>");
-        footerbtn = true;
-      }
-      if (poetryBtn == false) {
-        $("#poetryBtnCont").append("<a href='#poetrySection' class='nav-link' id='poetryBtn'>Poetry</a>");
-        poetryBtn = true;
-      }
-      if (aboutBtn == false) {
-        $("#aboutBtnCont").prepend("<a href='#aboutMeSection' class='nav-link' id='aboutBtn'>About</a>");
-        aboutBtn = true;
-      }
-    }
-  }
 
   if (screenWidth >= 600) {
     mobile = false;
@@ -377,35 +185,6 @@ $(document).ready(function() {
     if (mobile === true) {
       document.getElementById("navCollapse").click();
     }
-  });
-
-  //function to toggle hiding of Nav arrow
-  var toggleNav = function() {
-    setTimeout(function() {
-      $("i").toggleClass("hide");
-    }, 550);
-
-  }
-
-  //Shows nav, hides arrow on enter
-  $(".hideShowNav").on("mouseenter", function() {
-    $("i").toggleClass("hide");
-  });
-
-  //Hides nav, shows arrow on leave, accounts for possible error in animation timing
-  $(".hideShowNav").on("mouseleave", function() {
-    setInterval(function() {
-      if ($(".navbar").css("transform") === "matrix(1, 0, 0, 1, 0, -80)") {
-        if ($("i").css("transform") === "matrix(1, 0, 0, 1, 0, -80)") {
-          $("i").toggleClass("hide");
-        }
-      }
-    }, 100);
-  });
-
-  //when the mouse leaves the navbar
-  $(".navbar").on("mouseleave", function() {
-    toggleNav();
   });
 
   //Secret Button

@@ -14,7 +14,7 @@ main {
   -o-transition: transform 900ms ease;
 }
 
-.hello {
+.show {
   transform: translate(0px, 0px);
 }
 
@@ -63,7 +63,7 @@ main {
   padding-top: 20px;
 }
 
-@keyframes aboutLoad {
+@keyframes opacity_reveal {
   0% {
     opacity: 0;
   }
@@ -83,7 +83,7 @@ main {
 }
 
 #aboutImg.load {
-  animation: aboutLoad 800ms ease 0s 1 normal forwards;
+  animation: opacity_reveal 800ms ease 0s 1 normal forwards;
 }
 
 #aboutHeader {
@@ -92,7 +92,7 @@ main {
 }
 
 #aboutHeader.load {
-  animation: aboutLoad 800ms ease 400ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 400ms 1 normal forwards;
 }
 
 #aboutP1 {
@@ -101,7 +101,7 @@ main {
 }
 
 #aboutP1.load {
-  animation: aboutLoad 800ms ease 800ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 800ms 1 normal forwards;
 }
 
 #aboutList {
@@ -110,7 +110,7 @@ main {
 }
 
 #aboutList.load {
-  animation: aboutLoad 800ms ease 1200ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 1200ms 1 normal forwards;
 }
 
 #listElem1 {
@@ -119,7 +119,7 @@ main {
 }
 
 #listElem1.load {
-  animation: aboutLoad 800ms ease 1600ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 1600ms 1 normal forwards;
 }
 
 #listElem2 {
@@ -128,7 +128,7 @@ main {
 }
 
 #listElem2.load {
-  animation: aboutLoad 800ms ease 2000ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 2000ms 1 normal forwards;
 }
 
 #listElem3 {
@@ -137,7 +137,7 @@ main {
 }
 
 #listElem3.load {
-  animation: aboutLoad 800ms ease 2400ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 2400ms 1 normal forwards;
 }
 
 #listElem4 {
@@ -146,7 +146,7 @@ main {
 }
 
 #listElem4.load {
-  animation: aboutLoad 800ms ease 2700ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 2700ms 1 normal forwards;
 }
 
 #listElem5 {
@@ -155,7 +155,7 @@ main {
 }
 
 #listElem5.load {
-  animation: aboutLoad 800ms ease 3000ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 3000ms 1 normal forwards;
 }
 
 #aboutP2 {
@@ -164,7 +164,7 @@ main {
 }
 
 #aboutP2.load {
-  animation: aboutLoad 800ms ease 3600ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 3600ms 1 normal forwards;
 }
 
 /* Non-Mobile Styles */
@@ -367,7 +367,7 @@ main {
   }
 }
 
-@keyframes poemButtonCascade {
+@keyframes opacity_reveal {
   0% {
     opacity: 0;
   }
@@ -380,6 +380,9 @@ main {
 
 #navPoemHead {
   opacity: 0;
+}
+
+#navPoemHead.load{
   animation: poemHead 400ms ease 500ms 1 normal forwards;
 }
 
@@ -396,67 +399,100 @@ main {
 #GG {
   transform: translate(0px, 10px);
   opacity: 0;
-  animation: poemButtonCascade 200ms ease 1000ms 1 normal forwards;
+}
+
+#GG.load_poem{
+  animation: opacity_reveal 200ms ease 1000ms 1 normal forwards;
 }
 
 #TDWBG {
   transform: translate(0px, 10px);
   opacity: 0;
-  animation: poemButtonCascade 200ms ease 1200ms 1 normal forwards;
+}
+
+#TDWBG.load_poem{
+  animation: opacity_reveal 200ms ease 1200ms 1 normal forwards;
 }
 
 #GOALS {
   transform: translate(0px, 10px);
   opacity: 0;
-  animation: poemButtonCascade 200ms ease 1400ms 1 normal forwards;
+}
+
+#GOALS.load_poem{
+  animation: opacity_reveal 200ms ease 1400ms 1 normal forwards;
 }
 
 #BD {
   transform: translate(0px, 10px);
   opacity: 0;
-  animation: poemButtonCascade 200ms ease 1600ms 1 normal forwards;
+}
+
+#BD.load_poem{
+  animation: opacity_reveal 200ms ease 1600ms 1 normal forwards;
 }
 
 #LTTG {
   transform: translate(0px, 10px);
   opacity: 0;
-  animation: poemButtonCascade 200ms ease 1800ms 1 normal forwards;
+}
+
+#LTTG.load_poem{
+  animation: opacity_reveal 200ms ease 1800ms 1 normal forwards;
 }
 
 #AMBIGUITY {
   transform: translate(0px, 10px);
   opacity: 0;
-  animation: poemButtonCascade 200ms ease 2000ms 1 normal forwards;
+}
+
+#AMBIGUITY.load_poem{
+  animation: opacity_reveal 200ms ease 2000ms 1 normal forwards;
 }
 
 #TT {
   transform: translate(0px, 10px);
   opacity: 0;
-  animation: poemButtonCascade 200ms ease 2200ms 1 normal forwards;
+}
+
+#TT.load_poem{
+  animation: opacity_reveal 200ms ease 2200ms 1 normal forwards;
 }
 
 #COMFORT {
   transform: translate(0px, 10px);
   opacity: 0;
-  animation: poemButtonCascade 200ms ease 2400ms 1 normal forwards;
+}
+
+#COMFORT.load_poem{
+  animation: opacity_reveal 200ms ease 2400ms 1 normal forwards;
 }
 
 #TM {
   transform: translate(0px, 10px);
   opacity: 0;
-  animation: poemButtonCascade 200ms ease 2600ms 1 normal forwards;
+}
+
+#TM.load_poem{
+  animation: opacity_reveal 200ms ease 2600ms 1 normal forwards;
 }
 
 #CS {
   transform: translate(0px, 10px);
   opacity: 0;
-  animation: poemButtonCascade 200ms ease 2800ms 1 normal forwards;
+}
+
+#CS.load_poem{
+  animation: opacity_reveal 200ms ease 2800ms 1 normal forwards;
 }
 
 #INF {
   transform: translate(0px, 10px);
   opacity: 0;
-  animation: poemButtonCascade 200ms ease 3000ms 1 normal forwards;
+}
+
+#INF.load_poem{
+  animation: opacity_reveal 200ms ease 3000ms 1 normal forwards;
 }
 
 .list-full {
@@ -477,6 +513,9 @@ main {
 
 #poemHead {
   opacity: 0;
+}
+
+#poemHead.load {
   animation: poemHead 400ms ease-in 0ms 1 normal forwards;
 }
 
