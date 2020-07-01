@@ -4,10 +4,7 @@ var timeout = false; //
 
 //Retrieves the id of the specified Poem by Poem class heirarchy
 function getID(y) {
-  'use strict';
-  var x = document.getElementsByClassName("Poem")[y].id;
-  return x;
-
+  return document.getElementsByClassName("Poem")[y].id;
 }
 
 function myFunction(z) {
@@ -72,9 +69,14 @@ function repositionActiveMobile() {
 $(document).ready(function() {
 
   'use strict';
-  $(".navToggle").click(function() {
+
+  // Collapse navbar initally
+  $(".navToggle").click(() => {
     $(".navbar").toggleClass("show");
   });
+
+  // Set page to top initally every refresh
+  window.scroll(0,0);
 
   // HTML widget containers ==================================================
   var about_div = document.getElementById("about_container");
@@ -106,10 +108,10 @@ $(document).ready(function() {
       }
 
       // Poetry Section loading
-      if (scroll_pos >= 1200) {
+      if (scroll_pos >= 2400) {
 
-          $("#navPoemHead").addClass("load");
-          $("#poemHead").addClass("load");
+          $("#nav_poetry_header").addClass("load");
+          $("#poetry_header").addClass("load");
 
           Array.prototype.forEach.call(poem_buttons, (item) => {
             $("#" + item.id).addClass("load_poem");
@@ -129,7 +131,7 @@ $(document).ready(function() {
 
 
   var screenWidth = $(window).width();
-  var onload = (function() {
+  var onload = (() => {
     $(".greeting").toggleClass("load");
     $(".description").toggleClass("load");
   })();
@@ -138,18 +140,19 @@ $(document).ready(function() {
     mobile = false;
   }
 
-  //Poem navbar button function
-  $(".poemHolder").click(function() {
+  // Poem navbar button function
+  $(".poem_btn").click(function() {
     if (timeout === false) {
       timeout = true;
-      var index = $(".poemHolder").index(this);
+      var index = $(".poem_btn").index(this);
+      alert(index);
       if (mobile === false) {
         let z = getID(index);
         let k = getActive();
-        $("#" + k).toggleClass("show");
-        $("#" + z).toggleClass("show");
-
+        $("#" + k).toggleClass("show_poem");
+        $("#" + z).toggleClass("show_poem");
       }
+      
       if (mobile === true) {
         let z = getID(index);
         let k = getActive();
@@ -162,33 +165,33 @@ $(document).ready(function() {
         repositionActiveMobile();
 
       }
-      setTimeout(function() {
+      setTimeout( () => {
         timeout = false;
-      }, 300);
+      }, 600);
     }
   });
 
   //Nav bar collapses if button on navbar is used on mobile
-  $("#aboutBtnCont").on('click', 'a#aboutBtn', function() {
+  $("#aboutBtnCont").on('click', 'a#aboutBtn', () => {
     if (mobile === true) {
       document.getElementById("navCollapse").click();
     }
   });
 
-  $("#poetryBtnCont").on('click', 'a#poetryBtn', function() {
+  $("#poetryBtnCont").on('click', 'a#poetryBtn', () => {
     if (mobile === true) {
       document.getElementById("navCollapse").click();
     }
   });
 
-  $("#footerBtnCont").on('click', 'a#footerBtn', function() {
+  $("#footerBtnCont").on('click', 'a#footerBtn', () => {
     if (mobile === true) {
       document.getElementById("navCollapse").click();
     }
   });
 
   //Secret Button
-  $("#secretActivator").click(function() {
+  $("#secretActivator").click(() => {
     if ($(".secret").css("display") == "none") {
       $(".secretbtn").toggleClass("showing");
       $(".secretbtn").html("Hide");
@@ -204,8 +207,18 @@ $(document).ready(function() {
   });
 
   //Goodreads Button
-  $("#goodReadsBtn").on('click', function() {
-    window.location.replace("https://www.goodreads.com/William-Riddle");
+  $("#goodReadsBtn").on('click', () => {
+    window.location.href = "https://www.goodreads.com/William-Riddle";
+  });
+
+  //IFG project Button
+  $("#IFG_project").on('click', () => {
+    window.location.href = "https://github.com/wtriddle/IFG";
+  });
+
+  //IFG project Button
+  $("#mTask_project").on('click', () => {
+    window.location.href = "https://github.com/wtriddle/mTask";
   });
 
   //If mobile, change font sizes
@@ -234,14 +247,14 @@ $(document).ready(function() {
   }
 
   //If user resizes window:
-  $(window).resize(function() {
+  $(window).resize(() => {
     var windowWidth = $(window).width();
     if (windowWidth < 560) {
       mobile = true; //If screen is 599px or less, activate mobile
     } else if (windowWidth >= 561) {
       mobile = false; //If screen is 600px or more, de-activate mobile, reactive non-mobile
     }
-    delay(function() {
+    delay(() => {
       //Mobile change for font
       if (windowWidth < 996) {
         $("h1").removeClass("display-1");
@@ -276,7 +289,7 @@ $(document).ready(function() {
 });
 
 //Delays the time in which functions under the resize will be called, but wait x amount of time after resize before changing anything
-var delay = (function() {
+var delay = (() => {
   var timers = {};
   return function(callback, ms, uniqueId) {
     if (!uniqueId) {

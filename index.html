@@ -64,19 +64,18 @@
 
 
     <!-- Put survey of what device someone is on, then turn survey into bar graph of which computer the users came from -->
-    <div id="target_div">
-    </div>
+
     <!-- About Section -->
     <div class="container-fluid bg-dark full-aboutme" id="aboutMeSection">
       <div class="row align-items-center">
         <div class="col-lg" id="aboutImgContainer">
-          <img src='Images/Pomona.JPG' alt='clouds' id='aboutImg' class='img-fluid'>
+          <img src='Images/IMG_0124.JPG' alt='clouds' id='aboutImg' class='img-fluid'>
         </div>
         <div class="col-lg About-me-section" id="about_container">
           
                     <h4 class='display-4 text-center' id='aboutHeader'>About</h4>
 
-                     <p id='aboutP1'>Currently a Junior at Cal Poly Pomona, I am majoring in Computer Engineering and living on campus. A lists of some of my interests includes</p
+                     <p id='aboutP1'>Currently a Junior at Cal Poly Pomona, I am majoring in Computer Engineering and living on campus. A lists of some of my interests includes:</p>
 
                     <ul id="aboutList">
                         <li id="listElem1">Weight Lifting</li>
@@ -85,8 +84,11 @@
                         <li id="listElem4">Music (Ambient, Trap and Indie Rock)</li>
                         <li id="listElem5">Yoga and Stretching</li>
                     </ul>
+
                     <p id="aboutP2">
-                        When I'm not doing one of the above, I'm probably on the first floor of the Cal Poly library or in the classroom.
+                        I am interested in expanding my knowledge of technology in applied sciences. I hope to develop complex systems which 
+                        help humans in some way. I am particularly interested in the medical field and hope to apply my computer engineering skills
+                        to develop the world forward.
                     </p>
 
         </div>
@@ -95,63 +97,93 @@
 
     </div>
 
+  <!-- Projects Section-->
+    <div class="container-fluid" id="project_section">
+      <div class="row text-center">
+        <div class="col" id="project_title_container">
+          <h2 class="display-1 text-center text-light" id="project_title">Projects</h2>
+        </div>
+      <div class="row text-center">
+        <div class="col-6 text-light">
+          <h4 class="text-center text-light">IFG</h4>
+          <!--Image for IFG will be prettified processing of script in a terminal window-->
+          <img src="Images/Spren.jpg" class='img-fluid project_image'>
+          <p>
+            The Identify Functional Groups (IFG) algorithm parses digital molecular string codes to obtain counts of the organic functional groups appenrt in their lattice structures.
+            The algorithm was implemented using the python3 programming language by using a mix of function hierarchies, inheritance, and data sorting models. 
+            The complete algorithm along with a more chemically accurate description can be found on Github at 
+          </p>
+            <button id="IFG_project">IFG project</button> 
+        </div>
+        <div class="col-6 text-light">
+          <h4 class="text-center text-light">mTask</h4>
+          <!--Image for mTask will be of sample routine gui interface-->
+          <img src="Images/Spren.jpg" class='img-fluid project_image'>
+          <p>
+            Lightweight task organizing program built with tkinter and python3. Routine and date occurance algorithms implemented to track daily tasks and routines.
+          </p>
+            <button id="mTask_project">mTask project</button> 
+        </div>
+    </div>
+  </div>
+  </div>
     <!-- Poetry Section -->
     <div class="container-fluid bg-dark" id="poetrySection">
       <div class="row bg-dark text-center">
-        <div class="col" id="poemHeadContainer">
-          <h2 class="display-1 text-center text-light bg-dark" id="poemHead">Poetry</h2>
+        <div class="col">
+          <h2 class="display-1 text-center text-light bg-dark" id="poetry_header">Poetry</h2>
         </div>
       </div>
       <!-- Poetry Navbar -->
       <div class="row bg-dark">
         <div class="col-8 bg-dark" id="holder"></div>
         <div class="col-4 justify-self-end list-full">
-              <h2 class="display-6 text-center text-light" id="navPoemHead">Select a Poem</h2>
+              <h2 class="display-6 text-center text-light" id="nav_poetry_header">Select a Poem</h2>
           <div class="col justify-content-center" id="poemNav">
 
 
-            <div class="row between poemHolder" id="GGcont">
-              <button class='btn btn-outline-secondary text-light poem-item' id="GG">The Green Goddess </button>
+            <div class="row poem_btn">
+              <button class='btn btn-outline-secondary text-light poem-item' id="GG"> The Green Goddess </button>
             </div>
 
-            <div class="row between poemHolder" id="TDWBGcont">
-              <button class='btn btn-outline-secondary text-light poem-item' id="TDWBG"> The Day Will Be Gone</button>
+            <div class="row poem_btn">
+              <button class='btn btn-outline-secondary text-light poem-item' id="TDWBG"> The Day Will Be Gone </button>
             </div>
 
-            <div class="row between poemHolder" id="GOALScont">
-              <button class='btn btn-outline-secondary text-light poem-item' id="GOALS">Goals </button>
+            <div class="row poem_btn">
+              <button class='btn btn-outline-secondary text-light poem-item' id="GOALS"> Goals </button>
             </div>
 
-            <div class="row between poemHolder" id="BDcont">
-              <button class='btn btn-outline-secondary text-light poem-item' id="BD">Brighter Day </button>
+            <div class="row poem_btn">
+              <button class='btn btn-outline-secondary text-light poem-item' id="BD"> Brighter Day </button>
             </div>
 
-            <div class="row between poemHolder" id="LTTGcont">
-              <button class='btn btn-outline-secondary text-light poem-item' id="LTTG">Lodged to the Grave </button>
+            <div class="row poem_btn">
+              <button class='btn btn-outline-secondary text-light poem-item' id="LTTG"> Lodged to the Grave </button>
             </div>
 
-            <div class="row between poemHolder" id="AMBIGUITYcont">
-              <button class='btn btn-outline-secondary text-light poem-item' id="AMBIGUITY"> Realize</button>
+            <div class="row poem_btn">
+              <button class='btn btn-outline-secondary text-light poem-item' id="AMBIGUITY"> Realize </button>
             </div>
 
-            <div class="row between poemHolder" id="TTcont">
-              <button class='btn btn-outline-secondary text-light poem-item' id="TT"> The Thrill</button>
+            <div class="row poem_btn">
+              <button class='btn btn-outline-secondary text-light poem-item' id="TT"> The Thrill </button>
             </div>
 
-            <div class="row between poemHolder" id="COMFORTcont">
-              <button class='btn btn-outline-secondary text-light poem-item' id="COMFORT">Comfort </button>
+            <div class="row poem_btn">
+              <button class='btn btn-outline-secondary text-light poem-item' id="COMFORT"> Comfort </button>
             </div>
 
-            <div class="row between poemHolder" id="TMcont">
-              <button class='btn btn-outline-secondary text-light poem-item' id="TM">Tell me </button>
+            <div class="row poem_btn">
+              <button class='btn btn-outline-secondary text-light poem-item' id="TM"> Tell me </button>
             </div>
 
-            <div class="row between poemHolder" id="CScont">
-              <button class='btn btn-outline-secondary text-light poem-item' id="CS">Clear Sight </button>
+            <div class="row poem_btn">
+              <button class='btn btn-outline-secondary text-light poem-item' id="CS"> Clear Sight </button>
             </div>
 
-            <div class="row between poemHolder" id="INFcont">
-              <button class='btn btn-outline-secondary text-light poem-item' id="INF">Infinity </button>
+            <div class="row poem_btn">
+              <button class='btn btn-outline-secondary text-light poem-item' id="INF"> Infinity </button>
             </div>
 
             <div class="moble-between">

@@ -2,6 +2,7 @@
 
 main {
   padding: 50px 0px 200px 0px;
+  font-family: Adamina;
 }
 
 .navbar {
@@ -80,6 +81,7 @@ main {
   position: static;
   width: 100%;
   height: 100%;
+  padding-bottom: 150px;
 }
 
 #aboutImg.load {
@@ -115,7 +117,7 @@ main {
 
 #listElem1 {
   opacity: 0;
-  transform: translate(10px, 0px);
+  transform: translate(50px, 0px);
 }
 
 #listElem1.load {
@@ -124,7 +126,7 @@ main {
 
 #listElem2 {
   opacity: 0;
-  transform: translate(10px, 0px);
+  transform: translate(50px, 0px);
 }
 
 #listElem2.load {
@@ -133,7 +135,7 @@ main {
 
 #listElem3 {
   opacity: 0;
-  transform: translate(10px, 0px);
+  transform: translate(50px, 0px);
 }
 
 #listElem3.load {
@@ -142,7 +144,7 @@ main {
 
 #listElem4 {
   opacity: 0;
-  transform: translate(10px, 0px);
+  transform: translate(50px, 0px);
 }
 
 #listElem4.load {
@@ -151,7 +153,7 @@ main {
 
 #listElem5 {
   opacity: 0;
-  transform: translate(10px, 0px);
+  transform: translate(50px, 0px);
 }
 
 #listElem5.load {
@@ -310,7 +312,7 @@ main {
   margin: 0 auto;
   height: 820px;
   width: 100%;
-  background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Mountains.jpg");
+  background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/windy_hill.JPG");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -357,138 +359,68 @@ main {
   color: white;
 }
 
-@keyframes poemHead {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes opacity_reveal {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
-
-#navPoemHead {
+#poetry_header, #nav_poetry_header {
   opacity: 0;
 }
 
-#navPoemHead.load{
-  animation: poemHead 400ms ease 500ms 1 normal forwards;
+#poetry_header.load {
+  animation: opacity_reveal 400ms ease-in 0ms 1 normal forwards;
 }
 
-.poemHolder {
+#nav_poetry_header.load{
+  animation: opacity_reveal 400ms ease 500ms 1 normal forwards;
+}
+
+.poem_btn {
   opacity: 1;
+  margin: 10px 0px 10px 0px;
 }
 
 .poem-item {
   opacity: 0;
   margin: auto;
   width: 80%;
-}
-
-#GG {
   transform: translate(0px, 10px);
-  opacity: 0;
 }
 
 #GG.load_poem{
   animation: opacity_reveal 200ms ease 1000ms 1 normal forwards;
 }
 
-#TDWBG {
-  transform: translate(0px, 10px);
-  opacity: 0;
-}
-
 #TDWBG.load_poem{
   animation: opacity_reveal 200ms ease 1200ms 1 normal forwards;
-}
-
-#GOALS {
-  transform: translate(0px, 10px);
-  opacity: 0;
 }
 
 #GOALS.load_poem{
   animation: opacity_reveal 200ms ease 1400ms 1 normal forwards;
 }
 
-#BD {
-  transform: translate(0px, 10px);
-  opacity: 0;
-}
-
 #BD.load_poem{
   animation: opacity_reveal 200ms ease 1600ms 1 normal forwards;
-}
-
-#LTTG {
-  transform: translate(0px, 10px);
-  opacity: 0;
 }
 
 #LTTG.load_poem{
   animation: opacity_reveal 200ms ease 1800ms 1 normal forwards;
 }
 
-#AMBIGUITY {
-  transform: translate(0px, 10px);
-  opacity: 0;
-}
-
 #AMBIGUITY.load_poem{
   animation: opacity_reveal 200ms ease 2000ms 1 normal forwards;
-}
-
-#TT {
-  transform: translate(0px, 10px);
-  opacity: 0;
 }
 
 #TT.load_poem{
   animation: opacity_reveal 200ms ease 2200ms 1 normal forwards;
 }
 
-#COMFORT {
-  transform: translate(0px, 10px);
-  opacity: 0;
-}
-
 #COMFORT.load_poem{
   animation: opacity_reveal 200ms ease 2400ms 1 normal forwards;
-}
-
-#TM {
-  transform: translate(0px, 10px);
-  opacity: 0;
 }
 
 #TM.load_poem{
   animation: opacity_reveal 200ms ease 2600ms 1 normal forwards;
 }
 
-#CS {
-  transform: translate(0px, 10px);
-  opacity: 0;
-}
-
 #CS.load_poem{
   animation: opacity_reveal 200ms ease 2800ms 1 normal forwards;
-}
-
-#INF {
-  transform: translate(0px, 10px);
-  opacity: 0;
 }
 
 #INF.load_poem{
@@ -506,22 +438,10 @@ main {
   max-height: 600px;
 }
 
-/*Between is for space in between button, 20px */
-.between {
-  margin: 10px 0px 10px 0px;
-}
-
-#poemHead {
-  opacity: 0;
-}
-
-#poemHead.load {
-  animation: poemHead 400ms ease-in 0ms 1 normal forwards;
-}
-
 .Poem {
   opacity: 0;
   transform: translate(0px, 0px);
+  position: absolute;
   transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
   -moz-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
   -webkit-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
@@ -529,67 +449,10 @@ main {
   font-size: 20px;
 }
 
-#GGpoem.show {
+
+.show_poem {
   opacity: 1 !important;
   transform: translate(50px, 0px);
-}
-
-#TDWBGpoem.show {
-  opacity: 1 !important;
-  transform: translate(50px, 0px);
-}
-
-#GOALSpoem.show {
-  opacity: 1 !important;
-  transform: translate(50px, 0px);
-}
-
-#BDpoem.show {
-  opacity: 1 !important;
-  transform: translate(50px, 0px);
-}
-
-#LTTGpoem.show {
-  opacity: 1 !important;
-  transform: translate(50px, 0px);
-}
-
-#AMBIGUITYpoem.show {
-  opacity: 1 !important;
-  transform: translate(50px, 0px);
-}
-
-#TTpoem.show {
-  opacity: 1 !important;
-  transform: translate(50px, 0px);
-}
-
-#COMFORTpoem.show {
-  opacity: 1 !important;
-  transform: translate(50px, 0px);
-}
-
-#TMpoem.show {
-  opacity: 1 !important;
-  transform: translate(50px, 0px);
-}
-
-#CSpoem.show {
-  opacity: 1 !important;
-  transform: translate(50px, 0px);
-}
-
-#INFpoem.show {
-  opacity: 1 !important;
-  transform: translate(50px, 0px);
-}
-
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
 }
 
 .footerP {
@@ -619,4 +482,14 @@ main {
   display: none;
   height: 200px;
   width: 300px;
+}
+
+#project_section {
+background-color: steelblue;
+}
+
+.project_image {
+  width: 80%;
+  height: 80%;
+  padding-left: 25px;
 }
