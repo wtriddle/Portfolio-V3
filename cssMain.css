@@ -28,7 +28,9 @@ main {
   position: fixed;
 }
 
-.bar1, .bar2, .bar3 {
+.bar1,
+.bar2,
+.bar3 {
   width: 40px;
   height: 5px;
   background-color: white;
@@ -94,7 +96,7 @@ main {
 }
 
 #aboutHeader.load {
-  animation: opacity_reveal 800ms ease 400ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 800ms 1 normal forwards;
 }
 
 #aboutP1 {
@@ -103,7 +105,7 @@ main {
 }
 
 #aboutP1.load {
-  animation: opacity_reveal 800ms ease 800ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 1200ms 1 normal forwards;
 }
 
 #aboutList {
@@ -112,52 +114,52 @@ main {
 }
 
 #aboutList.load {
-  animation: opacity_reveal 800ms ease 1200ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 1600ms 1 normal forwards;
 }
 
 #listElem1 {
   opacity: 0;
-  transform: translate(50px, 0px);
+  transform: translate(15px, 0px);
 }
 
 #listElem1.load {
-  animation: opacity_reveal 800ms ease 1600ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 2000ms 1 normal forwards;
 }
 
 #listElem2 {
   opacity: 0;
-  transform: translate(50px, 0px);
+  transform: translate(15px, 0px);
 }
 
 #listElem2.load {
-  animation: opacity_reveal 800ms ease 2000ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 2400ms 1 normal forwards;
 }
 
 #listElem3 {
   opacity: 0;
-  transform: translate(50px, 0px);
+  transform: translate(15px, 0px);
 }
 
 #listElem3.load {
-  animation: opacity_reveal 800ms ease 2400ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 2700ms 1 normal forwards;
 }
 
 #listElem4 {
   opacity: 0;
-  transform: translate(50px, 0px);
+  transform: translate(15px, 0px);
 }
 
 #listElem4.load {
-  animation: opacity_reveal 800ms ease 2700ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 3000ms 1 normal forwards;
 }
 
 #listElem5 {
   opacity: 0;
-  transform: translate(50px, 0px);
+  transform: translate(15px, 0px);
 }
 
 #listElem5.load {
-  animation: opacity_reveal 800ms ease 3000ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 3300ms 1 normal forwards;
 }
 
 #aboutP2 {
@@ -166,7 +168,7 @@ main {
 }
 
 #aboutP2.load {
-  animation: opacity_reveal 800ms ease 3600ms 1 normal forwards;
+  animation: opacity_reveal 800ms ease 4000ms 1 normal forwards;
 }
 
 /* Non-Mobile Styles */
@@ -359,7 +361,8 @@ main {
   color: white;
 }
 
-#poetry_header, #nav_poetry_header {
+#poetry_header,
+#nav_poetry_header {
   opacity: 0;
 }
 
@@ -367,7 +370,7 @@ main {
   animation: opacity_reveal 400ms ease-in 0ms 1 normal forwards;
 }
 
-#nav_poetry_header.load{
+#nav_poetry_header.load {
   animation: opacity_reveal 400ms ease 500ms 1 normal forwards;
 }
 
@@ -383,47 +386,47 @@ main {
   transform: translate(0px, 10px);
 }
 
-#GG.load_poem{
+#GG.load_poem {
   animation: opacity_reveal 200ms ease 1000ms 1 normal forwards;
 }
 
-#TDWBG.load_poem{
+#TDWBG.load_poem {
   animation: opacity_reveal 200ms ease 1200ms 1 normal forwards;
 }
 
-#GOALS.load_poem{
+#GOALS.load_poem {
   animation: opacity_reveal 200ms ease 1400ms 1 normal forwards;
 }
 
-#BD.load_poem{
+#BD.load_poem {
   animation: opacity_reveal 200ms ease 1600ms 1 normal forwards;
 }
 
-#LTTG.load_poem{
+#LTTG.load_poem {
   animation: opacity_reveal 200ms ease 1800ms 1 normal forwards;
 }
 
-#AMBIGUITY.load_poem{
+#AMBIGUITY.load_poem {
   animation: opacity_reveal 200ms ease 2000ms 1 normal forwards;
 }
 
-#TT.load_poem{
+#TT.load_poem {
   animation: opacity_reveal 200ms ease 2200ms 1 normal forwards;
 }
 
-#COMFORT.load_poem{
+#COMFORT.load_poem {
   animation: opacity_reveal 200ms ease 2400ms 1 normal forwards;
 }
 
-#TM.load_poem{
+#TM.load_poem {
   animation: opacity_reveal 200ms ease 2600ms 1 normal forwards;
 }
 
-#CS.load_poem{
+#CS.load_poem {
   animation: opacity_reveal 200ms ease 2800ms 1 normal forwards;
 }
 
-#INF.load_poem{
+#INF.load_poem {
   animation: opacity_reveal 200ms ease 3000ms 1 normal forwards;
 }
 
@@ -485,11 +488,119 @@ main {
 }
 
 #project_section {
-background-color: steelblue;
+  background-color: steelblue;
+  padding-bottom: 50px;
+}
+
+@keyframes project_image_load {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  50% {
+    transform: translateY(-45px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 }
 
 .project_image {
-  width: 80%;
-  height: 80%;
+  opacity: 0;
+  transform: translateY(-20px);
+  width: 73%;
+  height: 73%;
   padding-left: 25px;
+}
+
+.project_image.load {
+  animation: project_image_load 1.5s ease-in-out 500ms 1 forwards normal;
+}
+
+.project_name {
+  font-size: 25px;
+}
+
+.slider_arrow {
+  padding-top: 25px;
+  font-size: 55px;
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0 14px 14px 0;
+  display: inline-block;
+  padding: 10px;
+  transform: translateX(0px) rotate(-45deg);
+}
+
+@keyframes animate_arrow {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) rotate(-45deg);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateX(75px) rotate(-45deg);
+  }
+
+  65% {
+    opacity: 0;
+    transform: translateX(-25px) rotate(-45deg);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateX(0px) rotate(-45deg);
+  }
+
+}
+
+.slide_arrow {
+  animation: animate_arrow 1.5s ease-in-out 0s 1 forwards normal;
+}
+
+.delay_1 {
+  animation-delay: 300ms;
+}
+
+.delay_2 {
+  animation-delay: 200ms;
+}
+
+.delay_3 {
+  animation-delay: 100ms;
+}
+
+.project_description {
+  border: solid black;
+  border-width: 1px;
+  margin-top: 15px;
+}
+
+#IFG_project {
+  font-size: 35px;
+}
+
+#mTask_project {
+  font-size: 35px;
+}
+
+#project_title,
+.project_name {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#project_title.load {
+  animation: opacity_reveal 0.5s ease 0s 1 forwards normal;
+}
+
+.project_name.load {
+  animation: opacity_reveal 0.5s ease 1.5s 1 forwards normal;
 }

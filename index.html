@@ -13,7 +13,8 @@
   <title>William's Website</title>
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   <!-- Custom styles for this Webpage -->
   <link type="text/css" rel="stylesheet" href="cssMain.css">
@@ -55,7 +56,8 @@
   <div class="headercont">
     <div class="background">
       <h1 class="display-1 text-center greeting">Greetings!</h1>
-      <p class="lead text-center description"> You have just stumbled upon a great website. Scroll down to reveal what secrets it holds. </p>
+      <p class="lead text-center description"> You have just stumbled upon a great website. Scroll down to reveal what
+        secrets it holds. </p>
     </div>
   </div>
 
@@ -72,24 +74,26 @@
           <img src='Images/IMG_0124.JPG' alt='clouds' id='aboutImg' class='img-fluid'>
         </div>
         <div class="col-lg About-me-section" id="about_container">
-          
-                    <h4 class='display-4 text-center' id='aboutHeader'>About</h4>
 
-                     <p id='aboutP1'>Currently a Junior at Cal Poly Pomona, I am majoring in Computer Engineering and living on campus. A lists of some of my interests includes:</p>
+          <h4 class='display-4 text-center' id='aboutHeader'>About</h4>
 
-                    <ul id="aboutList">
-                        <li id="listElem1">Weight Lifting</li>
-                        <li id="listElem2">Reading Books</li>
-                        <li id="listElem3">Programming/coding</li>
-                        <li id="listElem4">Music (Ambient, Trap and Indie Rock)</li>
-                        <li id="listElem5">Yoga and Stretching</li>
-                    </ul>
+          <p id='aboutP1'>Currently a Junior at Cal Poly Pomona, I am majoring in Computer Engineering and living on
+            campus. A lists of some of my interests includes:</p>
 
-                    <p id="aboutP2">
-                        I am interested in expanding my knowledge of technology in applied sciences. I hope to develop complex systems which 
-                        help humans in some way. I am particularly interested in the medical field and hope to apply my computer engineering skills
-                        to develop the world forward.
-                    </p>
+          <ul id="aboutList">
+            <li id="listElem1">Weight Lifting</li>
+            <li id="listElem2">Reading Books</li>
+            <li id="listElem3">Programming/coding</li>
+            <li id="listElem4">Music</li>
+            <li id="listElem5">Yoga and Stretching</li>
+          </ul>
+
+          <p id="aboutP2">
+            I am interested in expanding my knowledge of technology in applied sciences. 
+            I hope to develop complex systems which help humans in some way. 
+            I am particularly interested in the medical field. 
+            I hope to apply my computer engineering skills to develop the world forward.
+          </p>
 
         </div>
 
@@ -97,36 +101,54 @@
 
     </div>
 
-  <!-- Projects Section-->
+    <!-- Projects Section-->
     <div class="container-fluid" id="project_section">
       <div class="row text-center">
         <div class="col" id="project_title_container">
-          <h2 class="display-1 text-center text-light" id="project_title">Projects</h2>
+          <h3 class="display-1 text-center text-light" id="project_title">Projects</h3>
         </div>
+      </div>
       <div class="row text-center">
         <div class="col-6 text-light">
-          <h4 class="text-center text-light">IFG</h4>
+          <h4 class="text-center text-light project_name">IFG</h4>
           <!--Image for IFG will be prettified processing of script in a terminal window-->
           <img src="Images/Spren.jpg" class='img-fluid project_image'>
-          <p>
-            The Identify Functional Groups (IFG) algorithm parses digital molecular string codes to obtain counts of the organic functional groups appenrt in their lattice structures.
-            The algorithm was implemented using the python3 programming language by using a mix of function hierarchies, inheritance, and data sorting models. 
-            The complete algorithm along with a more chemically accurate description can be found on Github at 
+          <p class="project_description">
+            The Identify Functional Groups (IFG) algorithm parses digital molecular string codes to obtain counts of the
+            organic functional groups in their lattice structures.
+            The algorithm was implemented using the python3 programming language by using a mix of function hierarchies,
+            inheritance, and sorting algorithms.
+            The complete algorithm along with a more chemically accurate description can be found on Github at
           </p>
-            <button id="IFG_project">IFG project</button> 
         </div>
         <div class="col-6 text-light">
-          <h4 class="text-center text-light">mTask</h4>
+          <h4 class="text-center text-light project_name">mTask</h4>
           <!--Image for mTask will be of sample routine gui interface-->
-          <img src="Images/Spren.jpg" class='img-fluid project_image'>
-          <p>
-            Lightweight task organizing program built with tkinter and python3. Routine and date occurance algorithms implemented to track daily tasks and routines.
+          <img src="Images/mTask.png" class='img-fluid project_image'>
+          <p class="project_description">
+            Lightweight task organizing program built with tkinter and python3. Routine and date occurance algorithms
+            implemented to track daily tasks and routines.
           </p>
-            <button id="mTask_project">mTask project</button> 
         </div>
+      </div>
+      <div class="row text-light">
+        <div class="col-6 justify-content-center text-center slider_arrow">
+          <button class="btn btn-outline-light" id="IFG_project">View IFG</button>
+          <div class="arrow delay_1"></div>
+          <div class="arrow delay_2"></div>
+          <div class="arrow delay_3"></div>
+        
+        </div>
+        <div class="col-6 justify-content-center text-center slider_arrow"> 
+          <button class="btn btn-outline-light" id="mTask_project">View mTask</button>
+          <div class="arrow delay_1"></div>
+          <div class="arrow delay_2"></div>
+          <div class="arrow delay_3"></div>
+        </div>
+      
+      </div>
     </div>
-  </div>
-  </div>
+
     <!-- Poetry Section -->
     <div class="container-fluid bg-dark" id="poetrySection">
       <div class="row bg-dark text-center">
@@ -138,7 +160,7 @@
       <div class="row bg-dark">
         <div class="col-8 bg-dark" id="holder"></div>
         <div class="col-4 justify-self-end list-full">
-              <h2 class="display-6 text-center text-light" id="nav_poetry_header">Select a Poem</h2>
+          <h2 class="display-6 text-center text-light" id="nav_poetry_header">Select a Poem</h2>
           <div class="col justify-content-center" id="poemNav">
 
 
@@ -759,10 +781,13 @@
           <h3 class="display-3 text-center">Thank You!</h3>
         </div>
         <p class="footerP text-center">
-          Thank you for taking the time to look at my website! I would appreciate any feedback you have about the website so that I can improve on my skills, so send me a quick email about anything you find. It would be a great help to me.
+          Thank you for taking the time to look at my website! I would appreciate any feedback you have about the
+          website so that I can improve on my skills, so send me a quick email about anything you find. It would be a
+          great help to me.
         </p>
         <p class="footerP text-center">
-          <b> A word on my poetry: </b> Although my poetry can be depressing or dark, please understand that it is a form of art and that it is the way I am expressing myself. I would ask no judgment on this section please.
+          <b> A word on my poetry: </b> Although my poetry can be depressing or dark, please understand that it is a
+          form of art and that it is the way I am expressing myself. I would ask no judgment on this section please.
         </p>
 
         <div class="row footerP">
@@ -803,8 +828,12 @@
 
   <!-- Bootstrap core JavaScript -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+  </script>
 
 </body>
 

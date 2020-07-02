@@ -66,7 +66,7 @@ function repositionActiveMobile() {
 }
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
   'use strict';
 
@@ -76,7 +76,7 @@ $(document).ready(function() {
   });
 
   // Set page to top initally every refresh
-  window.scroll(0,0);
+  window.scroll(0, 0);
 
   // HTML widget containers ==================================================
   var about_div = document.getElementById("about_container");
@@ -87,46 +87,54 @@ $(document).ready(function() {
   // Containers ==============================================================
 
   // Animated scroll configurations
-  $(window).scroll(function() {
+  $(window).scroll(function () {
 
     // Integer position of user on page
     var scroll_pos = $(this).scrollTop();
 
-      // About me section loading
-      if (scroll_pos >= 200) {
+    // About me section loading
+    if (scroll_pos >= 600) {
 
-          $("#aboutImg").addClass("load");
-          
-          Array.prototype.forEach.call(about_elems, (item) => {
-            $("#" + item.id).addClass("load");
-          });
+      $("#aboutImg").addClass("load");
 
-          // About section navbar button
-          if (!document.getElementById("aboutBtn")){
-              $("#aboutBtnCont").prepend("<a href='#aboutMeSection' class='nav-link' id='aboutBtn'>About</a>");
-          }
+      Array.prototype.forEach.call(about_elems, (item) => {
+        $("#" + item.id).addClass("load");
+      });
+
+      // About section navbar button
+      if (!document.getElementById("aboutBtn")) {
+        $("#aboutBtnCont").prepend("<a href='#aboutMeSection' class='nav-link' id='aboutBtn'>About</a>");
+      }
+    }
+
+    // Project Section loading
+    if (scroll_pos >= 1500) {
+      $(".project_image").addClass("load");
+      $("#project_title").addClass("load");
+      $(".project_name").addClass("load");
+
+    }
+
+    // Poetry Section loading
+    if (scroll_pos >= 2400) {
+
+      $("#nav_poetry_header").addClass("load");
+      $("#poetry_header").addClass("load");
+
+      Array.prototype.forEach.call(poem_buttons, (item) => {
+        $("#" + item.id).addClass("load_poem");
+      });
+
+      // Poetry section navbar button
+      if (!document.getElementById("poetryBtn")) {
+        $("#poetryBtnCont").append("<a href='#poetrySection' class='nav-link' id='poetryBtn'>Poetry</a>");
       }
 
-      // Poetry Section loading
-      if (scroll_pos >= 2400) {
-
-          $("#nav_poetry_header").addClass("load");
-          $("#poetry_header").addClass("load");
-
-          Array.prototype.forEach.call(poem_buttons, (item) => {
-            $("#" + item.id).addClass("load_poem");
-          });        
-
-          // Poetry section navbar button
-          if (!document.getElementById("poetryBtn")){
-              $("#poetryBtnCont").append("<a href='#poetrySection' class='nav-link' id='poetryBtn'>Poetry</a>");
-          }
-
-          // Footer section navbar button
-          if (!document.getElementById("footerBtn")){
-              $("#footerBtnCont").append("<a href='#footer' class='nav-link' id='footerBtn'>Footer</a>");
-          }
+      // Footer section navbar button
+      if (!document.getElementById("footerBtn")) {
+        $("#footerBtnCont").append("<a href='#footer' class='nav-link' id='footerBtn'>Footer</a>");
       }
+    }
   });
 
 
@@ -141,18 +149,17 @@ $(document).ready(function() {
   }
 
   // Poem navbar button function
-  $(".poem_btn").click(function() {
+  $(".poem_btn").click(function () {
     if (timeout === false) {
       timeout = true;
       var index = $(".poem_btn").index(this);
-      alert(index);
       if (mobile === false) {
         let z = getID(index);
         let k = getActive();
         $("#" + k).toggleClass("show_poem");
         $("#" + z).toggleClass("show_poem");
       }
-      
+
       if (mobile === true) {
         let z = getID(index);
         let k = getActive();
@@ -165,7 +172,7 @@ $(document).ready(function() {
         repositionActiveMobile();
 
       }
-      setTimeout( () => {
+      setTimeout(() => {
         timeout = false;
       }, 600);
     }
@@ -204,6 +211,30 @@ $(document).ready(function() {
       $(".secret").css("display", "none");
     }
 
+  });
+
+
+  $("#IFG_project").on('mouseenter', function () {
+    var arrows = this.parentElement.getElementsByClassName("arrow");
+
+    Array.prototype.forEach.call(arrows, (item) => {
+      $(item).addClass("slide_arrow");
+    });
+
+  });
+
+  $("#mTask_project").on('mouseenter', function () {
+    var arrows = this.parentElement.getElementsByClassName("arrow");
+
+    Array.prototype.forEach.call(arrows, (item) => {
+      $(item).addClass("slide_arrow");
+    });
+
+  });
+
+  $(".slider_arrow").on('mouseleave', function () {
+    $(".arrow").removeClass("slide_arrow");
+    // Allow arrows to perform one last cycle before stopping the animation
   });
 
   //Goodreads Button
@@ -288,10 +319,13 @@ $(document).ready(function() {
   });
 });
 
+
+
+
 //Delays the time in which functions under the resize will be called, but wait x amount of time after resize before changing anything
 var delay = (() => {
   var timers = {};
-  return function(callback, ms, uniqueId) {
+  return function (callback, ms, uniqueId) {
     if (!uniqueId) {
       uniqueId = "Don't call this twice without a uniqueId";
     }
