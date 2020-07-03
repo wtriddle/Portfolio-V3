@@ -109,10 +109,19 @@ $(document).ready(function () {
 
     // Project Section loading
     if (scroll_pos >= 1500) {
-      $(".project_image").addClass("load");
-      $("#project_title").addClass("load");
-      $(".project_name").addClass("load");
 
+      $("#project_title").addClass("load");
+      $("#IFG_image").addClass("load");
+      $("#mTask_image").addClass("load");
+      $("#mTask_name").addClass("load");
+      $("#IFG_name").addClass("load");
+      $("#mTask_description").addClass("load");
+      $("#mTask_project").addClass("load");
+      $("#IFG_description").addClass("load");
+      $("#IFG_project").addClass("load");
+      // $(".delay_1").addClass("load");
+      // $(".delay_2").addClass("load");
+      // $(".delay_3").addClass("load");
     }
 
     // Poetry Section loading
