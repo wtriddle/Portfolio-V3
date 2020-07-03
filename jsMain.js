@@ -119,9 +119,12 @@ $(document).ready(function () {
       $("#mTask_project").addClass("load");
       $("#IFG_description").addClass("load");
       $("#IFG_project").addClass("load");
-      // $(".delay_1").addClass("load");
-      // $(".delay_2").addClass("load");
-      // $(".delay_3").addClass("load");
+      $(".arrow_wrapper_1").addClass("load");
+      $(".arrow_wrapper_2").addClass("load");
+      $(".arrow_wrapper_3").addClass("load");
+      $(".arrow_wrapper_4").addClass("load");
+      $(".arrow_wrapper_5").addClass("load");
+      $(".arrow_wrapper_6").addClass("load");
     }
 
     // Poetry Section loading
