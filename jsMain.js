@@ -80,10 +80,15 @@ $(document).ready(function () {
 
   // HTML widget containers ==================================================
   var about_div = document.getElementById("about_container");
-  var about_elems = about_div.getElementsByTagName("*");
+  var about_widgets = about_div.getElementsByTagName("*");
 
   var poem_div = document.getElementById("poemNav");
   var poem_buttons = poem_div.getElementsByTagName("button");
+
+  var project_widgets = ["#project_title", 
+      "#IFG_image","#IFG_name", "#IFG_description","#IFG_project",
+      "#mTask_image", "#mTask_name", "#mTask_description", "#mTask_project",
+    ]
   // Containers ==============================================================
 
   // Animated scroll configurations
@@ -95,9 +100,9 @@ $(document).ready(function () {
     // About me section loading
     if (scroll_pos >= 600) {
 
+      // Widgets
       $("#aboutImg").addClass("load");
-
-      Array.prototype.forEach.call(about_elems, (item) => {
+      Array.prototype.forEach.call(about_widgets, (item) => {
         $("#" + item.id).addClass("load");
       });
 
@@ -110,29 +115,25 @@ $(document).ready(function () {
     // Project Section loading
     if (scroll_pos >= 1500) {
 
-      $("#project_title").addClass("load");
-      $("#IFG_image").addClass("load");
-      $("#mTask_image").addClass("load");
-      $("#mTask_name").addClass("load");
-      $("#IFG_name").addClass("load");
-      $("#mTask_description").addClass("load");
-      $("#mTask_project").addClass("load");
-      $("#IFG_description").addClass("load");
-      $("#IFG_project").addClass("load");
-      $(".arrow_wrapper_1").addClass("load");
-      $(".arrow_wrapper_2").addClass("load");
-      $(".arrow_wrapper_3").addClass("load");
-      $(".arrow_wrapper_4").addClass("load");
-      $(".arrow_wrapper_5").addClass("load");
-      $(".arrow_wrapper_6").addClass("load");
+      // Widgets
+      Array.prototype.forEach.call(project_widgets, (item) => {
+        $(item).addClass("load");
+      });
+
+      // Arrows
+      var i;
+      for (i = 1; i < 7; ++i) {
+        $(".arrow_wrapper_" + i).addClass("load");
+      }
+
     }
 
     // Poetry Section loading
     if (scroll_pos >= 2400) {
 
+      // Widgets
       $("#nav_poetry_header").addClass("load");
       $("#poetry_header").addClass("load");
-
       Array.prototype.forEach.call(poem_buttons, (item) => {
         $("#" + item.id).addClass("load_poem");
       });
@@ -225,8 +226,21 @@ $(document).ready(function () {
 
   });
 
+  var timer_seconds_IFG = 0;
+  var IFG_timer;
 
   $("#IFG_project").on('mouseenter', function () {
+    var enter_time_IFG = new Date().getTime();
+
+    IFG_timer = setInterval( function() {
+      var now_IFG = new Date().getTime();
+
+      var distance_IFG = now_IFG - enter_time_IFG;
+
+      timer_seconds_IFG = Math.floor(distance_IFG % (1000 * 60));
+      
+    }, 10)
+
     var arrows = this.parentElement.getElementsByClassName("arrow");
 
     Array.prototype.forEach.call(arrows, (item) => {
@@ -234,8 +248,38 @@ $(document).ready(function () {
     });
 
   });
+
+  $("#IFG_project").on('mouseleave', function () {
+    clearInterval(IFG_timer);
+    if (timer_seconds_IFG < 1600){
+      var remaining_seconds_IFG = 1600 - timer_seconds_IFG;
+    }
+    else {
+      var remaining_seconds_IFG = 1600 - (timer_seconds_IFG % 1500);
+    }
+    timer_seconds_IFG = 0;
+    setTimeout(function(){
+      $(".arrow").removeClass("slide_arrow");
+    }, remaining_seconds_IFG);
+
+  });
+
+  var timer_seconds_mTask = 0;
+  var mTask_timer;
+
 
   $("#mTask_project").on('mouseenter', function () {
+    var enter_time_mTask = new Date().getTime();
+
+    mTask_timer = setInterval( function() {
+      var now_mTask = new Date().getTime();
+
+      var distance_mTask = now_mTask - enter_time_mTask;
+
+      timer_seconds_mTask = Math.floor(distance_mTask % (1000 * 60));
+      
+    }, 10)
+
     var arrows = this.parentElement.getElementsByClassName("arrow");
 
     Array.prototype.forEach.call(arrows, (item) => {
@@ -244,10 +288,21 @@ $(document).ready(function () {
 
   });
 
-  $(".slider_arrow").on('mouseleave', function () {
-    $(".arrow").removeClass("slide_arrow");
-    // Allow arrows to perform one last cycle before stopping the animation
+  $("#mTask_project").on('mouseleave', function () {
+    clearInterval(mTask_timer);
+    if (timer_seconds_mTask < 1600){
+      var remaining_seconds_mTask = 1600 - timer_seconds_mTask;
+    }
+    else {
+      var remaining_seconds_mTask = 1600 - (timer_seconds_mTask % 1500);
+    }
+    timer_seconds_mTask = 0;
+    setTimeout(function(){
+      $(".arrow").removeClass("slide_arrow");
+    }, remaining_seconds_mTask);
+
   });
+  
 
   //Goodreads Button
   $("#goodReadsBtn").on('click', () => {

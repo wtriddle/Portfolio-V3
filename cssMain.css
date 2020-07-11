@@ -662,12 +662,6 @@ animation: opacity_reveal 0.25s ease 4s 1 forwards normal;
 
 }
 
-/* .arrow.load {
-  animation: load_arrow 1s ease-in-out 6s 1 forwards normal, animate_arrow 1.5s ease-in-out 7.1s 1 forwards normal;
-} */
-
-
-
 .arrow_wrapper_1 {
   display: inline-block;
   opacity: 0;
