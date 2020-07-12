@@ -226,40 +226,57 @@ $(document).ready(function () {
 
   });
 
+
+  function slide_arrows(arrows) {
+  /*
+    Activates sliding animation on arrows inside of the projects section
+   @arrows {div object} reference to the arrow divs
+   */
+    Array.prototype.forEach.call(arrows, (item) => {
+      $(item).addClass("slide_arrow");
+    });
+  }
+
+  function get_remaining_time(timer_seconds) {
+  /*
+    Returns the number of miliseconds reamining in the sliding arrow animation
+    @timer_seconds {integer} the total number of miliseconds that the animation has been running for
+  */
+    if (timer_seconds < 1600){
+      return (1600 - timer_seconds);
+    }
+    else {
+      return (1600 - (timer_seconds % 1500));
+    }
+  }
+
   var timer_seconds_IFG = 0;
   var IFG_timer;
 
   $("#IFG_project").on('mouseenter', function () {
-    var enter_time_IFG = new Date().getTime();
+    var enter_time = new Date().getTime();
 
     IFG_timer = setInterval( function() {
-      var now_IFG = new Date().getTime();
+      var now = new Date().getTime();
 
-      var distance_IFG = now_IFG - enter_time_IFG;
+      var distance = now - enter_time;
 
-      timer_seconds_IFG = Math.floor(distance_IFG % (1000 * 60));
+      timer_seconds_IFG = Math.floor(distance % (1000 * 60));
       
     }, 10)
 
-    var arrows = this.parentElement.getElementsByClassName("arrow");
+    var arrows = this.parentElement.getElementsByClassName("arrow_IFG");
 
-    Array.prototype.forEach.call(arrows, (item) => {
-      $(item).addClass("slide_arrow");
-    });
+    slide_arrows(arrows);
 
   });
 
   $("#IFG_project").on('mouseleave', function () {
     clearInterval(IFG_timer);
-    if (timer_seconds_IFG < 1600){
-      var remaining_seconds_IFG = 1600 - timer_seconds_IFG;
-    }
-    else {
-      var remaining_seconds_IFG = 1600 - (timer_seconds_IFG % 1500);
-    }
+    var remaining_seconds_IFG = get_remaining_time(timer_seconds_IFG);
     timer_seconds_IFG = 0;
     setTimeout(function(){
-      $(".arrow").removeClass("slide_arrow");
+      $(".arrow_IFG").removeClass("slide_arrow");
     }, remaining_seconds_IFG);
 
   });
@@ -269,36 +286,29 @@ $(document).ready(function () {
 
 
   $("#mTask_project").on('mouseenter', function () {
-    var enter_time_mTask = new Date().getTime();
+    var enter_time = new Date().getTime();
 
     mTask_timer = setInterval( function() {
-      var now_mTask = new Date().getTime();
+      var now = new Date().getTime();
 
-      var distance_mTask = now_mTask - enter_time_mTask;
+      var distance = now - enter_time;
 
-      timer_seconds_mTask = Math.floor(distance_mTask % (1000 * 60));
+      timer_seconds_mTask = Math.floor(distance % (1000 * 60));
       
     }, 10)
 
-    var arrows = this.parentElement.getElementsByClassName("arrow");
+    var arrows = this.parentElement.getElementsByClassName("arrow_mTask");
 
-    Array.prototype.forEach.call(arrows, (item) => {
-      $(item).addClass("slide_arrow");
-    });
+    slide_arrows(arrows);
 
   });
 
   $("#mTask_project").on('mouseleave', function () {
     clearInterval(mTask_timer);
-    if (timer_seconds_mTask < 1600){
-      var remaining_seconds_mTask = 1600 - timer_seconds_mTask;
-    }
-    else {
-      var remaining_seconds_mTask = 1600 - (timer_seconds_mTask % 1500);
-    }
+    var remaining_seconds_mTask = get_remaining_time(timer_seconds_mTask);
     timer_seconds_mTask = 0;
     setTimeout(function(){
-      $(".arrow").removeClass("slide_arrow");
+      $(".arrow_mTask").removeClass("slide_arrow");
     }, remaining_seconds_mTask);
 
   });
