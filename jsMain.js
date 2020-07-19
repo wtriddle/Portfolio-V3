@@ -1,11 +1,5 @@
 var mobile = false; //Determines if the webpage will use Mobile or Non-Mobile functionality.
 
-var timeout = false; //
-
-//Retrieves the id of the specified Poem by Poem class heirarchy
-function getID(y) {
-  return document.getElementsByClassName("Poem")[y].id;
-}
 
 function myFunction(z) {
   z.classList.toggle("change");
@@ -31,6 +25,14 @@ function getActive() {
     }
   }
 
+}
+
+function addData(chart, label, data) {
+  chart.data.labels.push(label);
+  chart.data.datasets.forEach((dataset) => {
+    dataset.data.push(data);
+  });
+  chart.update();
 }
 
 
@@ -66,6 +68,7 @@ function repositionActiveMobile() {
 }
 
 
+
 $(document).ready(function () {
 
   'use strict';
@@ -85,10 +88,10 @@ $(document).ready(function () {
   var poem_div = document.getElementById("poemNav");
   var poem_buttons = poem_div.getElementsByTagName("button");
 
-  var project_widgets = ["#project_title", 
-      "#IFG_image","#IFG_name", "#IFG_description","#IFG_project",
-      "#mTask_image", "#mTask_name", "#mTask_description", "#mTask_project",
-    ]
+  var project_widgets = ["#project_title",
+    "#IFG_image", "#IFG_name", "#IFG_description", "#IFG_project",
+    "#mTask_image", "#mTask_name", "#mTask_description", "#mTask_project",
+  ]
   // Containers ==============================================================
 
   // Animated scroll configurations
@@ -126,6 +129,10 @@ $(document).ready(function () {
         $(".arrow_wrapper_" + i).addClass("load");
       }
 
+      // Project section navbar button
+      if (!document.getElementById("projectBtn")) {
+        $("#projectBtnCont").append("<a href='#project_section' class='nav-link' id='projectBtn'>Projects</a>");
+      }
     }
 
     // Poetry Section loading
@@ -159,28 +166,33 @@ $(document).ready(function () {
 
   if (screenWidth >= 600) {
     mobile = false;
+  } else {
+    mobile = true;
   }
 
+  var timeout = false;
+
   // Poem navbar button function
-  $(".poem_btn").click(function () {
+  $("#poemNav button").click(function () {
+
+    // Timer for fluidity of animation
     if (timeout === false) {
+
       timeout = true;
-      var index = $(".poem_btn").index(this);
+      let selected_poem = this.id + "poem";
+      let poem_to_hide = getActive();
+
       if (mobile === false) {
-        let z = getID(index);
-        let k = getActive();
-        $("#" + k).toggleClass("show_poem");
-        $("#" + z).toggleClass("show_poem");
+        $("#" + poem_to_hide).toggleClass("show_poem");
+        $("#" + selected_poem).toggleClass("show_poem");
       }
 
       if (mobile === true) {
-        let z = getID(index);
-        let k = getActive();
-        if (k === undefined) {
-          $("#" + z).css("display", "block");
+        if (poem_to_hide === undefined) {
+          $("#" + selected_poem).css("display", "block");
         } else {
-          $("#" + k).css("display", "none");
-          $("#" + z).css("display", "block");
+          $("#" + poem_to_hide).css("display", "none");
+          $("#" + selected_poem).css("display", "block");
         }
         repositionActiveMobile();
 
@@ -191,8 +203,29 @@ $(document).ready(function () {
     }
   });
 
+  $("#show_graph").click(() => {
+
+    var fav = $('input[name="fav_section]:checked"').val();
+    $('input[name="fav_section"]:checked').prop("checked", false);
+    var favorites_dict = {
+      'Header': 2,
+      'About': 8,
+      'Projects': 12,
+      'Poetry': 25,
+      'Footer': 16
+    }
+    favorites_dict[fav] += 1;
+    var data = favorites_dict.values();
+  });
+
   //Nav bar collapses if button on navbar is used on mobile
   $("#aboutBtnCont").on('click', 'a#aboutBtn', () => {
+    if (mobile === true) {
+      document.getElementById("navCollapse").click();
+    }
+  });
+
+  $("#projectBtnCont").on('click', 'a#projectBtn', () => {
     if (mobile === true) {
       document.getElementById("navCollapse").click();
     }
@@ -210,42 +243,24 @@ $(document).ready(function () {
     }
   });
 
-  //Secret Button
-  $("#secretActivator").click(() => {
-    if ($(".secret").css("display") == "none") {
-      $(".secretbtn").toggleClass("showing");
-      $(".secretbtn").html("Hide");
-      $("#secret").css("display", "block");
-      $(".secret").css("display", "block");
-    } else if ($(".secret").css("display") == "block") {
-      $(".secretbtn").toggleClass("showing");
-      $(".secretbtn").html(" ");
-      $("#secret").css("display", "none");
-      $(".secret").css("display", "none");
-    }
-
-  });
-
-
   function slide_arrows(arrows) {
-  /*
-    Activates sliding animation on arrows inside of the projects section
-   @arrows {div object} reference to the arrow divs
-   */
+    /*
+      Activates sliding animation on arrows inside of the projects section
+     @arrows {div object} reference to the arrow divs
+     */
     Array.prototype.forEach.call(arrows, (item) => {
       $(item).addClass("slide_arrow");
     });
   }
 
   function get_remaining_time(timer_seconds) {
-  /*
-    Returns the number of miliseconds reamining in the sliding arrow animation
-    @timer_seconds {integer} the total number of miliseconds that the animation has been running for
-  */
-    if (timer_seconds < 1600){
+    /*
+      Returns the number of miliseconds reamining in the sliding arrow animation
+      @timer_seconds {integer} the total number of miliseconds that the animation has been running for
+    */
+    if (timer_seconds < 1600) {
       return (1600 - timer_seconds);
-    }
-    else {
+    } else {
       return (1600 - (timer_seconds % 1500));
     }
   }
@@ -256,13 +271,13 @@ $(document).ready(function () {
   $("#IFG_project").on('mouseenter', function () {
     var enter_time = new Date().getTime();
 
-    IFG_timer = setInterval( function() {
+    IFG_timer = setInterval(function () {
       var now = new Date().getTime();
 
       var distance = now - enter_time;
 
       timer_seconds_IFG = Math.floor(distance % (1000 * 60));
-      
+
     }, 10)
 
     var arrows = this.parentElement.getElementsByClassName("arrow_IFG");
@@ -275,7 +290,7 @@ $(document).ready(function () {
     clearInterval(IFG_timer);
     var remaining_seconds_IFG = get_remaining_time(timer_seconds_IFG);
     timer_seconds_IFG = 0;
-    setTimeout(function(){
+    setTimeout(function () {
       $(".arrow_IFG").removeClass("slide_arrow");
     }, remaining_seconds_IFG);
 
@@ -288,13 +303,13 @@ $(document).ready(function () {
   $("#mTask_project").on('mouseenter', function () {
     var enter_time = new Date().getTime();
 
-    mTask_timer = setInterval( function() {
+    mTask_timer = setInterval(function () {
       var now = new Date().getTime();
 
       var distance = now - enter_time;
 
       timer_seconds_mTask = Math.floor(distance % (1000 * 60));
-      
+
     }, 10)
 
     var arrows = this.parentElement.getElementsByClassName("arrow_mTask");
@@ -307,12 +322,12 @@ $(document).ready(function () {
     clearInterval(mTask_timer);
     var remaining_seconds_mTask = get_remaining_time(timer_seconds_mTask);
     timer_seconds_mTask = 0;
-    setTimeout(function(){
+    setTimeout(function () {
       $(".arrow_mTask").removeClass("slide_arrow");
     }, remaining_seconds_mTask);
 
   });
-  
+
 
   //Goodreads Button
   $("#goodReadsBtn").on('click', () => {

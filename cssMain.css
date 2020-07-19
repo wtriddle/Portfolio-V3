@@ -5,6 +5,14 @@ main {
   font-family: Adamina;
 }
 
+hr {
+  border: none;
+  display: block;
+  background-color: black;
+  height: 2px;
+}
+
+
 .navbar {
   font-size: 26px;
   z-index: 1;
@@ -374,8 +382,7 @@ main {
   animation: opacity_reveal 400ms ease 500ms 1 normal forwards;
 }
 
-.poem_btn {
-  opacity: 1;
+#poemNav .row {
   margin: 10px 0px 10px 0px;
 }
 
@@ -444,12 +451,19 @@ main {
 .Poem {
   opacity: 0;
   transform: translate(0px, 0px);
-  position: absolute;
   transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
   -moz-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
   -webkit-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
   -o-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
   font-size: 20px;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
 }
 
 
@@ -489,7 +503,9 @@ main {
 
 #project_section {
   background-color: steelblue;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
+  margin-bottom: 20px;
+  clear: both;
 }
 
 @keyframes project_image_load {
@@ -512,23 +528,33 @@ main {
 .project_image {
   opacity: 0;
   transform: translateY(-20px);
-  width: 73%;
-  height: 73%;
-  padding-left: 25px;
+  padding: 0px 15px 0px 15px;
+  height: 85%;
+  width: 85%;
+  position: relative;
+  display: block;
 }
 
 
 .project_name {
   font-size: 25px;
+  color: whitesmoke;
 }
 
 .slider_arrow {
+  position: relative;
   padding-top: 25px;
   font-size: 55px;
+  padding-bottom: 20px;
+}
+
+.card_bg {
+  background-color: steelblue;
+  opacity: 1;
 }
 
 .arrow_IFG {
-  border: solid white;
+  border: solid orange;
   border-width: 0 14px 14px 0;
   display: inline-block;
   padding: 10px;
@@ -537,7 +563,7 @@ main {
 }
 
 .arrow_mTask {
-  border: solid white;
+  border: solid orange;
   border-width: 0 14px 14px 0;
   display: inline-block;
   padding: 10px;
@@ -584,24 +610,17 @@ main {
   animation-delay: 100ms;
 }
 
-/* .delay_1.load {
-  animation: load_arrow 1s ease-in-out 6s 1 forwards normal;
-}
-
-.delay_2.load {
-  animation: load_arrow 1s ease-in-out 6.3s 1 forwards normal;
-}
-
-.delay_3.load {
-  animation: load_arrow 1s ease-in-out 6.6s 1 forwards normal;
-} */
-
 .project_description {
-  border: solid black;
+  border: solid whitesmoke;
+  color: whitesmoke;
   border-width: 1px;
   margin-top: 15px;
   transform: translateY(20px);
   opacity: 0;
+}
+
+.project_full {
+  padding-bottom: 20px;
 }
 
 #IFG_project {
@@ -611,7 +630,7 @@ main {
 }
 
 #mTask_project {
-  font-size: 35px;
+  font-size: 30px;
   opacity: 0;
   transform: translateY(20px);
 }
@@ -628,6 +647,10 @@ main {
 .project_name {
   opacity: 0;
   transform: translateY(20px);
+}
+
+#project_title_container {
+  margin-bottom: 20px;
 }
 
 #project_title.mobile {
@@ -655,22 +678,23 @@ main {
 }
 
 #mTask_description.load {
-animation: opacity_reveal 0.25s ease 4s 1 forwards normal;
+  animation: opacity_reveal 0.25s ease 4s 1 forwards normal;
 }
 
 #IFG_description.load {
-animation: opacity_reveal 0.25s ease 4s 1 forwards normal;
+  animation: opacity_reveal 0.25s ease 4s 1 forwards normal;
 }
 
 
 @keyframes load_arrow {
   0% {
-  opacity: 0;
-  transform: translateY(25px);
+    opacity: 0;
+    transform: translateY(25px);
   }
-  100%{
-  opacity: 1;
-  transform: translateY(0);
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 
 }
@@ -736,6 +760,145 @@ animation: opacity_reveal 0.25s ease 4s 1 forwards normal;
 }
 
 #footer {
-  background-color:darkcyan;
-  
+  background-color: darkcyan;
+}
+
+.social-icons {
+  list-style: none;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.social-icons a {
+  background-color: midnightblue;
+  color: cyan;
+  font-size: 38px;
+  display: inline-block;
+  line-height: 70px;
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear
+}
+
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+  color: white;
+}
+
+.social-icons a.github:hover {
+  background-color: black;
+}
+
+.social-icons a.soundcloud:hover {
+  background-color: #FE5000;
+}
+
+.social-icons a.linkedin:hover {
+  background-color: #007bb6;
+}
+
+.social-icons a.soundcloud {
+  padding-bottom: 3px;
+}
+
+.social-icons a.github {
+  padding-bottom: 3px;
+}
+
+.social-icons a.linkedin {
+  padding-bottom: 6px;
+}
+
+#footer_name {
+  font-size: 25px;
+}
+
+.footer_btn {
+  font-size: 20px;
+}
+
+#email_message_box {
+  border-radius: 5%;
+  text-align: left;
+  padding-left: 5px;
+  padding-top: 5px;
+  height: 27vh;
+  width: 400px;
+  resize: none;
+  display: block;
+}
+
+@media screen and (max-width:1096px) {
+  #email_message_box {
+    width: 300px;
+  }
+}
+
+footer h3 {
+  font-size: 50px;
+}
+
+.radio-wrapper {
+  font-size: 35px;
+}
+
+.custom-radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: none;
+  height: 35px;
+  width: 35px;
+  background: blue;
+  border-radius: 50%;
+  transition: all 0.5s;
+  cursor: pointer;
+  display: inline-block;
+}
+
+@keyframes slide_left {
+
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-35px);
+  }
+
+}
+
+.radio-wrapper label.show {
+  animation: slide_left 0.5s ease-in-out 0.4s 1 forwards normal;
+}
+
+.custom-radio:hover {
+  height: 55px;
+  background: white;
+  width: 55px;
+}
+
+.custom-radio:checked {
+  height: 80px;
+  width: 80px;
+  background: green;
+}
+
+#footer_img {
+  padding: 20px 0px 20px 0px;
+  margin: auto;
+  display: block;
+  position: relative;
+  height: 45%;
 }
