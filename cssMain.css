@@ -302,10 +302,6 @@ hr {
     transition: transform 900ms ease;
   }
 
-  .secretbtn {
-    display: none;
-  }
-
   .navToggle {
     display: none;
   }

@@ -1,10 +1,5 @@
 var mobile = false; //Determines if the webpage will use Mobile or Non-Mobile functionality.
 
-
-function myFunction(z) {
-  z.classList.toggle("change");
-}
-
 //Returns the id string of the currently visible Poem, for both Mobile and Non-mobile
 function getActive() {
   'use strict';
@@ -72,11 +67,6 @@ function repositionActiveMobile() {
 $(document).ready(function () {
 
   'use strict';
-
-  // Collapse navbar initally
-  $(".navToggle").click(() => {
-    $(".navbar").toggleClass("show");
-  });
 
   // Set page to top initally every refresh
   window.scroll(0, 0);
@@ -170,6 +160,13 @@ $(document).ready(function () {
     mobile = true;
   }
 
+
+  $(".navToggle").click(function () {
+    $(".navbar").toggleClass("show");
+    // Toggler style
+    this.classList.toggle("change");
+  });
+
   var timeout = false;
 
   // Poem navbar button function
@@ -219,27 +216,9 @@ $(document).ready(function () {
   });
 
   //Nav bar collapses if button on navbar is used on mobile
-  $("#aboutBtnCont").on('click', 'a#aboutBtn', () => {
+  $("nav li").on('click', () => {
     if (mobile === true) {
-      document.getElementById("navCollapse").click();
-    }
-  });
-
-  $("#projectBtnCont").on('click', 'a#projectBtn', () => {
-    if (mobile === true) {
-      document.getElementById("navCollapse").click();
-    }
-  });
-
-  $("#poetryBtnCont").on('click', 'a#poetryBtn', () => {
-    if (mobile === true) {
-      document.getElementById("navCollapse").click();
-    }
-  });
-
-  $("#footerBtnCont").on('click', 'a#footerBtn', () => {
-    if (mobile === true) {
-      document.getElementById("navCollapse").click();
+      $("nav button").click();
     }
   });
 
@@ -329,9 +308,19 @@ $(document).ready(function () {
   });
 
 
-  //Goodreads Button
-  $("#goodReadsBtn").on('click', () => {
-    window.location.href = "https://www.goodreads.com/William-Riddle";
+  //Soundcloud Button
+  $(".soundcloud").on('click', () => {
+    window.location.href = "https://soundcloud.com/furryman654";
+  });
+
+  //Github Button
+  $(".github").on('click', () => {
+    window.location.href = "https://github.com/wtriddle";
+  });
+
+  //Linkedin Button
+  $(".linkedin").on('click', () => {
+    window.location.href = "https://www.linkedin.com/in/william-riddle-983233190/";
   });
 
   //IFG project Button
