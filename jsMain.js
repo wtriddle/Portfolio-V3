@@ -22,6 +22,19 @@ function getActive() {
 
 }
 
+function getActiveContent() {
+  var parent = document.getElementsByClassName("activity_content")[0];
+  var contents = parent.getElementsByTagName("div");
+  var active = null;
+  Array.prototype.forEach.call(contents, (item) => {
+    if ($("#" + item.id).css("opacity") == 1) {
+      active = item.id;
+    }
+  });
+  return active
+
+}
+
 function addData(chart, label, data) {
   chart.data.labels.push(label);
   chart.data.datasets.forEach((dataset) => {
@@ -71,10 +84,11 @@ $(document).ready(function () {
   // Set page to top initally every refresh
   window.scroll(0, 0);
 
-  // HTML widget containers ==================================================
-  var about_div = document.getElementById("about_container");
-  var about_widgets = about_div.getElementsByTagName("*");
+  // Header text loading
+  $("header h1").css("opacity", "1");
+  $("header p").css("opacity", "1");
 
+  // HTML widget containers ==================================================
   var poem_div = document.getElementById("poemNav");
   var poem_buttons = poem_div.getElementsByTagName("button");
 
@@ -94,11 +108,14 @@ $(document).ready(function () {
     if (scroll_pos >= 600) {
 
       // Widgets
-      $("#aboutImg").addClass("load");
-      Array.prototype.forEach.call(about_widgets, (item) => {
-        $("#" + item.id).addClass("load");
-      });
-
+      $(".about_section img").addClass("opacity_show");
+      $(".about_section h4").addClass("slide_fade");
+      $(".about_section h4~p").addClass("slide_fade");
+      $("#Weight_Lifting").addClass("load");
+      $("#Book_Reading").addClass("load");
+      $("#Developing").addClass("load");
+      $("#Music").addClass("load");
+      $("#Yoga").addClass("load");
       // About section navbar button
       if (!document.getElementById("aboutBtn")) {
         $("#aboutBtnCont").prepend("<a href='#aboutMeSection' class='nav-link' id='aboutBtn'>About</a>");
@@ -149,10 +166,6 @@ $(document).ready(function () {
 
 
   var screenWidth = $(window).width();
-  var onload = (() => {
-    $(".greeting").toggleClass("load");
-    $(".description").toggleClass("load");
-  })();
 
   if (screenWidth >= 600) {
     mobile = false;
@@ -172,7 +185,7 @@ $(document).ready(function () {
   // Poem navbar button function
   $("#poemNav button").click(function () {
 
-    // Timer for fluidity of animation
+    // Timer for buffer of animation
     if (timeout === false) {
 
       timeout = true;
@@ -308,6 +321,28 @@ $(document).ready(function () {
   });
 
 
+  //About Button
+  $(".activity_selector button").on('click', function () {
+
+    if (timeout === false) {
+
+      timeout = true
+      var id = this.id;
+      var active = getActiveContent();
+      if ((id + "_Content") == active) {
+        return 0;
+      }
+      $("#" + this.id + "_Content").addClass("show_content");
+      if (active) {
+        $("#" + active).removeClass("show_content");
+      }
+
+    }
+    setTimeout(() => {
+      timeout = false;
+    }, 600);
+  });
+
   //Soundcloud Button
   $(".soundcloud").on('click', () => {
     window.location.href = "https://soundcloud.com/furryman654";
@@ -337,7 +372,6 @@ $(document).ready(function () {
   if (screenWidth < 576) {
     $("h1").removeClass("display-1");
     $("h1").addClass("display-4");
-    $(".About-me-section").css("font-size", "20px");
   }
 
   //Change Poem Section to Mobile Layout

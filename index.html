@@ -19,6 +19,9 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
   </script>
 
+  <!-- Custom styles for this Webpage -->
+  <link type="text/css" rel="stylesheet" href="cssMain.css">
+
   <script src="jsMain.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,8 +31,6 @@
 
   <title>William's Website</title>
 
-  <!-- Custom styles for this Webpage -->
-  <link type="text/css" rel="stylesheet" href="cssMain.css">
 
 </head>
 
@@ -44,11 +45,11 @@
   <!-- Navbar -->
   <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
     <a href="#" class="navbar-brand">William's Site</a>
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="navbar-collapse collapse" id="myMenu">
+    <div class="navbar-collapse collapse" id="menu">
       <ul class="navbar-nav justify-content-center">
         <li class="nav-item" id="aboutBtnCont">
 
@@ -68,13 +69,13 @@
   </nav>
 
   <!-- Image/Title Section -->
-  <div class="headercont">
-    <div class="background">
-      <h1 class="display-1 text-center greeting">Greetings!</h1>
-      <p class="lead text-center description"> You have just stumbled upon a great website. Scroll down to reveal what
+  <header>
+    <div class="text-center">
+      <h1 class="display-1">Greetings!</h1>
+      <p> You have just stumbled upon a great website. Scroll down to reveal what
         secrets it holds. </p>
     </div>
-  </div>
+  </header>
 
   <!-- Main -->
   <main class="bg-dark">
@@ -84,36 +85,71 @@
 
     <!-- About Section -->
     <div class="container-fluid bg-dark">
-      <div class="row align-items-center">
-        <div class="col-lg">
-          <img src='Images/IMG_0124.JPG' alt='clouds' id='aboutImg' class='img-fluid'>
+      <div class="row about_section">
+        <div class="col-xl">
+          <img src="Images/IMG_0124.JPG" alt="clouds" class="img-fluid">
         </div>
-        <div class="col-lg About-me-section" id="about_container">
+        <div class="col-xl text-light">
 
-          <h4 class='display-4 text-center' id='aboutHeader'>About</h4>
+          <h4 class="display-4 text-center">About</h4>
 
-          <p id='aboutP1'>Currently a Junior at Cal Poly Pomona, I am majoring in Computer Engineering and living on
-            campus. A lists of some of my interests includes:</p>
+          <p>I am currently a Junior at Cal Poly Pomona and I am majoring in Computer Engineering. A list
+            of some of my interests includes:</p>
 
-          <ul id="aboutList">
-            <li id="listElem1">Weight Lifting</li>
-            <li id="listElem2">Reading Books</li>
-            <li id="listElem3">Programming/coding</li>
-            <li id="listElem4">Music</li>
-            <li id="listElem5">Yoga and Stretching</li>
-          </ul>
+          <div class="row activity_section">
+            <div class="col-md justify-content-center activity_selector">
+              <div class="row">
+                <button class="btn btn-outline-secondary text-light" id="Weight_Lifting">Weight Lifting</button>
+              </div>
+              <div class="row">
+                <button class="btn btn-outline-secondary text-light" id="Book_Reading">Reading Books</button>
+              </div>
+              <div class="row">
+                <button class="btn btn-outline-secondary text-light" id="Developing">Developing</button>
+              </div>
+              <div class="row">
+                <button class="btn btn-outline-secondary text-light" id="Music">Music</button>
+              </div>
+              <div class="row">
+                <button class="btn btn-outline-secondary text-light" id="Yoga">Yoga</button>
+              </div>
 
-          <p id="aboutP2">
-            I am interested in expanding my knowledge of technology in applied sciences.
-            I hope to develop complex systems which help humans in some way.
-            I am particularly interested in the medical field.
-            I hope to apply my computer engineering skills to develop the world forward.
-          </p>
-
+            </div>
+            <div class="col-md text-center activity_content">
+              <div id="Book_Reading_Content">
+                <img src="Images/Activity_slider/Book_Reading.JPG" alt="Book Reading" class="img-fluid">
+                <p> I enjoy reading fantasy books. My personal favorite series is Riyria Revelations by Michael J
+                  Sullivan.
+                  You can find my goodreads account and find some of my other favorites at <a
+                    href="https://www.goodreads.com/wtriddle">this link</a>
+                </p>
+              </div>
+              <div id="Developing_Content">
+                <img src="Images/Activity_slider/Developing.PNG" alt="Developing" class="img-fluid">
+                <p> I enjoy programming because I enjoy typing and having a string of thoughts while banging to trap
+                  music.
+                </p>
+              </div>
+              <div id="Music_Content">
+                <img src="Images/Activity_slider/Music.PNG" alt="Music" class="img-fluid">
+                <p> I enjoy producing. I use a DAW called Renoise. If you want to link on a track, send me a sample! Or,
+                  hit me up. Let's collab.
+                </p>
+              </div>
+              <div id="Weight_Lifting_Content">
+                <img src="Images/Activity_slider/Weight_Lifting.JPG" alt="Weight Lifting" class="img-fluid">
+                <p> I enjoy weight lifting. I like being lean and muscular.
+                </p>
+              </div>
+              <div id="Yoga_Content">
+                <img src="Images/Activity_slider/Yoga.JPG" alt="Yoga" class="img-fluid">
+                <p> I enjoy stretching my muslces. It is important to be flexible and mobile for training.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
-
     </div>
 
     <!-- Projects Section-->
@@ -810,7 +846,7 @@
           <p class="display-5">Email me below and tell me one thing I can do to improve this webpage.</p>
           <label><textarea id="email_message_box" placeholder="Enter a message"></textarea></label><br>
           <button class="btn btn-outline-light footer_btn">Send to wtriddle31@gmail.com</button>
-            <img src="Images/oldie.jpg" class="img-fluid" id="footer_img">
+          <img src="Images/oldie.jpg" class="img-fluid" id="footer_img">
         </div>
         <div class="col-lg-8 text-light text-center">
           <h3>Which section was your favorite?</h3>

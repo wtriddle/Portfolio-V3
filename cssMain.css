@@ -2,7 +2,7 @@
 
 main {
   padding: 50px 0px 200px 0px;
-  font-family: Adamina;
+  font-family: Adamina, sans-serif;
 }
 
 hr {
@@ -18,9 +18,6 @@ hr {
   z-index: 1;
   transform: translate(0px, -80px);
   transition: transform 900ms ease;
-  -webkit-transition: transform 900ms ease;
-  -moz-transition: transform 900ms ease;
-  -o-transition: transform 900ms ease;
 }
 
 .show {
@@ -62,17 +59,52 @@ hr {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
-#hideShowPic {
-  margin: auto;
-  display: block;
-  z-index: 1;
-  height: 40px;
-  width: 40px;
+
+header {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
-.full-aboutme {
-  padding-top: 20px;
+header div {
+  margin: 0 auto;
+  height: 820px;
+  width: 100%;
+  background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/windy_hill.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
+
+header h1 {
+  opacity: 0;
+  text-shadow: 5px 5px 10px darkolivegreen;
+  margin: 0 auto;
+  color: chartreuse;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  transition: opacity 800ms ease-in;
+}
+
+header p {
+  opacity: 0;
+  font-size: 30px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  color: white;
+  transition: opacity 4s ease-in-out;
+}
+
+.opacity_show {
+  opacity: 1 !important;
+}
+
+.slide_fade {
+  opacity: 1 !important;
+  transform: translate(0px, 0px) !important;
+}
+
 
 @keyframes opacity_reveal {
   0% {
@@ -85,99 +117,96 @@ hr {
   }
 }
 
-#aboutImg {
+.about_section {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.about_section img {
   opacity: 0;
-  transform: translate(0px, 0px);
   position: static;
   width: 100%;
   height: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
+  transition: opacity 800ms ease-in;
 }
 
-#aboutImg.load {
-  animation: opacity_reveal 800ms ease 0s 1 normal forwards;
-}
-
-#aboutHeader {
+.about_section h4 {
   opacity: 0;
   transform: translate(15px, 0px);
+  transition: opacity 400ms ease 800ms, transform 400ms ease 800ms;
 }
 
-#aboutHeader.load {
-  animation: opacity_reveal 800ms ease 800ms 1 normal forwards;
+.about_section:last-child {
+  font-size: 20px;
 }
 
-#aboutP1 {
+.about_section h4~p {
   opacity: 0;
-  transform: translate(5px, 0px);
+  transform: translateX(5px);
+  transition: opacity 400ms ease 1200ms, transform 400ms ease 1200ms;
 }
 
-#aboutP1.load {
-  animation: opacity_reveal 800ms ease 1200ms 1 normal forwards;
+.activity_selector .row {
+  margin: 25px 0px 25px 0px;
 }
 
-#aboutList {
+.activity_section .col-md {
+  margin: auto;
+}
+
+.activity_selector button {
+  margin: auto;
+  width: 80%;
+  font-size: 30px;
   opacity: 0;
-  transform: translate(0px, 0px);
+  transform: translate(0px, 10px);
 }
 
-#aboutList.load {
-  animation: opacity_reveal 800ms ease 1600ms 1 normal forwards;
+#Weight_Lifting.load {
+  animation: opacity_reveal 200ms ease 1500ms 1 forwards normal;
 }
 
-#listElem1 {
+#Book_Reading.load {
+  animation: opacity_reveal 200ms ease 1800ms 1 forwards normal;
+}
+
+#Developing.load {
+  animation: opacity_reveal 200ms ease 2100ms 1 forwards normal;
+}
+
+#Music.load {
+  animation: opacity_reveal 200ms ease 2400ms 1 forwards normal;
+}
+
+#Yoga.load {
+  animation: opacity_reveal 200ms ease 2700ms 1 forwards normal;
+}
+
+.activity_content img {
+  width: 400px;
+  height: 575px;
+  display: inline-block;
+}
+
+.activity_content div {
   opacity: 0;
-  transform: translate(15px, 0px);
+  position: absolute;
+  margin: auto;
+  display: block;
+  transform: translate(-25px, -50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-#listElem1.load {
-  animation: opacity_reveal 800ms ease 2000ms 1 normal forwards;
+.activity_content p {
+  transform: translateY(-55px);
 }
 
-#listElem2 {
-  opacity: 0;
-  transform: translate(15px, 0px);
+.show_content {
+  opacity: 1 !important;
+  transform: translate(-25px, -235px) !important;
 }
 
-#listElem2.load {
-  animation: opacity_reveal 800ms ease 2400ms 1 normal forwards;
-}
-
-#listElem3 {
-  opacity: 0;
-  transform: translate(15px, 0px);
-}
-
-#listElem3.load {
-  animation: opacity_reveal 800ms ease 2700ms 1 normal forwards;
-}
-
-#listElem4 {
-  opacity: 0;
-  transform: translate(15px, 0px);
-}
-
-#listElem4.load {
-  animation: opacity_reveal 800ms ease 3000ms 1 normal forwards;
-}
-
-#listElem5 {
-  opacity: 0;
-  transform: translate(15px, 0px);
-}
-
-#listElem5.load {
-  animation: opacity_reveal 800ms ease 3300ms 1 normal forwards;
-}
-
-#aboutP2 {
-  opacity: 0;
-  transform: translate(5px, 0px);
-}
-
-#aboutP2.load {
-  animation: opacity_reveal 800ms ease 4000ms 1 normal forwards;
-}
 
 /* Non-Mobile Styles */
 @media screen and (min-width: 561px) {
@@ -307,64 +336,6 @@ hr {
   }
 }
 
-.headercont {
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-}
-
-.background {
-  margin: 0 auto;
-  height: 820px;
-  width: 100%;
-  background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/windy_hill.JPG");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-
-.greeting {
-  opacity: 0;
-  font-family: Adamina;
-  text-shadow: 5px 5px 10px darkolivegreen;
-  margin: 0 auto;
-  color: chartreuse;
-  padding-top: 100px;
-  padding-bottom: 50px;
-  transition: opacity 800ms ease-in;
-  -webkit-transition: opacity 800ms ease-in;
-  -moz-transition: opacity 800ms ease-in;
-  -o-transition: opacity 800ms ease-in;
-}
-
-.greeting.load {
-  opacity: 1;
-}
-
-.description {
-  opacity: 0;
-  font-size: 30px;
-  font-family: Adamina, sans-serif;
-  margin: 0 auto;
-  padding-bottom: 50px;
-  color: white;
-  transition: opacity 4s ease-in-out;
-  -webkit-transition: opacity 4s ease-in-out;
-  -moz-transition: opacity 4s ease-in-out;
-  -o-transition: opacity 4s ease-in-out;
-}
-
-.description.load {
-  opacity: 1;
-}
-
-.About-me-section {
-  font-family: Adamina, sans-serif;
-  font-size: 20px;
-  color: white;
-}
-
 #poetry_header,
 #nav_poetry_header {
   opacity: 0;
@@ -448,9 +419,6 @@ hr {
   opacity: 0;
   transform: translate(0px, 0px);
   transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
-  -moz-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
-  -webkit-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
-  -o-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
   font-size: 20px;
 }
 
@@ -777,8 +745,6 @@ hr {
   height: 70px;
   width: 70px;
   border-radius: 100%;
-  -webkit-transition: all .2s linear;
-  -o-transition: all .2s linear;
   transition: all .2s linear
 }
 
