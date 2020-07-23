@@ -379,17 +379,12 @@ $(document).ready(function () {
     changePoemColumns();
     $(".Poem").css("opacity", "1");
     $(".Poem").removeClass("absolute").addClass("relative");
-    $(".list-full").removeClass("col-4");
-    $(".list-full").addClass("col-xs-4");
-
   }
 
   //Change Poem Section to non-Mobile layout
   if (screenWidth >= 561) {
     changePoemColumns();
     $(".Poem").removeClass("relative").addClass("absolute");
-    $(".list-full").removeClass("col-xs-4");
-    $(".list-full").addClass("col-4");
   }
 
   //If user resizes window:
