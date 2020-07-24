@@ -89,7 +89,7 @@ $(document).ready(function () {
   $("header p").css("opacity", "1");
 
   // HTML widget containers ==================================================
-  var poem_div = document.getElementById("poemNav");
+  var poem_div = document.getElementsByClassName("poem_nav")[0];
   var poem_buttons = poem_div.getElementsByTagName("button");
 
   var project_widgets = ["#project_title",
@@ -110,6 +110,7 @@ $(document).ready(function () {
       // Widgets
       $(".about_section img").addClass("opacity_show");
       $(".about_section h3").addClass("slide_fade");
+      $(".about_section h4").addClass("slide_fade");
       $("#Weight_Lifting").addClass("load");
       $("#Book_Reading").addClass("load");
       $("#Developing").addClass("load");
@@ -120,7 +121,7 @@ $(document).ready(function () {
 
       // About section navbar button
       if (!document.getElementById("aboutBtn")) {
-        $("#aboutBtnCont").prepend("<a href='#aboutMeSection' class='nav-link' id='aboutBtn'>About</a>");
+        $("#aboutBtnCont").prepend("<a href='#About' class='nav-link' id='aboutBtn'>About</a>");
       }
     }
 
@@ -185,7 +186,7 @@ $(document).ready(function () {
   var timeout = false;
 
   // Poem navbar button function
-  $("#poemNav button").click(function () {
+  $(".poem_nav button").click(function () {
 
     // Timer for buffer of animation
     if (timeout === false) {
