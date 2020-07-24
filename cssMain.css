@@ -122,29 +122,10 @@ header p {
   padding-bottom: 25px;
 }
 
-.about_section img {
-  opacity: 0;
-  position: static;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 75px;
-  transition: opacity 800ms ease-in;
-}
-
-.about_section h4 {
+.about_section h3 {
   opacity: 0;
   transform: translate(15px, 0px);
   transition: opacity 400ms ease 800ms, transform 400ms ease 800ms;
-}
-
-.about_section:last-child {
-  font-size: 20px;
-}
-
-.about_section h4~p {
-  opacity: 0;
-  transform: translateX(5px);
-  transition: opacity 400ms ease 1200ms, transform 400ms ease 1200ms;
 }
 
 .activity_selector .row {
@@ -183,28 +164,42 @@ header p {
   animation: opacity_reveal 200ms ease 2700ms 1 forwards normal;
 }
 
-.activity_content img {
-  width: 400px;
-  height: 575px;
-  display: inline-block;
+#Education.load {
+  animation: opacity_reveal 200ms ease 3000ms 1 forwards normal;
 }
 
-.activity_content div {
+#Aspirations.load {
+  animation: opacity_reveal 200ms ease 3300ms 1 forwards normal;
+}
+
+
+.activity_content img {
+  width: 500px;
+  height: 575px;
+  display: block;
+  position: relative;
+  float: left;
+}
+
+.activity_content div.row {
   opacity: 0;
   position: absolute;
   margin: auto;
   display: block;
-  transform: translate(-25px, -50px);
+  transform: translate(-25px, 150px);
+  font-size: 25px;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .activity_content p {
-  transform: translateY(-55px);
+  display: inline;
+  position: relative;
 }
+
 
 .show_content {
   opacity: 1 !important;
-  transform: translate(-25px, -235px) !important;
+  transform: translate(-25px, 0px) !important;
 }
 
 

@@ -24,7 +24,7 @@ function getActive() {
 
 function getActiveContent() {
   var parent = document.getElementsByClassName("activity_content")[0];
-  var contents = parent.getElementsByTagName("div");
+  var contents = parent.getElementsByClassName("row");
   var active = null;
   Array.prototype.forEach.call(contents, (item) => {
     if ($("#" + item.id).css("opacity") == 1) {
@@ -109,13 +109,15 @@ $(document).ready(function () {
 
       // Widgets
       $(".about_section img").addClass("opacity_show");
-      $(".about_section h4").addClass("slide_fade");
-      $(".about_section h4~p").addClass("slide_fade");
+      $(".about_section h3").addClass("slide_fade");
       $("#Weight_Lifting").addClass("load");
       $("#Book_Reading").addClass("load");
       $("#Developing").addClass("load");
       $("#Music").addClass("load");
       $("#Yoga").addClass("load");
+      $("#Education").addClass("load");
+      $("#Aspirations").addClass("load");
+
       // About section navbar button
       if (!document.getElementById("aboutBtn")) {
         $("#aboutBtnCont").prepend("<a href='#aboutMeSection' class='nav-link' id='aboutBtn'>About</a>");
