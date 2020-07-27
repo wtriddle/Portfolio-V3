@@ -70,11 +70,7 @@ header div {
   margin: 0 auto;
   height: 100vh;
   width: 100%;
-<<<<<<< HEAD
   background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/windy_hill.JPG");
-=======
-  background-image: url("Images/Header_slider/windy_hill.JPG");
->>>>>>> tmp
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -193,18 +189,12 @@ header p {
 }
 
 .activity_content img {
-<<<<<<< HEAD
-  width: 35vw;
-  height: 55vh;
-  display: inline-block;
-=======
   width: 500px;
   height: 575px;
   display: block;
   position: relative;
   float: left;
   margin: auto;
->>>>>>> tmp
 }
 
 .activity_content div.row {
