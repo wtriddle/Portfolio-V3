@@ -163,7 +163,7 @@ $(document).ready(function () {
     }
 
     // Poetry Section loading
-    if (scroll_pos >= 2400) {
+    if (scroll_pos >= 3000) {
 
       // Widgets
       $("#nav_poetry_header").addClass("load");
