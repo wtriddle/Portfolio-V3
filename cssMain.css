@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Adamina');
-
 main {
   padding: 50px 0px 200px 0px;
-  font-family: Adamina, sans-serif;
+  font-family: sans-serif;
 }
 
 hr {
@@ -63,7 +61,6 @@ header {
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  position: relative;
 }
 
 header div {
@@ -192,24 +189,22 @@ header p {
   width: 500px;
   height: 575px;
   display: block;
-  position: relative;
   float: left;
   margin: auto;
 }
 
-.activity_content div.row {
+div.activity_content>div {
   opacity: 0;
   position: absolute;
   margin: auto;
   display: block;
   transform: translate(-25px, 150px);
-  font-size: 20px;
+  font-size: 25px;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .activity_content p {
   display: inline;
-  position: relative;
 }
 
 .activity_content hr {
@@ -219,9 +214,80 @@ header p {
 
 .show_content {
   opacity: 1 !important;
-  transform: translate(-25px, 0px) !important;
+  transform: translate(-25px, 25px) !important;
 }
 
+.quote_section {
+  height: 100%;
+}
+
+.inspiration_circle {
+  height: 14em;
+  width: 17.5em;
+  font-size: 25px;
+  background: radial-gradient(ellipse at center,
+      orange 0%,
+      orange 60%,
+      rgba(0, 128, 172, 0) 60.3%);
+}
+
+
+.inspiration_circle blockquote {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  padding-top: 3em;
+}
+
+.inspiration_circle blockquote p {
+  text-align: center;
+  padding: 0;
+  height: 100%;
+  line-height: 1.25;
+}
+
+.inspiration_circle blockquote::before {
+  content: "";
+  float: left;
+  height: 100%;
+  width: 50%;
+  --bite:
+    radial-gradient(farthest-side at var(--pos-x, 100%),
+      transparent 99%,
+      red);
+  shape-outside: var(--bite);
+}
+
+.inspiration_circle blockquote p::before {
+  content: "";
+  float: right;
+  --pos-x: 0;
+  height: 100%;
+  width: 50%;
+  --bite:
+    radial-gradient(farthest-side at var(--pos-x, 100%),
+      transparent 99%,
+      red);
+  shape-outside: var(--bite);
+}
+
+blockquote footer {
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+}
+
+.like_button {
+  font-size: 30px;
+  margin: auto;
+}
+
+.like_button button {
+  display: block;
+  font-size: 30px;
+  margin: auto;
+}
 
 /* Non-Mobile Styles */
 @media screen and (min-width: 561px) {
@@ -453,7 +519,6 @@ header p {
 }
 
 #project_section {
-  background-color: steelblue;
   padding-bottom: 100px;
   margin-bottom: 20px;
   clear: both;
@@ -462,35 +527,31 @@ header p {
 @keyframes project_image_load {
   0% {
     opacity: 0;
-    transform: translateY(20px);
-  }
-
-  50% {
-    transform: translateY(-45px);
+    transform: translateX(-60px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
 }
 
 .project_image {
   opacity: 0;
-  transform: translateY(-20px);
+  transform: translateX(-60px);
+  float: left;
   padding: 0px 15px 0px 15px;
   height: 85%;
   width: 85%;
-  position: relative;
   display: block;
 }
 
-
-.project_name {
-  font-size: 25px;
-  color: whitesmoke;
+.IFG_Section {
+  padding: 0px 50px 0px 50px;
+  font-size: 30px;
 }
+
 
 .slider_arrow {
   position: relative;
@@ -499,10 +560,6 @@ header p {
   padding-bottom: 20px;
 }
 
-.card_bg {
-  background-color: steelblue;
-  opacity: 1;
-}
 
 .arrow_IFG {
   border: solid orange;
@@ -519,6 +576,15 @@ header p {
   display: inline-block;
   padding: 10px;
   transform: translateX(0) rotate(-45deg);
+  opacity: 1;
+}
+
+.arrow_like {
+  border: solid orange;
+  border-width: 0 14px 14px 0;
+  display: inline-block;
+  padding: 10px;
+  transform: translateX(0) rotate(-135deg);
   opacity: 1;
 }
 
@@ -562,9 +628,6 @@ header p {
 }
 
 .project_description {
-  border: solid whitesmoke;
-  color: whitesmoke;
-  border-width: 1px;
   margin-top: 15px;
   transform: translateY(20px);
   opacity: 0;
@@ -572,6 +635,11 @@ header p {
 
 .project_full {
   padding-bottom: 20px;
+}
+
+#col_padding {
+  margin: 0;
+  padding: 0;
 }
 
 #IFG_project {
@@ -587,11 +655,11 @@ header p {
 }
 
 #mTask_project.load {
-  animation: opacity_reveal 0.25s ease 5s 1 forwards normal;
+  animation: opacity_reveal 0.25s ease 2.5s 1 forwards normal;
 }
 
 #IFG_project.load {
-  animation: opacity_reveal 0.25s ease 5s 1 forwards normal;
+  animation: opacity_reveal 0.25s ease 2.5s 1 forwards normal;
 }
 
 #project_title,
@@ -609,11 +677,11 @@ header p {
 }
 
 #IFG_image.load {
-  animation: project_image_load 1.5s ease-in-out 500ms 1 forwards normal;
+  animation: project_image_load 0.5s ease-in-out 500ms 1 forwards normal;
 }
 
 #mTask_image.load {
-  animation: project_image_load 1.5s ease-in-out 2s 1 forwards normal;
+  animation: project_image_load 0.5s ease-in-out 500ms 1 forwards normal;
 }
 
 #project_title.load {
@@ -621,19 +689,19 @@ header p {
 }
 
 #IFG_name.load {
-  animation: opacity_reveal 0.5s ease 1.5s 1 forwards normal;
+  animation: opacity_reveal 0.5s ease 1s 1 forwards normal;
 }
 
 #mTask_name.load {
-  animation: opacity_reveal 0.5s ease 3s 1 forwards normal;
+  animation: opacity_reveal 0.5s ease 1s 1 forwards normal;
 }
 
 #mTask_description.load {
-  animation: opacity_reveal 0.25s ease 4s 1 forwards normal;
+  animation: opacity_reveal 0.25s ease 1.5s 1 forwards normal;
 }
 
 #IFG_description.load {
-  animation: opacity_reveal 0.25s ease 4s 1 forwards normal;
+  animation: opacity_reveal 0.25s ease 1.5s 1 forwards normal;
 }
 
 
@@ -650,6 +718,12 @@ header p {
 
 }
 
+.arrow_wrapper {
+  display: block;
+  opacity: 1;
+  transform: translateY(25px);
+}
+
 .arrow_wrapper_1 {
   display: inline-block;
   opacity: 0;
@@ -657,7 +731,7 @@ header p {
 }
 
 .arrow_wrapper_1.load {
-  animation: load_arrow 1s ease-in-out 6s 1 forwards normal;
+  animation: load_arrow 1s ease-in-out 3s 1 forwards normal;
 }
 
 .arrow_wrapper_2 {
@@ -667,7 +741,7 @@ header p {
 }
 
 .arrow_wrapper_2.load {
-  animation: load_arrow 1s ease-in-out 6.2s 1 forwards normal;
+  animation: load_arrow 1s ease-in-out 3.2s 1 forwards normal;
 }
 
 .arrow_wrapper_3 {
@@ -677,7 +751,7 @@ header p {
 }
 
 .arrow_wrapper_3.load {
-  animation: load_arrow 1s ease-in-out 6.4s 1 forwards normal;
+  animation: load_arrow 1s ease-in-out 3.4s 1 forwards normal;
 }
 
 .arrow_wrapper_4 {
@@ -687,7 +761,7 @@ header p {
 }
 
 .arrow_wrapper_4.load {
-  animation: load_arrow 1s ease-in-out 6.6s 1 forwards normal;
+  animation: load_arrow 1s ease-in-out 3s 1 forwards normal;
 }
 
 .arrow_wrapper_5 {
@@ -697,7 +771,7 @@ header p {
 }
 
 .arrow_wrapper_5.load {
-  animation: load_arrow 1s ease-in-out 6.8s 1 forwards normal;
+  animation: load_arrow 1s ease-in-out 3.2s 1 forwards normal;
 }
 
 .arrow_wrapper_6 {
@@ -707,7 +781,7 @@ header p {
 }
 
 .arrow_wrapper_6.load {
-  animation: load_arrow 1s ease-in-out 7s 1 forwards normal;
+  animation: load_arrow 1s ease-in-out 3.4s 1 forwards normal;
 }
 
 #footer {
@@ -848,6 +922,5 @@ footer h3 {
   padding: 20px 0px 20px 0px;
   margin: auto;
   display: block;
-  position: relative;
   height: 45%;
 }

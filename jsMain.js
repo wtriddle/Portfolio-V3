@@ -24,7 +24,7 @@ function getActive() {
 
 function getActiveContent() {
   var parent = document.getElementsByClassName("activity_content")[0];
-  var contents = parent.getElementsByClassName("row");
+  var contents = parent.childNodes;
   var active = null;
   Array.prototype.forEach.call(contents, (item) => {
     if ($("#" + item.id).css("opacity") == 1) {
@@ -92,8 +92,11 @@ $(document).ready(function () {
   var poem_div = document.getElementsByClassName("poem_nav")[0];
   var poem_buttons = poem_div.getElementsByTagName("button");
 
-  var project_widgets = ["#project_title",
-    "#IFG_image", "#IFG_name", "#IFG_description", "#IFG_project",
+  var IFG_widgets = ["#project_title",
+    "#IFG_image", "#IFG_name", "#IFG_description", "#IFG_project"
+  ]
+
+  var mTask_widgets = [
     "#mTask_image", "#mTask_name", "#mTask_description", "#mTask_project",
   ]
   // Containers ==============================================================
@@ -105,7 +108,7 @@ $(document).ready(function () {
     var scroll_pos = $(this).scrollTop();
 
     // About me section loading
-    if (scroll_pos >= 600) {
+    if (scroll_pos >= 350) {
 
       // Widgets
       $(".about_section img").addClass("opacity_show");
@@ -128,20 +131,34 @@ $(document).ready(function () {
     // Project Section loading
     if (scroll_pos >= 1500) {
 
-      // Widgets
-      Array.prototype.forEach.call(project_widgets, (item) => {
+      // IFG widgets
+      Array.prototype.forEach.call(IFG_widgets, (item) => {
         $(item).addClass("load");
       });
 
-      // Arrows
+      // IFG arrows
       var i;
-      for (i = 1; i < 7; ++i) {
+      for (i = 1; i < 4; ++i) {
         $(".arrow_wrapper_" + i).addClass("load");
       }
 
       // Project section navbar button
       if (!document.getElementById("projectBtn")) {
         $("#projectBtnCont").append("<a href='#project_section' class='nav-link' id='projectBtn'>Projects</a>");
+      }
+    }
+
+    if (scroll_pos >= 2100) {
+
+      // IFG widgets
+      Array.prototype.forEach.call(mTask_widgets, (item) => {
+        $(item).addClass("load");
+      });
+
+      // IFG arrows
+      var i;
+      for (i = 4; i < 7; ++i) {
+        $(".arrow_wrapper_" + i).addClass("load");
       }
     }
 
