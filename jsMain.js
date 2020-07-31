@@ -1,23 +1,28 @@
 var mobile = false; //Determines if the webpage will use Mobile or Non-Mobile functionality.
 
 //Returns the id string of the currently visible Poem, for both Mobile and Non-mobile
-function getActive() {
-  'use strict';
+function getActive(poems_obj) {
+  /*
+  Takes DOM button list in poetry section. Maps button id to poem contianer id.
+  Returns string of button id for showing poem. Null if nothing is showing
+  */
+  var active = null;
+
   if (mobile === false) {
-    for (var poemNumber = 0; poemNumber < 11; poemNumber++) {
-      var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
-      if ($("#" + poemName).css("opacity") == 1) {
-        return poemName;
+    Array.prototype.forEach.call(poems_obj, (item) => {
+      if ($("#" + item.id + "poem").css("opacity") == 1) {
+        active = item.id;
       }
-    }
+    });
+    return active;
   }
   if (mobile === true) {
-    for (var poemNumber = 0; poemNumber < 11; poemNumber++) {
-      var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
-      if ($("#" + poemName).css("display") == "block") {
-        return poemName;
+    Array.prototype.forEach.call(poems_obj, (item) => {
+      if ($("#" + item.id + "poem").css("display") == "block") {
+        active = item.id;
       }
-    }
+    });
+    return active;
   }
 
 }
@@ -166,15 +171,15 @@ $(document).ready(function () {
     if (scroll_pos >= 3000) {
 
       // Widgets
-      $("#nav_poetry_header").addClass("load");
-      $("#poetry_header").addClass("load");
+      $("#poetry_section h1").addClass("opacity_show");
+      $("#poetry_section h2").addClass("opacity_show");
       Array.prototype.forEach.call(poem_buttons, (item) => {
         $("#" + item.id).addClass("load_poem");
       });
 
       // Poetry section navbar button
       if (!document.getElementById("poetryBtn")) {
-        $("#poetryBtnCont").append("<a href='#poetrySection' class='nav-link' id='poetryBtn'>Poetry</a>");
+        $("#poetryBtnCont").append("<a href='#poetry_section' class='nav-link' id='poetryBtn'>Poetry</a>");
       }
 
       // Footer section navbar button
@@ -210,7 +215,7 @@ $(document).ready(function () {
 
       timeout = true;
       let selected_poem = this.id + "poem";
-      let poem_to_hide = getActive();
+      let poem_to_hide = getActive(poem_buttons) + "poem";
 
       if (mobile === false) {
         $("#" + poem_to_hide).toggleClass("show_poem");

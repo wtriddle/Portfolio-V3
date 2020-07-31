@@ -22,16 +22,32 @@
   font-family: 'Roboto-Italic';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Regular'), local('Allan-Regular'),
-        url('fonts/Roboto-LightItalic.ttf') format('truetype');
+  src: local('Roboto Regular'), local('Roboto-Regular'),
+    url('fonts/Roboto-LightItalic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Roboto-Header';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Regular'), local('Allan-Regular'),
-        url('fonts/Roboto-Light.ttf') format('truetype');
+  src: local('Roboto Regular'), local('Roboto-Regular'),
+    url('fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Graffiti-1';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Graffiti-1 Regular'), local('Graffiti-1-Regular'),
+    url('fonts/Searfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Graffiti-2';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Graffiti-2 Regular'), local('Graffiti-2-Regular'),
+    url('fonts/PhillySans.otf') format('opentype');
 }
 
 * {
@@ -96,8 +112,17 @@ hr {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
+.pre-load {
+  background: url("Images/Header_slider/El_Corte.JPG") no-repeat -9999px -9999px,
+    url("Images/Header_slider/Ice_House.JPG") no-repeat -9999px -9999px,
+    url("Images/Header_slider/Russ_Ridge.JPG") no-repeat -9999px -9999px,
+    url("Images/Header_slider/Lake_Tahoe.JPG") no-repeat -9999px -9999px,
+    url("Images/Header_slider/Windy_Hill.JPG") no-repeat -9999px -9999px,
+    url("Images/Header_slider/Mt_Wilson.JPG") no-repeat -9999px -9999px;
+}
 
 header {
+  display: block;
   height: 100%;
   width: 100%;
   margin: 0 auto;
@@ -108,26 +133,38 @@ header div {
   margin: 0 auto;
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/windy_hill.JPG");
+  background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/Ice_House.JPG");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   backface-visibility: hidden;
-  animation: background_slideshow 30s ease-in-out infinite 0s;
+  animation: background_slideshow 30s linear infinite 0s;
 }
 
 @keyframes background_slideshow {
-  0% {}
+  0% {
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/Ice_House.JPG");
+  }
 
-  20% {}
+  20% {
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/El_Corte.JPG");
+  }
 
-  40% {}
+  40% {
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/Lake_Tahoe.JPG");
+  }
 
-  60% {}
+  60% {
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/Mt_Wilson.JPG");
+  }
 
-  80% {}
+  80% {
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/Russ_Ridge.JPG");
+  }
 
-  100% {}
+  100% {
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/Windy_Hill.JPG");
+  }
 }
 
 header h1 {
@@ -140,7 +177,7 @@ header h1 {
   transition: opacity 800ms ease-in;
 }
 
-header p {
+header div .Greet_Message {
   opacity: 0;
   font-size: 30px;
   margin: 0 auto;
@@ -148,6 +185,47 @@ header p {
   color: white;
   transition: opacity 4s ease-in-out;
 }
+
+header div .Fancy_Text {
+  opacity: 1;
+  font-size: 150px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  color: rgb(30, 116, 187);
+  font-family: "Graffiti-2";
+}
+
+@keyframes text_slideshow {
+  0% {
+    content: "Ice House Caynon"
+  }
+
+  20% {
+    content: "El Corte De Madera"
+  }
+
+  40% {
+    content: "Lake Tahoe"
+  }
+
+  60% {
+    content: "Mt Wilson"
+  }
+
+  80% {
+    content: "Russian Ridge"
+  }
+
+  100% {
+    content: "Windy Hill"
+  }
+}
+
+header div .Fancy_Text::after {
+  content: "";
+  animation: text_slideshow 30s linear infinite 0s;
+}
+
 
 .opacity_show {
   opacity: 1 !important;
@@ -237,6 +315,7 @@ header p {
 
 .activity_content h4 {
   font-family: 'Roboto-Italic';
+  color: orange;
 }
 
 div.activity_content>div {
@@ -333,35 +412,7 @@ blockquote {
 
 /* Non-Mobile Styles */
 @media screen and (min-width: 561px) {
-  #GGpoem {
-    display: block !important;
-  }
-
-  #TDWBGpoem {
-    display: block !important;
-  }
-
-  #GOALSpoem {
-    display: block !important;
-  }
-
   #BDpoem {
-    display: block !important;
-  }
-
-  #LTTGpoem {
-    display: block !important;
-  }
-
-  #AMBIGUITYpoem {
-    display: block !important;
-  }
-
-  #TTpoem {
-    display: block !important;
-  }
-
-  #COMFORTpoem {
     display: block !important;
   }
 
@@ -370,10 +421,6 @@ blockquote {
   }
 
   #CSpoem {
-    display: block !important;
-  }
-
-  #INFpoem {
     display: block !important;
   }
 
@@ -384,43 +431,7 @@ blockquote {
 
 /* Mobile Styles */
 @media screen and (max-width: 560px) {
-
-  #GGpoem {
-    margin: auto;
-    display: none;
-  }
-
-  #TDWBGpoem {
-    margin: auto;
-    display: none;
-  }
-
-  #GOALSpoem {
-    margin: auto;
-    display: none;
-  }
-
   #BDpoem {
-    margin: auto;
-    display: none;
-  }
-
-  #LTTGpoem {
-    margin: auto;
-    display: none;
-  }
-
-  #AMBIGUITYpoem {
-    margin: auto;
-    display: none;
-  }
-
-  #TTpoem {
-    margin: auto;
-    display: none;
-  }
-
-  #COMFORTpoem {
     margin: auto;
     display: none;
   }
@@ -431,11 +442,6 @@ blockquote {
   }
 
   #CSpoem {
-    margin: auto;
-    display: none;
-  }
-
-  #INFpoem {
     margin: auto;
     display: none;
   }
@@ -455,83 +461,56 @@ blockquote {
   }
 }
 
-#poetrySection h2 {
+#poetry_section h1 {
   font-family: "Roboto-Header";
+  opacity: 0;
+  transition: opacity 400ms ease;
 }
 
-#poetrySection h3 {
+#poetry_section h2 {
+  font-family: "Roboto-Italic";
+  opacity: 0;
+  transition: opacity 400ms ease 500ms;
+}
+
+#poetry_section h3 {
+  color: orange;
   font-family: "Roboto-Italic";
 }
 
-#poetry_header,
-#nav_poetry_header {
-  opacity: 0;
-}
-
-#poetry_header.load {
-  animation: opacity_reveal 400ms ease-in 0ms 1 normal forwards;
-}
-
-#nav_poetry_header.load {
-  animation: opacity_reveal 400ms ease 500ms 1 normal forwards;
-}
-
 .poem_nav .row {
-  margin: 10px 0px 10px 0px;
+  margin: 25px 0px 25px 0px;
 }
 
 .poem_nav button {
   opacity: 0;
   margin: auto;
   width: 80%;
+  font-size: 22px;
   transform: translate(0px, 10px);
 }
 
-#GG.load_poem {
+#BD.load_poem {
   animation: opacity_reveal 200ms ease 1000ms 1 normal forwards;
 }
 
-#TDWBG.load_poem {
+#TM.load_poem {
   animation: opacity_reveal 200ms ease 1200ms 1 normal forwards;
 }
 
-#GOALS.load_poem {
+#CS.load_poem {
   animation: opacity_reveal 200ms ease 1400ms 1 normal forwards;
 }
 
-#BD.load_poem {
+#HV.load_poem {
   animation: opacity_reveal 200ms ease 1600ms 1 normal forwards;
 }
 
-#LTTG.load_poem {
+#UPS.load_poem {
   animation: opacity_reveal 200ms ease 1800ms 1 normal forwards;
 }
 
-#AMBIGUITY.load_poem {
-  animation: opacity_reveal 200ms ease 2000ms 1 normal forwards;
-}
-
-#TT.load_poem {
-  animation: opacity_reveal 200ms ease 2200ms 1 normal forwards;
-}
-
-#COMFORT.load_poem {
-  animation: opacity_reveal 200ms ease 2400ms 1 normal forwards;
-}
-
-#TM.load_poem {
-  animation: opacity_reveal 200ms ease 2600ms 1 normal forwards;
-}
-
-#CS.load_poem {
-  animation: opacity_reveal 200ms ease 2800ms 1 normal forwards;
-}
-
-#INF.load_poem {
-  animation: opacity_reveal 200ms ease 3000ms 1 normal forwards;
-}
-
-.list-full {
+#poetry_section .row .col-4 {
   width: 100%;
   height: 100%;
   margin: 0px;
@@ -546,6 +525,9 @@ blockquote {
   opacity: 0;
   transform: translate(0px, 0px);
   transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.Poem p {
   font-size: 20px;
 }
 
@@ -617,6 +599,7 @@ blockquote {
 }
 
 #project_section h3 {
+  color: orange;
   font-family: 'Roboto-Italic';
 }
 
@@ -934,13 +917,13 @@ blockquote {
   }
 }
 
-footer button {
+#footer button {
   font-size: 40px;
 }
 
 
-footer h3 {
-  font-size: 50px;
+#footer h3 {
+  font-size: 150px;
   font-family: 'Allan';
 }
 
