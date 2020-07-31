@@ -197,22 +197,27 @@ header div .Fancy_Text {
 
 @keyframes text_slideshow {
   0% {
+    color: darkcyan;
     content: "Ice House Caynon"
   }
 
   20% {
+    color: rgb(128, 197, 24);
     content: "El Corte De Madera"
   }
 
   40% {
+    color: darkolivegreen;
     content: "Lake Tahoe"
   }
 
   60% {
+    color: darkcyan;
     content: "Mt Wilson"
   }
 
   80% {
+    color: darkolivegreen;
     content: "Russian Ridge"
   }
 
