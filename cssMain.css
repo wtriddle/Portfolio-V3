@@ -417,9 +417,6 @@ header div .Fancy_Text::after {
   color: orange;
 }
 
-
-
-
 .about_section {
   padding-top: 25px;
   padding-bottom: 100px;
@@ -496,7 +493,6 @@ div.activity_content>div {
   margin: auto;
   transform: translate(-25px, 150px);
   font-size: 25px;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .activity_content p {
@@ -581,57 +577,6 @@ blockquote {
 }
 
 
-/* Non-Mobile Styles */
-@media screen and (min-width: 561px) {
-  #BDpoem {
-    display: block !important;
-  }
-
-  #TMpoem {
-    display: block !important;
-  }
-
-  #CSpoem {
-    display: block !important;
-  }
-
-  #holder {
-    display: block;
-  }
-}
-
-/* Mobile Styles */
-@media screen and (max-width: 560px) {
-  #BDpoem {
-    margin: auto;
-    display: none;
-  }
-
-  #TMpoem {
-    margin: auto;
-    display: none;
-  }
-
-  #CSpoem {
-    margin: auto;
-    display: none;
-  }
-
-  main {
-    padding: 0px 0px 0px 0px;
-  }
-
-  .navbar {
-    font-size: 30px;
-    transform: translate(0px, 0px);
-    transition: transform 900ms ease;
-  }
-
-  .navToggle {
-    display: none;
-  }
-}
-
 #poetry_section h1 {
   font-family: "Roboto-Header";
   opacity: 0;
@@ -649,9 +594,6 @@ blockquote {
   font-family: "Roboto-Italic";
 }
 
-.poem_nav .row {
-  margin: 25px 0px 25px 0px;
-}
 
 .poem_nav button {
   opacity: 0;
@@ -688,10 +630,6 @@ blockquote {
   padding: 0px;
 }
 
-.poemsNav {
-  max-height: 600px;
-}
-
 .Poem {
   opacity: 0;
   transform: translate(0px, 0px);
@@ -716,6 +654,59 @@ blockquote {
   transform: translate(50px, 0px);
 }
 
+.Arrow_Poetry_Nav {
+  height: 50px;
+  color: white;
+}
+
+.Arrow_Poetry_Nav div,
+.Arrow_Poetry_Nav p {
+  display: inline-block;
+}
+
+.Arrow_Poetry_Nav p.BD::after {
+  content: "Brighter Day";
+  font-size: 40px;
+  border: black 3px;
+  color: orange;
+}
+
+.Arrow_Poetry_Nav p.TM::after {
+  content: "Tell Me";
+  font-size: 40px;
+  border: black 3px;
+  color: orange;
+}
+
+.Arrow_Poetry_Nav p.CS::after {
+  content: "Clear Sight";
+  font-size: 40px;
+  border: black 3px;
+  color: orange;
+}
+
+.Arrow_Poetry_Nav p.HV::after {
+  content: "Hover";
+  font-size: 40px;
+  border: black 3px;
+  color: orange;
+}
+
+.Arrow_Poetry_Nav p.UPS::after {
+  content: "On the Upside";
+  font-size: 40px;
+  border: black 3px;
+  color: orange;
+}
+
+.Arrow_Poetry_Nav p.Pen::after {
+  content: "Pending poem";
+  font-size: 40px;
+  border: black 3px;
+  color: orange;
+}
+
+
 .footerP {
   font-size: 25px;
   padding: 20px 0px 20px 0px;
@@ -731,18 +722,6 @@ blockquote {
   0% {
     opacity: 0;
     transform: translateX(80px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(20px);
-  }
-}
-
-@keyframes IFG_image_load {
-  0% {
-    opacity: 0;
-    transform: translateX(-40);
   }
 
   100% {
@@ -1027,7 +1006,8 @@ blockquote {
   height: 70px;
   width: 70px;
   border-radius: 100%;
-  transition: all .2s linear
+  transition: all .2s linear;
+  margin: auto;
 }
 
 .social-icons a:active,
@@ -1060,23 +1040,6 @@ blockquote {
   padding-bottom: 6px;
 }
 
-
-#email_message_box {
-  border-radius: 5%;
-  text-align: left;
-  padding-left: 5px;
-  padding-top: 5px;
-  height: 27vh;
-  width: 400px;
-  resize: none;
-  display: block;
-}
-
-@media screen and (max-width:1096px) {
-  #email_message_box {
-    width: 300px;
-  }
-}
 
 #footer button {
   font-size: 40px;

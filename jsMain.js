@@ -1,5 +1,3 @@
-var mobile = false; //Determines if the webpage will use Mobile or Non-Mobile functionality.
-
 //Returns the id string of the currently visible Poem, for both Mobile and Non-mobile
 function getActive(poems_obj) {
   /*
@@ -7,8 +5,8 @@ function getActive(poems_obj) {
   Returns string of button id for showing poem. Null if nothing is showing
   */
   var active = null;
-
-  if (mobile === false) {
+  var windowWidth = $(window).width();
+  if (windowWidth > 1200) {
     Array.prototype.forEach.call(poems_obj, (item) => {
       if ($("#" + item.id + "poem").css("opacity") == 1) {
         active = item.id;
@@ -16,7 +14,7 @@ function getActive(poems_obj) {
     });
     return active;
   }
-  if (mobile === true) {
+  if (windowWidth <= 1200) {
     Array.prototype.forEach.call(poems_obj, (item) => {
       if ($("#" + item.id + "poem").css("display") == "block") {
         active = item.id;
@@ -51,40 +49,14 @@ function getActiveContent() {
 
 }
 
-function addData(chart, label, data) {
-  chart.data.labels.push(label);
-  chart.data.datasets.forEach((dataset) => {
-    dataset.data.push(data);
-  });
-  chart.update();
-}
-
-
-//Re-shapes Poem section when changing from Mobile to Non-Mobile, vice versa
-function changePoemColumns() {
-  'use strict';
-  if (mobile === true) {
-    for (var poemNumber = 0; poemNumber < 5; poemNumber++) {
-      var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
-      $("#" + poemName).removeClass("col-8").addClass("col-12");
-    }
-  }
-  if (mobile === false) {
-    for (var poemNumber = 0; poemNumber < 5; poemNumber++) {
-      var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
-      $("#" + poemName).removeClass("col-12").addClass("col-8");
-    }
-  }
-}
-
 //When resizing the webpage down to mobile, this function will take the active showing poem from the non-mobile webpage and center it with all the other poems.
 function repositionActiveMobile() {
   'use strict';
 
-  for (var poemNumber = 0; poemNumber < 10; poemNumber++) {
+  for (var poemNumber = 0; poemNumber < 5; poemNumber++) {
     var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
     if ($("#" + poemName).css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
-      $("#" + poemName).toggleClass("show");
+      $("#" + poemName).toggleClass("show_poem");
       break;
     }
   }
@@ -123,7 +95,6 @@ $(document).ready(function () {
     if (scroll_pos >= 350) {
 
       // Widgets
-      $(".about_section img").addClass("opacity_show");
       $(".about_section h3").addClass("slide_fade");
       $(".about_section h4").addClass("slide_fade");
       $("#Weight-Lifting").addClass("load");
@@ -196,16 +167,6 @@ $(document).ready(function () {
     }
   });
 
-
-  var screenWidth = $(window).width();
-
-  if (screenWidth >= 600) {
-    mobile = false;
-  } else {
-    mobile = true;
-  }
-
-
   $(".navToggle").click(function () {
     $(".navbar").toggleClass("show");
     // Toggler style
@@ -223,20 +184,19 @@ $(document).ready(function () {
       timeout = true;
       let selected_poem = this.id + "poem";
       let poem_to_hide = getActive(poem_buttons) + "poem";
-
-      if (mobile === false) {
+      var windowWidth = $(window).width();
+      if (windowWidth > 1200) {
         $("#" + poem_to_hide).toggleClass("show_poem");
         $("#" + selected_poem).toggleClass("show_poem");
       }
 
-      if (mobile === true) {
+      if (windowWidth <= 1200) {
         if (poem_to_hide === undefined) {
           $("#" + selected_poem).css("display", "block");
         } else {
           $("#" + poem_to_hide).css("display", "none");
           $("#" + selected_poem).css("display", "block");
         }
-        repositionActiveMobile();
 
       }
       setTimeout(() => {
@@ -262,7 +222,8 @@ $(document).ready(function () {
 
   //Nav bar collapses if button on navbar is used on mobile
   $("nav li").on('click', () => {
-    if (mobile === true) {
+    var windowWidth = $(window).width();
+    if (windowWidth <= 560) {
       $("nav button").click();
     }
   });
@@ -447,6 +408,67 @@ $(document).ready(function () {
     }
   });
 
+
+  var poems = ["BD", "TM", "CS", "HV", "UPS"];
+  var poem_counter = 0;
+  //Activity Right Arrow 
+  $(".Arrow_Poetry_Nav div.arrow_right").on('click', function () {
+    repositionActiveMobile();
+    if (timeout === false) {
+
+      // Shift activity content right
+      var active = getActive(poem_buttons);
+      poem_counter++;
+      if (poem_counter == 5) {
+        poem_counter = 0;
+      }
+      var activate = poems[poem_counter];
+
+      $(".Arrow_Poetry_Nav p").addClass(activate);
+      $(".Arrow_Poetry_Nav p").removeClass(active);
+
+      $("#" + activate + "poem").css("display", "block");
+      $("#" + active + "poem").css("display", "none");
+
+      // Animate arrow and add timeout
+      timeout = true;
+      this.classList.toggle("arrow_clicked");
+      setTimeout(() => {
+        this.classList.toggle("arrow_clicked");
+        timeout = false;
+      }, 550);
+    }
+  });
+
+  //Activity Left Arrow 
+  $(".Arrow_Poetry_Nav div.arrow_left").on('click', function () {
+    repositionActiveMobile();
+    if (timeout === false) {
+
+      // Shift activity content left
+      var active = getActive(poem_buttons);
+      poem_counter--;
+      if (poem_counter == -1) {
+        poem_counter = 4;
+      }
+      var activate = poems[poem_counter];
+
+      $(".Arrow_Poetry_Nav p").addClass(activate);
+      $(".Arrow_Poetry_Nav p").removeClass(active);
+
+      $("#" + activate + "poem").css("display", "block");
+      $("#" + active + "poem").css("display", "none");
+
+      // Animate arrow and add timeout
+      timeout = true;
+      this.classList.toggle("arrow_clicked");
+      setTimeout(() => {
+        this.classList.toggle("arrow_clicked");
+        timeout = false;
+      }, 550);
+    }
+  });
+
   //Soundcloud Button
   $(".soundcloud").on('click', () => {
     window.location.href = "https://soundcloud.com/furryman654";
@@ -473,54 +495,24 @@ $(document).ready(function () {
   });
 
   //Change Poem Section to Mobile Layout
-  if (screenWidth < 560) {
-    changePoemColumns();
+  if (screenWidth < 1200) {
     $(".Poem").css("opacity", "1");
     $(".Poem").removeClass("absolute").addClass("relative");
   }
 
   //Change Poem Section to non-Mobile layout
-  if (screenWidth >= 561) {
-    changePoemColumns();
+  if (screenWidth >= 1200) {
     $(".Poem").removeClass("relative").addClass("absolute");
   }
 
   //If user resizes window:
   $(window).resize(() => {
     var windowWidth = $(window).width();
-    if (windowWidth < 560) {
-      mobile = true; //If screen is 599px or less, activate mobile
-    } else if (windowWidth >= 561) {
-      mobile = false; //If screen is 600px or more, de-activate mobile, reactive non-mobile
-    }
     delay(() => {
-      //Mobile change for font
-      if (windowWidth < 996) {
-        $("h1").removeClass("display-1");
-        $("h1").addClass("display-4");
-      }
-      //Non-mobile change for font
-      if (windowWidth > 996) {
-        $("h1").removeClass("display-4");
-        $("h1").addClass("display-1");
-      }
       //Poem Section Mobile for resize
-      if (windowWidth < 560) {
-        changePoemColumns();
-        $(".Poem").css("opacity", "1");
-        $(".Poem").removeClass("absolute").addClass("relative");
-        $(".list-full").removeClass("col-4");
-        $(".list-full").addClass("col-xs-4");
-      }
-      //Poem Section Non-Mobile for resize
-      if (windowWidth >= 561) {
-        changePoemColumns();
-        $(".Poem").css("opacity", "0");
-        $(".Poem").removeClass("relative").addClass("absolute");
-        $(".list-full").removeClass("col-xs-4");
-        $(".list-full").addClass("col-4");
-      }
+      repositionActiveMobile();
 
+      // Content Reposition from mobile to non-mobile
       if (windowWidth >= 1238) {
         var content = ["Book-Reading-Content", "Developing-Content", "Music-Content", "Weight-Lifting-Content", "Yoga-Content", "Education-Content", "Aspirations-Content"];
         Array.prototype.forEach.call(content, (item) => {
@@ -528,6 +520,7 @@ $(document).ready(function () {
         });
       }
 
+      // Content Reposition from non-mobile to mobile
       if (windowWidth < 1238) {
         var active = getActiveContent();
         var content = ["Book-Reading-Content", "Developing-Content", "Music-Content", "Weight-Lifting-Content", "Yoga-Content", "Education-Content", "Aspirations-Content"];

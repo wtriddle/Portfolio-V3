@@ -22,6 +22,13 @@
     .activity_content img {
         float: left;
     }
+
+    #poetry_section h1::after {
+        content: "How Do I Express Myself?";
+        font-size: 100px;
+    }
+
+
 }
 
 @media screen and (max-width: 768px) {
@@ -34,11 +41,33 @@
         float: none;
     }
 
+    #poetry_section h1::after {
+        content: "What Do I Feel?";
+        font-size: 75px;
+        line-height: 0.75;
+    }
+
+
+
+}
+
+@media screen and (min-width: 1400px) {
+    #project_title {
+        font-size: 75px;
+    }
+
+    .project_description {
+        font-size: 27.5px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
     header div .Fancy_Text {
         font-size: 150px;
+    }
+
+    div.activity_content>div {
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     }
 
     #mTask_Mobile {
@@ -117,9 +146,79 @@
         font-size: 35px;
     }
 
+    #BDpoem {
+        display: block !important;
+    }
+
+    #TMpoem {
+        display: block !important;
+    }
+
+    #CSpoem {
+        display: block !important;
+    }
+
+    #HVpoem {
+        display: block !important;
+    }
+
+    #UPSpoem {
+        display: block !important;
+    }
+
+    #holder {
+        display: block;
+    }
+
+    .Poem {
+        position: absolute;
+    }
+
+    .poem_nav button {
+        display: block;
+    }
+
+    .poem_nav div.Arrow_Poetry_Nav {
+        display: none;
+    }
+
+    .Poem h3 {
+        display: block;
+    }
+
+    .Poem {
+        opacity: 0;
+    }
+
+    .poem_nav .row {
+        margin: 25px 0px 25px 0px;
+    }
+
+
 }
 
 @media screen and (max-width: 1200px) {
+
+    .poem_nav button {
+        display: none;
+    }
+
+    .poem_nav .row {
+        margin: 0;
+    }
+
+    .Poem {
+        opacity: 1;
+    }
+
+    .Poem h3 {
+        display: none;
+    }
+
+    .poem_nav div.Arrow_Poetry_Nav {
+        display: block;
+    }
+
     header div .Fancy_Text {
         font-size: 90px;
         line-height: 1;
@@ -174,6 +273,10 @@
 
     .activity_selector .Arrow_Nav {
         display: block;
+    }
+
+    div.activity_content>div {
+        transition: none;
     }
 
     #Book-Reading-Content {
@@ -234,6 +337,54 @@
 
     #project_title {
         font-size: 75px;
+    }
+
+    .Poem {
+        position: relative;
+    }
+
+    #BDpoem {
+        margin: auto;
+        display: none;
+        position: relative;
+    }
+
+    #TMpoem {
+        margin: auto;
+        display: none;
+        position: relative;
+    }
+
+    #CSpoem {
+        margin: auto;
+        display: none;
+        position: relative;
+    }
+
+    #HVpoem {
+        margin: auto;
+        display: none;
+        position: relative;
+    }
+
+    #UPSpoem {
+        display: none;
+        margin: auto;
+        position: relative;
+    }
+
+    main {
+        padding: 0px 0px 0px 0px;
+    }
+
+    .navbar {
+        font-size: 30px;
+        transform: translate(0px, 0px);
+        transition: transform 900ms ease;
+    }
+
+    .navToggle {
+        display: none;
     }
 
 }
