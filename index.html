@@ -16,6 +16,7 @@
 
   <!-- Custom CSS/JS -->
   <link type="text/css" rel="stylesheet" href="cssMain.css">
+  <link type="text/css" rel="stylesheet" href="css_mobile.css">
   <script src="jsMain.js"></script>
 
   <!-- Meta Data -->
@@ -67,9 +68,7 @@
   <!-- Image/Title Section -->
   <header class="pre-load">
     <div class="text-center">
-      <h1 class="display-1">Greetings!</h1>
-      <p class="Greet_Message"> You have just stumbled upon a great website. Scroll down to reveal what
-        secrets it holds. </p>
+      <h1>Greetings!</h1>
       <p class="Fancy_Text">
       </p>
     </div>
@@ -78,9 +77,6 @@
   <!-- Main -->
   <main class="bg-dark">
 
-
-    <!-- Put survey of what device someone is on, then turn survey into bar graph of which computer the users came from -->
-
     <!-- About Section -->
     <div class="container-fluid bg-dark about_section" id="About">
       <h3 class="display-3 text-center text-light">Who Am I?</h4>
@@ -88,10 +84,10 @@
           <div class="col-xl-4 justify-content-center activity_selector">
             <h4 class="display-4 text-center text-light">Choose an Activity</h4>
             <div class="row">
-              <button class="btn btn-outline-secondary text-light" id="Weight_Lifting">Weight Lifting</button>
+              <button class="btn btn-outline-secondary text-light" id="Weight-Lifting">Weight Lifting</button>
             </div>
             <div class="row">
-              <button class="btn btn-outline-secondary text-light" id="Book_Reading">Reading Books</button>
+              <button class="btn btn-outline-secondary text-light" id="Book-Reading">Reading Books</button>
             </div>
             <div class="row">
               <button class="btn btn-outline-secondary text-light" id="Developing">Developing</button>
@@ -109,14 +105,20 @@
               <button class="btn btn-outline-secondary text-light" id="Aspirations">Aspirations</button>
             </div>
 
+            <div class="row text-center Arrow_Nav">
+              <div class="arrow_left"></div>
+              <p></p>
+              <div class="arrow_right"></div>
+            </div>
+
           </div>
-          <div class="col-xl-8 text-center activity_content ">
-            <div class="row align-items-center" id="Book_Reading_Content">
-              <div class="col-s-4">
+          <div class="col-xl-8 text-center activity_content">
+            <div class="row align-items-center" id="Book-Reading-Content">
+              <div class="col-s">
                 <img src="Images/Activity_slider/Book_Reading.JPG" alt="Book Reading" class="img-fluid">
               </div>
-              <div class="col-s-4">
-                <h4 class=" display-4">I am a Book Worm.</h4>
+              <div class="col-s">
+                <h4 class="display-4">I am a Book Worm.</h4>
                 <hr>
                 <p class="text-light"> I am a total book nerd. My personal favorite series is Riyria Revelations by
                   Michael J
@@ -133,18 +135,17 @@
                 </div>
               </div>
             </div>
-            <div class="row" id="Developing_Content">
+            <div class="row align-items-center" id="Developing-Content">
               <div class="col-s">
                 <img src="Images/Activity_slider/Developing.PNG" alt="Developing" class="img-fluid">
               </div>
               <div class="col-s">
                 <h4 class=" display-4">I am a Developer.</h4>
                 <hr>
-                <p class="text-light"> Developing caught my eye as a young boy. I have always been enamered with the
-                  breadth of computer
+                <p class="text-light"> I have always been enamered with the breadth of computer
                   science. I have substantial experience with python3, front-end development, and SQL. I have
                   rudimentary experience with PHP and C++. I am very affluent with databases, data collection, and
-                  algorithms. Check my python programming projects below.
+                  algorithms.
                 </p>
                 <div class="row justify-content-center quote_section">
                   <div class="inspiration_circle">
@@ -156,7 +157,7 @@
                 </div>
               </div>
             </div>
-            <div class="row" id="Music_Content">
+            <div class="row align-items-center" id="Music-Content">
               <div class="col-s">
                 <img src="Images/Activity_slider/Music.PNG" alt="Music" class="img-fluid">
               </div>
@@ -177,7 +178,7 @@
                 </div>
               </div>
             </div>
-            <div class="row" id="Weight_Lifting_Content">
+            <div class="row align-items-center" id="Weight-Lifting-Content">
               <div class="col-s">
                 <img src="Images/Activity_slider/Weight_Lifting.JPG" alt="Weight Lifting" class="img-fluid">
               </div>
@@ -199,7 +200,7 @@
                 </div>
               </div>
             </div>
-            <div class="row" id="Yoga_Content">
+            <div class="row align-items-center" id="Yoga-Content">
               <div class="col-s">
                 <img src="Images/Activity_slider/Yoga.JPG" alt="Yoga" class="img-fluid">
               </div>
@@ -221,7 +222,7 @@
                 </div>
               </div>
             </div>
-            <div class="row" id="Education_Content">
+            <div class="row align-items-center" id="Education-Content">
               <div class="col-s">
                 <img src="Images/Activity_slider/Education.JPG" alt="Education" class="img-fluid">
               </div>
@@ -243,11 +244,11 @@
                 </div>
               </div>
             </div>
-            <div class="row" id="Aspirations_Content">
-              <div class="col-s">
+            <div class="row" id="Aspirations-Content">
+              <div class="col-md">
                 <img src="Images/Activity_slider/Aspirations.JPG" alt="Aspirations" class="img-fluid">
               </div>
-              <div class="col-s">
+              <div class="col-md">
                 <h4 class=" display-4">I am a Visionary.</h4>
                 <hr>
                 <p class="text-light"> I visualize my goals. I believe having a vision is the most important aspect of
@@ -272,15 +273,15 @@
     <!-- Projects Section-->
     <div class="container-fluid bg-dark text-light" id="project_section">
       <div class="row text-center">
-        <div class="col-lg" id="project_title_container">
-          <h2 class="display-2 text-center text-light" id="project_title">What Do I Develop?</h2>
+        <div class="col-xl" id="project_title_container">
+          <h2 class="text-center text-light" id="project_title">What Do I Develop?</h2>
         </div>
       </div>
       <div class="row justify-content-center text-center IFG_Section">
-        <div class="col-lg-6">
+        <div class="col-xl-6">
           <img src="Images/Spren.jpg" class="img-fluid mx-auto mt-4 project_image" id="IFG_image">
         </div>
-        <div class="col-lg-4">
+        <div class="col-xl-4">
           <h3 class="display-3 text-center project_name" id="IFG_name">IFG</h3>
           <hr>
           <p class="project_description" id="IFG_description">
@@ -301,30 +302,33 @@
             </div>
           </div>
         </div>
-        <div class="row justify-content-center text-center mTask_Section">
-          <div class="col-lg-4">
-            <h3 class="display-3 text-center project_name" id="mTask_name">mTask</h4>
-              <hr>
-              <p class="project_description" id="mTask_description">
-                mTask is a lightweight task organizing program built with tkinter and python3. It features a routine and
-                task recurrance algorithm. View the Github repository below.
-              </p>
-              <div class="justify-content-center text-center slider_arrow">
-                <button class="btn btn-outline-warning" id="mTask_project">View mTask</button>
-                <div class="arrow_wrapper_4">
-                  <div class="arrow_mTask delay_1"></div>
-                </div>
-                <div class="arrow_wrapper_5">
-                  <div class="arrow_mTask delay_2"></div>
-                </div>
-                <div class="arrow_wrapper_6">
-                  <div class="arrow_mTask delay_3"></div>
-                </div>
+      </div>
+      <div class="row justify-content-center text-center mTask_Section">
+        <div class="col-xl-6" id="mTask_Mobile">
+          <img src="Images/mTask.png" class="img-fluid mx-auto mt-4 project_image" id="mTask_image_mobile">
+        </div>
+        <div class="col-xl-4">
+          <h3 class="display-3 text-center project_name" id="mTask_name">mTask</h4>
+            <hr>
+            <p class="project_description" id="mTask_description">
+              mTask is a lightweight task organizing program built with tkinter and python3. It features a routine and
+              task recurrance algorithm. View the Github repository below.
+            </p>
+            <div class="justify-content-center text-center slider_arrow">
+              <button class="btn btn-outline-warning" id="mTask_project">View mTask</button>
+              <div class="arrow_wrapper_4">
+                <div class="arrow_mTask delay_1"></div>
               </div>
-          </div>
-          <div class="col-lg-6">
-            <img src="Images/mTask.png" class="img-fluid mx-auto mt-4 project_image" id="mTask_image">
-          </div>
+              <div class="arrow_wrapper_5">
+                <div class="arrow_mTask delay_2"></div>
+              </div>
+              <div class="arrow_wrapper_6">
+                <div class="arrow_mTask delay_3"></div>
+              </div>
+            </div>
+        </div>
+        <div class="col-xl-6" id="mTask_Desktop">
+          <img src="Images/mTask.png" class="img-fluid mx-auto mt-4 project_image" id="mTask_image">
         </div>
       </div>
     </div>

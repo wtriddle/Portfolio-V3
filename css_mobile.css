@@ -1,0 +1,239 @@
+@keyframes IFG_image_load {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(20px);
+    }
+}
+
+@media screen and (min-width: 996px) {}
+
+@media screen and (max-width: 996px) {}
+
+@media screen and (min-width: 768px) {
+    header h1 {
+        font-size: 250px;
+    }
+
+    .activity_content img {
+        float: left;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    header h1 {
+        font-size: 100px;
+    }
+
+    .activity_content img {
+        float: none;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    header div .Fancy_Text {
+        font-size: 150px;
+    }
+
+    #mTask_Mobile {
+        display: none;
+    }
+
+    #mTask_Desktop {
+        display: block;
+    }
+
+    #mTask_image_mobile {
+        opacity: 0;
+    }
+
+    #IFG_image.load {
+        animation: IFG_image_load 0.5s ease-in-out 500ms 1 forwards normal;
+    }
+
+    .project_image {
+        height: 100%;
+        width: 100%;
+    }
+
+    #Book-Reading-Content {
+        display: block;
+        opacity: 0;
+    }
+
+    #Developing-Content {
+        display: block;
+        opacity: 0;
+    }
+
+    #Music-Content {
+        display: block;
+        opacity: 0;
+    }
+
+    #Weight-Lifting-Content {
+        display: block;
+        opacity: 0;
+    }
+
+    #Yoga-Content {
+        display: block;
+        opacity: 0;
+    }
+
+    #Education-Content {
+        display: block;
+        opacity: 0;
+    }
+
+    #Aspirations-Content {
+        display: block;
+        opacity: 0;
+    }
+
+    .activity_selector .row button {
+        display: block;
+    }
+
+    .activity_selector .row {
+        margin: 25px 0px 25px 0px;
+    }
+
+    .activity_selector .Arrow_Nav {
+        display: none;
+    }
+
+    #project_title {
+        font-size: 100px;
+    }
+
+    .project_description {
+        font-size: 35px;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    header div .Fancy_Text {
+        font-size: 90px;
+        line-height: 1;
+    }
+
+    #mTask_Mobile {
+        display: block;
+    }
+
+    #mTask_Desktop {
+        display: none;
+    }
+
+    #mTask_image_mobile {
+        opacity: 1;
+    }
+
+    #IFG_image {
+        transform: translate(0);
+    }
+
+    #IFG_image.load {
+        animation: none;
+    }
+
+    .project_image {
+        height: 100%;
+        width: 100%;
+    }
+
+    .project_description {
+        font-size: 25px;
+    }
+
+    #IFG_image {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    #mTask_image {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    .activity_selector .row button {
+        display: none;
+    }
+
+    .activity_selector .row {
+        margin: auto;
+    }
+
+    .activity_selector .Arrow_Nav {
+        display: block;
+    }
+
+    #Book-Reading-Content {
+        display: none;
+        position: relative;
+        padding: 0;
+        transform: translate(0);
+        opacity: 1;
+    }
+
+    #Developing-Content {
+        display: none;
+        transform: translate(0);
+        position: relative;
+        padding: 0;
+        opacity: 1;
+    }
+
+    #Music-Content {
+        display: none;
+        transform: translate(0);
+        position: relative;
+        padding: 0;
+        opacity: 1;
+    }
+
+    #Weight-Lifting-Content {
+        display: none;
+        position: relative;
+        padding: 0;
+        transform: translate(0);
+        opacity: 1;
+    }
+
+    #Yoga-Content {
+        display: none;
+        position: relative;
+        padding: 0;
+        transform: translate(0);
+        opacity: 1;
+    }
+
+    #Education-Content {
+        display: none;
+        position: relative;
+        transform: translate(0);
+        padding: 0;
+        opacity: 1;
+    }
+
+    #Aspirations-Content {
+        display: none;
+        position: relative;
+        padding: 0;
+        transform: translate(0);
+        opacity: 1;
+    }
+
+    #project_title {
+        font-size: 75px;
+    }
+
+}

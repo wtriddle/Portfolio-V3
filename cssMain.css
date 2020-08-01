@@ -168,32 +168,57 @@ header div {
 }
 
 header h1 {
-  opacity: 0;
   text-shadow: 5px 5px 10px darkolivegreen;
   margin: 0 auto;
   color: chartreuse;
   padding-top: 100px;
-  padding-bottom: 50px;
-  transition: opacity 800ms ease-in;
+  padding-bottom: 25px;
 }
 
+@keyframes color_slider {
+  0% {
+    color: skyblue;
+  }
+
+  20% {
+    color: rgb(3, 53, 3);
+  }
+
+  40% {
+    color: forestgreen;
+  }
+
+  60% {
+    color: skyblue;
+  }
+
+  80% {
+    color: white;
+  }
+
+  100% {
+    color: olivedrab;
+  }
+}
+
+
+
 header div .Greet_Message {
-  opacity: 0;
   font-size: 30px;
   margin: 0 auto;
   padding-bottom: 50px;
-  color: white;
-  transition: opacity 4s ease-in-out;
+  color: rgb(15, 146, 135);
+  animation: color_slider 30s linear infinite 0s;
 }
 
 header div .Fancy_Text {
   opacity: 1;
-  font-size: 150px;
   margin: 0 auto;
   padding-bottom: 50px;
   color: rgb(30, 116, 187);
   font-family: "Graffiti-2";
 }
+
 
 @keyframes text_slideshow {
   0% {
@@ -217,7 +242,7 @@ header div .Fancy_Text {
   }
 
   80% {
-    color: darkolivegreen;
+    color: skyblue;
     content: "Russian Ridge"
   }
 
@@ -253,6 +278,148 @@ header div .Fancy_Text::after {
   }
 }
 
+.arrow_left {
+  border: solid orange;
+  border-width: 14px 0px 0px 14px;
+  padding: 10px;
+  display: inline-block;
+  transform: translateX(0) rotate(-45deg);
+  opacity: 1;
+  transition: transform ease 0.1s 0s;
+}
+
+.arrow_left:hover {
+  transform: translateX(-5px) rotate(-45deg);
+}
+
+.arrow_right {
+  border: solid orange;
+  border-width: 0 14px 14px 0;
+  padding: 10px;
+  display: inline-block;
+  transform: translateX(0) rotate(-45deg);
+  opacity: 1;
+  transition: transform ease 0.1s 0s;
+}
+
+.arrow_right:hover {
+  transform: translateX(5px) rotate(-45deg);
+}
+
+@keyframes right_arrow_slide {
+  0% {
+    opacity: 1;
+    transform: translateX(5px) rotate(-45deg);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateX(35px) rotate(-45deg);
+  }
+
+  51% {
+    transform: translateX(-30px) rotate(-45deg);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateX(0px) rotate(-45deg);
+  }
+
+}
+
+.arrow_right.arrow_clicked {
+  animation: right_arrow_slide 0.5s ease-in-out 0s 1 forwards normal;
+}
+
+@keyframes left_arrow_slide {
+  0% {
+    opacity: 1;
+    transform: translateX(-5px) rotate(-45deg);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateX(-35px) rotate(-45deg);
+  }
+
+  51% {
+    transform: translateX(30px) rotate(-45deg);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateX(0px) rotate(-45deg);
+  }
+
+}
+
+.arrow_left.arrow_clicked {
+  animation: left_arrow_slide 0.5s ease-in-out 0s 1 both normal;
+}
+
+.Arrow_Nav {
+  height: 50px;
+  color: white;
+}
+
+.Arrow_Nav div,
+.Arrow_Nav p {
+  display: inline-block;
+}
+
+.Arrow_Nav p.Weight::after {
+  content: "Weights";
+  font-size: 50px;
+  border: black 3px;
+  color: orange;
+}
+
+.Arrow_Nav p.Music::after {
+  content: "Music";
+  font-size: 50px;
+  border: black 3px;
+  color: orange;
+}
+
+.Arrow_Nav p.Yoga::after {
+  content: "Yoga";
+  font-size: 50px;
+  border: black 3px;
+  color: orange;
+}
+
+.Arrow_Nav p.Education::after {
+  content: "Education";
+  font-size: 50px;
+  border: black 3px;
+  color: orange;
+}
+
+.Arrow_Nav p.Aspirations::after {
+  content: "Visions";
+  font-size: 50px;
+  border: black 3px;
+  color: orange;
+}
+
+.Arrow_Nav p.Book::after {
+  content: "Books";
+  font-size: 50px;
+  border: black 3px;
+  color: orange;
+}
+
+.Arrow_Nav p.Developing::after {
+  content: "Dev";
+  font-size: 50px;
+  border: black 3px;
+  color: orange;
+}
+
+
+
+
 .about_section {
   padding-top: 25px;
   padding-bottom: 100px;
@@ -264,10 +431,6 @@ header div .Fancy_Text::after {
   opacity: 0;
   transform: translate(15px, 0px);
   transition: opacity 400ms ease 800ms, transform 400ms ease 800ms;
-}
-
-.activity_selector .row {
-  margin: 25px 0px 25px 0px;
 }
 
 .activity_section .col-md {
@@ -282,11 +445,11 @@ header div .Fancy_Text::after {
   transform: translate(0px, 10px);
 }
 
-#Weight_Lifting.load {
+#Weight-Lifting.load {
   animation: opacity_reveal 200ms ease 1500ms 1 forwards normal;
 }
 
-#Book_Reading.load {
+#Book-Reading.load {
   animation: opacity_reveal 200ms ease 1800ms 1 forwards normal;
 }
 
@@ -310,11 +473,15 @@ header div .Fancy_Text::after {
   animation: opacity_reveal 200ms ease 3300ms 1 forwards normal;
 }
 
+
+.activity_content {
+  padding-top: 25px;
+}
+
 .activity_content img {
   width: 500px;
   height: 575px;
   display: block;
-  float: left;
   margin: auto;
 }
 
@@ -327,7 +494,6 @@ div.activity_content>div {
   opacity: 0;
   position: absolute;
   margin: auto;
-  display: block;
   transform: translate(-25px, 150px);
   font-size: 25px;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -576,17 +742,13 @@ blockquote {
 @keyframes IFG_image_load {
   0% {
     opacity: 0;
-    transform: translateX(0);
+    transform: translateX(-40);
   }
 
   100% {
     opacity: 1;
-    transform: translateX(60px);
+    transform: translateX(20px);
   }
-}
-
-#IFG_image.load {
-  animation: IFG_image_load 0.5s ease-in-out 500ms 1 forwards normal;
 }
 
 #mTask_image.load {
@@ -595,11 +757,8 @@ blockquote {
 
 .project_image {
   opacity: 0;
-  transform: translateX(-60px);
   float: left;
-  padding: 0px 15px 0px 15px;
-  height: 85%;
-  width: 85%;
+  padding: 15px;
   display: block;
 }
 
@@ -613,11 +772,13 @@ blockquote {
 }
 
 .IFG_Section {
-  padding: 0px 50px 0px 50px;
+  padding-top: 10px;
+  padding-bottom: 18px;
   font-size: 30px;
 }
 
 .mTask_Section {
+  padding-top: 10px;
   font-size: 30px;
 }
 
@@ -744,11 +905,6 @@ blockquote {
   margin-bottom: 20px;
 }
 
-#project_title.mobile {
-  padding-bottom: 10px;
-}
-
-
 #project_title.load {
   animation: opacity_reveal 0.5s ease 0s 1 forwards normal;
 }
@@ -784,7 +940,7 @@ blockquote {
 }
 
 .arrow_wrapper {
-  display: block;
+  display: inline;
   opacity: 1;
   transform: translateY(25px);
 }

@@ -28,15 +28,26 @@ function getActive(poems_obj) {
 }
 
 function getActiveContent() {
-  var parent = document.getElementsByClassName("activity_content")[0];
-  var contents = parent.childNodes;
+  let parent = document.getElementsByClassName("activity_content")[0];
+  let contents = parent.childNodes;
   var active = null;
+  var screenWidth = $(window).width();
+  if (screenWidth <= 1238) {
+    Array.prototype.forEach.call(contents, (item) => {
+      if ($("#" + item.id).css("display") == "block") {
+        active = item.id;
+      }
+    });
+    return active
+  }
+
   Array.prototype.forEach.call(contents, (item) => {
     if ($("#" + item.id).css("opacity") == 1) {
       active = item.id;
     }
   });
   return active
+
 
 }
 
@@ -53,13 +64,13 @@ function addData(chart, label, data) {
 function changePoemColumns() {
   'use strict';
   if (mobile === true) {
-    for (var poemNumber = 0; poemNumber < 10; poemNumber++) {
+    for (var poemNumber = 0; poemNumber < 5; poemNumber++) {
       var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
       $("#" + poemName).removeClass("col-8").addClass("col-12");
     }
   }
   if (mobile === false) {
-    for (var poemNumber = 0; poemNumber < 10; poemNumber++) {
+    for (var poemNumber = 0; poemNumber < 5; poemNumber++) {
       var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
       $("#" + poemName).removeClass("col-12").addClass("col-8");
     }
@@ -89,10 +100,6 @@ $(document).ready(function () {
   // Set page to top initally every refresh
   window.scroll(0, 0);
 
-  // Header text loading
-  $("header h1").css("opacity", "1");
-  $("header p").css("opacity", "1");
-
   // HTML widget containers ==================================================
   var poem_div = document.getElementsByClassName("poem_nav")[0];
   var poem_buttons = poem_div.getElementsByTagName("button");
@@ -119,8 +126,8 @@ $(document).ready(function () {
       $(".about_section img").addClass("opacity_show");
       $(".about_section h3").addClass("slide_fade");
       $(".about_section h4").addClass("slide_fade");
-      $("#Weight_Lifting").addClass("load");
-      $("#Book_Reading").addClass("load");
+      $("#Weight-Lifting").addClass("load");
+      $("#Book-Reading").addClass("load");
       $("#Developing").addClass("load");
       $("#Music").addClass("load");
       $("#Yoga").addClass("load");
@@ -351,21 +358,93 @@ $(document).ready(function () {
 
     if (timeout === false) {
 
-      timeout = true
+      timeout = true;
       var id = this.id;
       var active = getActiveContent();
-      if ((id + "_Content") == active) {
+
+      if ((id + "-Content") == active) {
         return 0;
       }
-      $("#" + this.id + "_Content").addClass("show_content");
+
+      $("#" + this.id + "-Content").addClass("show_content");
       if (active) {
         $("#" + active).removeClass("show_content");
       }
-
     }
     setTimeout(() => {
       timeout = false;
     }, 600);
+  });
+
+
+  var counter = 0;
+
+  var contents = ["Book-Reading-Content", "Developing-Content", "Music-Content", "Weight-Lifting-Content", "Yoga-Content", "Education-Content", "Aspirations-Content"]
+
+  //Activity Right Arrow 
+  $(".Arrow_Nav div.arrow_right").on('click', function () {
+
+    if (timeout === false) {
+
+      // Shift activity content right
+      var active = getActiveContent();
+      let re = /^\w+/;
+      counter++;
+      if (counter == 7) {
+        counter = 0;
+      }
+      var activate = contents[counter];
+
+      var toActive = re.exec(activate)[0];
+      var fromActive = re.exec(active)[0];
+
+      $(".Arrow_Nav p").addClass(toActive);
+      $(".Arrow_Nav p").removeClass(fromActive);
+
+      $("#" + activate).css("display", "block");
+      $("#" + active).css("display", "none");
+
+      // Animate arrow and add timeout
+      timeout = true;
+      this.classList.toggle("arrow_clicked");
+      setTimeout(() => {
+        this.classList.toggle("arrow_clicked");
+        timeout = false;
+      }, 550);
+    }
+  });
+
+  //Activity Left Arrow 
+  $(".Arrow_Nav div.arrow_left").on('click', function () {
+
+    if (timeout === false) {
+
+      // Shift activity content left
+      var active = getActiveContent();
+      let re = /^\w+/;
+      counter--;
+      if (counter == -1) {
+        counter = 6;
+      }
+      var activate = contents[counter];
+
+      var toActive = re.exec(activate)[0];
+      var fromActive = re.exec(active)[0];
+
+      $(".Arrow_Nav p").addClass(toActive);
+      $(".Arrow_Nav p").removeClass(fromActive);
+
+      $("#" + activate).css("display", "block");
+      $("#" + active).css("display", "none");
+
+      // Animate arrow and add timeout
+      timeout = true;
+      this.classList.toggle("arrow_clicked");
+      setTimeout(() => {
+        this.classList.toggle("arrow_clicked");
+        timeout = false;
+      }, 550);
+    }
   });
 
   //Soundcloud Button
@@ -392,12 +471,6 @@ $(document).ready(function () {
   $("#mTask_project").on('click', () => {
     window.location.href = "https://github.com/wtriddle/mTask";
   });
-
-  //If mobile, change font sizes
-  if (screenWidth < 576) {
-    $("h1").removeClass("display-1");
-    $("h1").addClass("display-4");
-  }
 
   //Change Poem Section to Mobile Layout
   if (screenWidth < 560) {
@@ -446,6 +519,23 @@ $(document).ready(function () {
         $(".Poem").removeClass("relative").addClass("absolute");
         $(".list-full").removeClass("col-xs-4");
         $(".list-full").addClass("col-4");
+      }
+
+      if (windowWidth >= 1238) {
+        var content = ["Book-Reading-Content", "Developing-Content", "Music-Content", "Weight-Lifting-Content", "Yoga-Content", "Education-Content", "Aspirations-Content"];
+        Array.prototype.forEach.call(content, (item) => {
+          $("#" + item).css("display", "block");
+        });
+      }
+
+      if (windowWidth < 1238) {
+        var active = getActiveContent();
+        var content = ["Book-Reading-Content", "Developing-Content", "Music-Content", "Weight-Lifting-Content", "Yoga-Content", "Education-Content", "Aspirations-Content"];
+        Array.prototype.forEach.call(content, (item) => {
+          if (item != active) {
+            $("#" + item).css("display", "none");
+          }
+        });
       }
 
 
