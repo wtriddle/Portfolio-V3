@@ -92,37 +92,37 @@
     }
 
     #Book-Reading-Content {
-        display: block;
+        display: block !important;
         opacity: 0;
     }
 
     #Developing-Content {
-        display: block;
+        display: block !important;
         opacity: 0;
     }
 
     #Music-Content {
-        display: block;
+        display: block !important;
         opacity: 0;
     }
 
     #Weight-Lifting-Content {
-        display: block;
+        display: block !important;
         opacity: 0;
     }
 
     #Yoga-Content {
-        display: block;
+        display: block !important;
         opacity: 0;
     }
 
     #Education-Content {
-        display: block;
+        display: block !important;
         opacity: 0;
     }
 
     #Aspirations-Content {
-        display: block;
+        display: block !important;
         opacity: 0;
     }
 

@@ -92,7 +92,7 @@ $(document).ready(function () {
     var scroll_pos = $(this).scrollTop();
 
     // About me section loading
-    if (scroll_pos >= 350) {
+    if (scroll_pos >= 300) {
 
       // Widgets
       $(".about_section h3").addClass("slide_fade");
@@ -112,7 +112,7 @@ $(document).ready(function () {
     }
 
     // Project Section loading
-    if (scroll_pos >= 1500) {
+    if (scroll_pos >= 1400) {
 
       // IFG widgets
       Array.prototype.forEach.call(IFG_widgets, (item) => {
@@ -131,7 +131,7 @@ $(document).ready(function () {
       }
     }
 
-    if (scroll_pos >= 2100) {
+    if (scroll_pos >= 2400) {
 
       // IFG widgets
       Array.prototype.forEach.call(mTask_widgets, (item) => {
@@ -146,7 +146,7 @@ $(document).ready(function () {
     }
 
     // Poetry Section loading
-    if (scroll_pos >= 3000) {
+    if (scroll_pos >= 3500) {
 
       // Widgets
       $("#poetry_section h1").addClass("opacity_show");
@@ -511,28 +511,6 @@ $(document).ready(function () {
     delay(() => {
       //Poem Section Mobile for resize
       repositionActiveMobile();
-
-      // Content Reposition from mobile to non-mobile
-      if (windowWidth >= 1238) {
-        var content = ["Book-Reading-Content", "Developing-Content", "Music-Content", "Weight-Lifting-Content", "Yoga-Content", "Education-Content", "Aspirations-Content"];
-        Array.prototype.forEach.call(content, (item) => {
-          $("#" + item).css("display", "block");
-        });
-      }
-
-      // Content Reposition from non-mobile to mobile
-      if (windowWidth < 1238) {
-        var active = getActiveContent();
-        var content = ["Book-Reading-Content", "Developing-Content", "Music-Content", "Weight-Lifting-Content", "Yoga-Content", "Education-Content", "Aspirations-Content"];
-        Array.prototype.forEach.call(content, (item) => {
-          if (item != active) {
-            $("#" + item).css("display", "none");
-          }
-        });
-      }
-
-
-
     }, 100, "STRING!");
   });
 });
