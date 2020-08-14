@@ -122,7 +122,7 @@ hr {
 }
 
 header {
-  display: block;
+  display: flex;
   height: 100%;
   width: 100%;
   margin: 0 auto;
@@ -171,44 +171,8 @@ header h1 {
   text-shadow: 5px 5px 10px darkolivegreen;
   margin: 0 auto;
   color: chartreuse;
-  padding-top: 100px;
-  padding-bottom: 25px;
-}
-
-@keyframes color_slider {
-  0% {
-    color: skyblue;
-  }
-
-  20% {
-    color: rgb(3, 53, 3);
-  }
-
-  40% {
-    color: forestgreen;
-  }
-
-  60% {
-    color: skyblue;
-  }
-
-  80% {
-    color: white;
-  }
-
-  100% {
-    color: olivedrab;
-  }
-}
-
-
-
-header div .Greet_Message {
-  font-size: 30px;
-  margin: 0 auto;
-  padding-bottom: 50px;
-  color: rgb(15, 146, 135);
-  animation: color_slider 30s linear infinite 0s;
+  padding-top: 10vh;
+  padding-bottom: 2.5vh;
 }
 
 header div .Fancy_Text {
