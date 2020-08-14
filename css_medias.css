@@ -28,6 +28,10 @@
         font-size: 100px;
     }
 
+    .project_description {
+        font-size: 4vw;
+    }
+
 
 }
 
@@ -47,6 +51,9 @@
         line-height: 0.75;
     }
 
+    .project_description {
+        font-size: 4vw;
+    }
 
 
 }
@@ -57,7 +64,7 @@
     }
 
     .project_description {
-        font-size: 27.5px;
+        font-size: 1vw;
     }
 }
 
@@ -143,7 +150,7 @@
     }
 
     .project_description {
-        font-size: 35px;
+        font-size: 2vw;
     }
 
     #BDpoem {
@@ -249,9 +256,6 @@
         width: 100%;
     }
 
-    .project_description {
-        font-size: 25px;
-    }
 
     #IFG_image {
         opacity: 1;

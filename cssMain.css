@@ -717,12 +717,12 @@ blockquote {
 .IFG_Section {
   padding-top: 10px;
   padding-bottom: 18px;
-  font-size: 30px;
+  font-size: 20vw;
 }
 
 .mTask_Section {
   padding-top: 10px;
-  font-size: 30px;
+  font-size: 20vw;
 }
 
 .slider_arrow {
