@@ -66,6 +66,10 @@ hr {
   height: 2px;
 }
 
+h3 {
+  font-size: 3.5vw;
+}
+
 .navbar {
   font-size: 26px;
   z-index: 1;
@@ -383,7 +387,6 @@ header div .Fancy_Text::after {
 
 .about_section {
   padding-top: 25px;
-  padding-bottom: 100px;
 }
 
 .about_section h3,
@@ -440,8 +443,6 @@ header div .Fancy_Text::after {
 }
 
 .activity_content img {
-  width: 500px;
-  height: 575px;
   display: block;
   margin: auto;
 }
@@ -456,7 +457,6 @@ div.activity_content>div {
   position: absolute;
   margin: auto;
   transform: translate(-25px, 150px);
-  font-size: 25px;
 }
 
 .activity_content p {
@@ -482,7 +482,6 @@ div.activity_content>div {
 .inspiration_circle {
   height: 14em;
   width: 17.5em;
-  font-size: 25px;
   background: radial-gradient(ellipse at center,
       orange 0%,
       orange 60%,
@@ -677,7 +676,7 @@ blockquote {
 }
 
 #project_section {
-  padding-bottom: 100px;
+  padding-bottom: 3vh;
   margin-bottom: 20px;
   clear: both;
 }
@@ -715,7 +714,6 @@ blockquote {
 }
 
 .IFG_Section {
-  padding-top: 10px;
   padding-bottom: 18px;
   font-size: 20vw;
 }
@@ -1010,7 +1008,7 @@ blockquote {
 }
 
 
-#footer h3 {
+#footer h1 {
   font-size: 150px;
   font-family: 'Allan';
 }

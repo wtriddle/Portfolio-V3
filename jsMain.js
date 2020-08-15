@@ -6,7 +6,7 @@ function getActive(poems_obj) {
   */
   var active = null;
   var windowWidth = $(window).width();
-  if (windowWidth > 1200) {
+  if (windowWidth >= 1185) {
     Array.prototype.forEach.call(poems_obj, (item) => {
       if ($("#" + item.id + "poem").css("opacity") == 1) {
         active = item.id;
@@ -14,7 +14,7 @@ function getActive(poems_obj) {
     });
     return active;
   }
-  if (windowWidth <= 1200) {
+  if (windowWidth <= 1184) {
     Array.prototype.forEach.call(poems_obj, (item) => {
       if ($("#" + item.id + "poem").css("display") == "block") {
         active = item.id;
@@ -26,11 +26,16 @@ function getActive(poems_obj) {
 }
 
 function getActiveContent() {
+  /*
+
+  Gets active content of Who am I section showing
+
+  */
   let parent = document.getElementsByClassName("activity_content")[0];
   let contents = parent.childNodes;
   var active = null;
   var screenWidth = $(window).width();
-  if (screenWidth <= 1238) {
+  if (screenWidth <= 1184) {
     Array.prototype.forEach.call(contents, (item) => {
       if ($("#" + item.id).css("display") == "block") {
         active = item.id;
@@ -39,29 +44,33 @@ function getActiveContent() {
     return active
   }
 
-  Array.prototype.forEach.call(contents, (item) => {
-    if ($("#" + item.id).css("opacity") == 1) {
-      active = item.id;
-    }
-  });
-  return active
+  if (screenWidth >= 1185) {
+    Array.prototype.forEach.call(contents, (item) => {
+      if ($("#" + item.id).css("opacity") == 1) {
+        active = item.id;
+      }
+    });
+    return active
+  }
 
 
 }
+
 
 //When resizing the webpage down to mobile, this function will take the active showing poem from the non-mobile webpage and center it with all the other poems.
 function repositionActiveMobile() {
   'use strict';
 
+  // Reposition poetry content
   for (var poemNumber = 0; poemNumber < 5; poemNumber++) {
     var poemName = document.getElementsByClassName("Poem")[poemNumber].id;
     if ($("#" + poemName).css("transform") === "matrix(1, 0, 0, 1, 50, 0)") {
       $("#" + poemName).toggleClass("show_poem");
-      break;
     }
   }
 
 }
+
 
 
 
@@ -321,6 +330,7 @@ $(document).ready(function () {
 
       timeout = true;
       var id = this.id;
+      active_content = id + "-Content";
       var active = getActiveContent();
 
       if ((id + "-Content") == active) {
@@ -494,6 +504,8 @@ $(document).ready(function () {
     window.location.href = "https://github.com/wtriddle/mTask";
   });
 
+  var screenWidth = $(window).width();
+
   //Change Poem Section to Mobile Layout
   if (screenWidth < 1200) {
     $(".Poem").css("opacity", "1");
@@ -505,12 +517,19 @@ $(document).ready(function () {
     $(".Poem").removeClass("relative").addClass("absolute");
   }
 
+  let active_content = ''; // Contains the ID of the currently showing content on non-mobile view of website
   //If user resizes window:
   $(window).resize(() => {
     var windowWidth = $(window).width();
     delay(() => {
       //Poem Section Mobile for resize
       repositionActiveMobile();
+      if (windowWidth <= 1200) {
+        if (active_content !== '') {
+          $('#' + active_content).removeClass('show_content');
+          active_content = '';
+        }
+      }
     }, 100, "STRING!");
   });
 });

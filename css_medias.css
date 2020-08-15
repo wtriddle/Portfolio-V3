@@ -10,17 +10,40 @@
     }
 }
 
-@media screen and (min-width: 996px) {}
 
-@media screen and (max-width: 996px) {}
+@media screen and (max-width: 576px) {
+    .navbar {
+        font-size: 30px;
+        transform: translate(0px, 0px);
+        transition: transform 900ms ease;
+    }
+
+    .navToggle {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 996px) {
+    .activity_content img {
+        float: left;
+    }
+
+}
+
+@media screen and (max-width: 996px) {
+    .activity_content img {
+        float: none;
+    }
+
+    div.activity_content>div {
+        font-size: 4vw !important;
+    }
+}
 
 @media screen and (min-width: 768px) {
     header h1 {
         font-size: 225px;
-    }
-
-    .activity_content img {
-        float: left;
     }
 
     #poetry_section h1::after {
@@ -33,16 +56,13 @@
     }
 
 
+
 }
 
 @media screen and (max-width: 768px) {
 
     header h1 {
         font-size: 100px;
-    }
-
-    .activity_content img {
-        float: none;
     }
 
     #poetry_section h1::after {
@@ -53,6 +73,11 @@
 
     .project_description {
         font-size: 4vw;
+    }
+
+    .activity_content img {
+        width: 100vw !important;
+        height: 70vh !important;
     }
 
 
@@ -66,15 +91,36 @@
     .project_description {
         font-size: 1vw;
     }
+
+    .inspiration_circle {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .inspiration_circle {
+        font-size: 20px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
+
+    .about_section {
+        padding-bottom: 35vh;
+    }
+
     header div .Fancy_Text {
         font-size: 150px;
     }
 
     div.activity_content>div {
+        font-size: 1.55vw;
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .activity_content img {
+        width: 40vw;
+        height: 90vh;
     }
 
     #mTask_Mobile {
@@ -205,6 +251,24 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .inspiration_circle {
+        font-size: 25px !important;
+    }
+
+    h3 {
+        display: none;
+    }
+
+    .about_section {
+        padding-bottom: 3vh;
+    }
+
+
+    .activity_content img {
+        width: 50vw;
+        height: 75vh;
+    }
+
 
     .poem_nav button {
         display: none;
@@ -280,6 +344,7 @@
     }
 
     div.activity_content>div {
+        font-size: 2.5vw;
         transition: none;
     }
 
@@ -378,17 +443,6 @@
     }
 
     main {
-        padding: 0px 0px 0px 0px;
+        padding: 0;
     }
-
-    .navbar {
-        font-size: 30px;
-        transform: translate(0px, 0px);
-        transition: transform 900ms ease;
-    }
-
-    .navToggle {
-        display: none;
-    }
-
 }
