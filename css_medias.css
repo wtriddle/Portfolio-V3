@@ -42,10 +42,6 @@
 }
 
 @media screen and (min-width: 768px) {
-    header h1 {
-        font-size: 225px;
-    }
-
     #poetry_section h1::after {
         content: "How Do I Express Myself?";
         font-size: 100px;
@@ -60,11 +56,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
-    header h1 {
-        font-size: 100px;
-    }
-
     #poetry_section h1::after {
         content: "What Do I Feel?";
         font-size: 75px;
@@ -104,6 +95,9 @@
 }
 
 @media screen and (min-width: 1200px) {
+    header h1 {
+        font-size: 225px;
+    }
 
     .about_section {
         padding-bottom: 35vh;
@@ -251,6 +245,10 @@
 }
 
 @media screen and (max-width: 1200px) {
+    header h1 {
+        font-size: 100px;
+    }
+
     .inspiration_circle {
         font-size: 25px !important;
     }
