@@ -126,27 +126,27 @@ header div {
 
 @keyframes background_slideshow {
   0% {
-    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/Ice_House.JPG");
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("./Images/Header_slider/Ice_House.JPG");
   }
 
   20% {
-    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/El_Corte.JPG");
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("./Images/Header_slider/El_Corte.JPG");
   }
 
   40% {
-    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/Lake_Tahoe.JPG");
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("./Images/Header_slider/Lake_Tahoe.JPG");
   }
 
   60% {
-    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/Mt_Wilson.JPG");
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("./Images/Header_slider/Mt_Wilson.JPG");
   }
 
   80% {
-    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/Russ_Ridge.JPG");
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("./Images/Header_slider/Russ_Ridge.JPG");
   }
 
   100% {
-    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("Images/Header_slider/Windy_Hill.JPG");
+    background-image: linear-gradient(rgba(26, 26, 26, 0.25), rgba(26, 26, 26, 0.25)), url("./Images/Header_slider/Windy_Hill.JPG");
   }
 }
 
