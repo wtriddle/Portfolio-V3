@@ -1,53 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Allan&family=Roboto:ital,wght@0,300;1,300&family=Trade+Winds&display=swap');
+;
+
 /* allan-regular - latin */
 @font-face {
   font-family: 'Allan';
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/allan-v12-latin-regular.eot');
-  /* IE9 Compat Modes */
   src: local('Allan Regular'), local('Allan-Regular'),
-    url('./fonts/allan-v12-latin-regular.eot?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */
-    url('./fonts/allan-v12-latin-regular.woff2') format('woff2'),
-    /* Super Modern Browsers */
-    url('./fonts/allan-v12-latin-regular.woff') format('woff'),
-    /* Modern Browsers */
-    url('./fonts/allan-v12-latin-regular.ttf') format('truetype'),
-    /* Safari, Android, iOS */
-    url('./fonts/allan-v12-latin-regular.svg#Allan') format('svg');
-  /* Legacy iOS */
+    ('https://fonts.googleapis.com/css2?family=Allan&family=Roboto:ital,wght@0,300;1,300&family=Trade+Winds&display=swap');
+
 }
 
 @font-face {
-  font-family: 'Roboto-Italic';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   src: local('Roboto Regular'), local('Roboto-Regular'),
-    url('./fonts/Roboto-LightItalic.ttf') format('truetype');
+    ('https://fonts.googleapis.com/css2?family=Allan&family=Roboto:ital,wght@0,300;1,300&family=Trade+Winds&display=swap');
+
 }
 
 @font-face {
-  font-family: 'Roboto-Header';
+  font-family: 'Trade Winds';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'),
-    url('./fonts/Roboto-Light.ttf') format('truetype');
-}
+  src: local('Trade Winds Regular'), local('Trade Winds-Regular'),
+    ('https://fonts.googleapis.com/css2?family=Allan&family=Roboto:ital,wght@0,300;1,300&family=Trade+Winds&display=swap');
 
-@font-face {
-  font-family: 'Graffiti-1';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Graffiti-1 Regular'), local('Graffiti-1-Regular'),
-    url('./fonts/Searfont.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Graffiti-2';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Graffiti-2 Regular'), local('Graffiti-2-Regular'),
-    url('./fonts/PhillySans.otf') format('opentype');
 }
 
 * {
@@ -184,7 +163,7 @@ header div .Fancy_Text {
   margin: 0 auto;
   padding-bottom: 50px;
   color: rgb(30, 116, 187);
-  font-family: "Graffiti-2";
+  font-family: "Trade Winds";
 }
 
 
@@ -389,9 +368,13 @@ header div .Fancy_Text::after {
   padding-top: 25px;
 }
 
-.about_section h3,
-.about_section h4 {
-  font-family: 'Roboto-Header';
+.about_section h2 {
+  font-family: 'Roboto';
+}
+
+.about_section h3 {
+  font-family: 'Roboto';
+  font-style: italic;
   opacity: 0;
   transform: translate(15px, 0px);
   transition: opacity 400ms ease 800ms, transform 400ms ease 800ms;
@@ -448,7 +431,8 @@ header div .Fancy_Text::after {
 }
 
 .activity_content h4 {
-  font-family: 'Roboto-Italic';
+  font-family: "Roboto";
+  font-style: italic;
   color: orange;
 }
 
@@ -539,22 +523,23 @@ blockquote {
   color: black;
 }
 
-
-#poetry_section h1 {
-  font-family: "Roboto-Header";
-  opacity: 0;
-  transition: opacity 400ms ease;
+#poetry_section h2 {
+  font-family: "Roboto";
+  opacity: 1;
 }
 
-#poetry_section h2 {
-  font-family: "Roboto-Italic";
-  opacity: 0;
-  transition: opacity 400ms ease 500ms;
+#poetry_section h4 {
+  font-family: "Roboto";
+  color: orange;
+  font-style: italic;
 }
 
 #poetry_section h3 {
+  font-family: "Roboto";
   color: orange;
-  font-family: "Roboto-Italic";
+  font-style: italic;
+  opacity: 0;
+  transition: opacity 400ms ease;
 }
 
 
@@ -706,11 +691,12 @@ blockquote {
 
 #project_section h3 {
   color: orange;
-  font-family: 'Roboto-Italic';
+  font-family: "Roboto";
+  font-style: italic;
 }
 
 #project_section h2 {
-  font-family: 'Roboto-Header';
+  font-family: 'Roboto';
 }
 
 .IFG_Section {
@@ -839,7 +825,8 @@ blockquote {
 }
 
 .project_name {
-  font-family: 'Roboto-Italic'
+  font-family: "Roboto";
+  font-style: italic;
 }
 
 #project_title_container {

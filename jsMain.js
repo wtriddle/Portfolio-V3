@@ -158,8 +158,7 @@ $(document).ready(function () {
     if (scroll_pos >= 3500) {
 
       // Widgets
-      $("#poetry_section h1").addClass("opacity_show");
-      $("#poetry_section h2").addClass("opacity_show");
+      $("#poetry_section h3").addClass("opacity_show");
       Array.prototype.forEach.call(poem_buttons, (item) => {
         $("#" + item.id).addClass("load_poem");
       });
