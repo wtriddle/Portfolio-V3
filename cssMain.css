@@ -8,7 +8,6 @@
   font-weight: 400;
   src: local('Allan Regular'), local('Allan-Regular'),
     ('https://fonts.googleapis.com/css2?family=Allan&family=Roboto:ital,wght@0,300;1,300&family=Trade+Winds&display=swap');
-
 }
 
 @font-face {
@@ -17,7 +16,6 @@
   font-weight: 400;
   src: local('Roboto Regular'), local('Roboto-Regular'),
     ('https://fonts.googleapis.com/css2?family=Allan&family=Roboto:ital,wght@0,300;1,300&family=Trade+Winds&display=swap');
-
 }
 
 @font-face {
@@ -26,7 +24,6 @@
   font-weight: 400;
   src: local('Trade Winds Regular'), local('Trade Winds-Regular'),
     ('https://fonts.googleapis.com/css2?family=Allan&family=Roboto:ital,wght@0,300;1,300&family=Trade+Winds&display=swap');
-
 }
 
 * {
