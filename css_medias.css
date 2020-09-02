@@ -197,6 +197,10 @@
         display: block !important;
     }
 
+    #FRSpoem {
+        display: block !important;
+    }
+
     #TMpoem {
         display: block !important;
     }
@@ -217,10 +221,6 @@
         display: block;
     }
 
-    .Poem {
-        position: absolute;
-    }
-
     .poem_nav button {
         display: block;
     }
@@ -234,6 +234,7 @@
     }
 
     .Poem {
+        position: absolute;
         opacity: 0;
     }
 
@@ -411,6 +412,12 @@
     }
 
     #BDpoem {
+        margin: auto;
+        display: none;
+        position: relative;
+    }
+
+    #FRSpoem {
         margin: auto;
         display: none;
         position: relative;

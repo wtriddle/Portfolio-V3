@@ -418,7 +418,7 @@ $(document).ready(function () {
   });
 
 
-  var poems = ["BD", "TM", "CS", "HV", "UPS"];
+  var poems = ["BD", "TM", "CS", "HV", "UPS", "FRS"];
   var poem_counter = 0;
   //Activity Right Arrow 
   $(".Arrow_Poetry_Nav div.arrow_right").on('click', function () {
@@ -428,7 +428,7 @@ $(document).ready(function () {
       // Shift activity content right
       var active = getActive(poem_buttons);
       poem_counter++;
-      if (poem_counter == 5) {
+      if (poem_counter == poems.length) {
         poem_counter = 0;
       }
       var activate = poems[poem_counter];
@@ -458,7 +458,7 @@ $(document).ready(function () {
       var active = getActive(poem_buttons);
       poem_counter--;
       if (poem_counter == -1) {
-        poem_counter = 4;
+        poem_counter = 5;
       }
       var activate = poems[poem_counter];
 
