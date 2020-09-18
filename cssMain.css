@@ -92,6 +92,31 @@ h3 {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
+
+.load-El_corte {
+  background: url("./Images/Header_slider/El_Corte.JPG") no-repeat -9999px -9999px
+}
+
+.load-Ice_House {
+  background: url("./Images/Header_slider/Ice_House.JPG") no-repeat -9999px -9999px
+}
+
+.load-Russ_Ridge {
+  background: url("./Images/Header_slider/Russ_Ridge.JPG") no-repeat -9999px -9999px
+}
+
+.load-Lake_Tahoe {
+  background: url("./Images/Header_slider/Lake_Tahoe.JPG") no-repeat -9999px -9999px
+}
+
+.load-Windy_Hill {
+  background: url("./Images/Header_slider/Windy_Hill.JPG") no-repeat -9999px -9999px
+}
+
+.load-Mt_Wilson {
+  background: url("./Images/Header_slider/Mt_Wilson.JPG") no-repeat -9999px -9999px
+}
+
 .pre-load {
   background: url("./Images/Header_slider/El_Corte.JPG") no-repeat -9999px -9999px,
     url("./Images/Header_slider/Ice_House.JPG") no-repeat -9999px -9999px,
