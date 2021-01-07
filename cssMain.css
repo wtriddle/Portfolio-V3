@@ -320,7 +320,7 @@ header div .Fancy_Text::after {
 }
 
 .Arrow_Nav p.Music::after {
-  content: "Music";
+  content: "Hiking";
   font-size: 50px;
   border: black 3px;
   color: orange;
