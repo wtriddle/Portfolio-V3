@@ -167,12 +167,12 @@ header div .Fancy_Text {
 @keyframes text_slideshow {
   0% {
     color: darkcyan;
-    content: "Ice House Caynon"
+    content: "Ice House"
   }
 
   20% {
     color: rgb(128, 197, 24);
-    content: "El Corte De Madera"
+    content: "El Corte"
   }
 
   40% {
